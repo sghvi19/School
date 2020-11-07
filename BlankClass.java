@@ -13,31 +13,25 @@ import acm.graphics.GLine;
 import acm.program.*;
 
 public class BlankClass extends GraphicsProgram {
-	private int startPointX;
-	private int startPointY;
-	private int endPointX;
-	private int endPointY;
-	private boolean first=true;
-	public void run() {
+	private GLine line;
+	private boolean t = true;
+
+	public void init() {
 		addMouseListeners();
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (first) {
-			startPointX = e.getX();
-			startPointY = e.getY();
-			first=false;
-		}else if(!first) {
-			endPointX=e.getX();
-			endPointY=e.getY();
+		if (t) {
+			line = new GLine(e.getX(), e.getY(), e.getX(), e.getY());
+			add(line);
+			t = false;
+		} else {
+			t = true;
 		}
-		
-		
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		GLine line=new GLine(startPointX,startPointY,e.getX(),e.getY());
-		add(line);
-	}
-
+		if(line != null && !t) {
+			line.setEndPoint(e.getX(), e.getY());
+		}
 }
