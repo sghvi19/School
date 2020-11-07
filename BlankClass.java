@@ -25,7 +25,9 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		oval.setLocation(e.getX()-10, e.getY()-10);
+		if (e.getX() >= oval.getX() && e.getX() <= oval.getX() + 20 && e.getY() >= oval.getY()
+				&& e.getY() <= oval.getY() + 20) {
+			oval.setLocation(e.getX() - 10, e.getY() - 10);
+		}
 	}
-
 }
