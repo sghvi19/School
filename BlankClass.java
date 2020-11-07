@@ -21,7 +21,7 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void run() {
-		GLine line1=new GLine(10,10,10,10);
+		GLine line1=new GLine(10,10,50,50);
 		add(line1);
 		//line1.setEndPoint(100, 100);
 	}
