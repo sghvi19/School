@@ -6,11 +6,48 @@
  * Then you can extend GraphicsProgram, ConsoleProgram, or DialogProgram as you like.
  */
 
+import java.awt.event.MouseEvent;
+
 import acm.program.*;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		/* You fill this in */
+		addActionListeners();
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("Click!");
+	}	
+	
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		System.out.println("Dragged");
+	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		System.out.println("Moved");
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
+		System.out.println("Pressed");
+	}
+	
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		System.out.println("Released");
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		System.out.println("Entered");
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent e) {
+		System.out.println("Exited");
 	}
 }
 
