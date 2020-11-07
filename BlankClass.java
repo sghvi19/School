@@ -12,7 +12,7 @@ import acm.program.*;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		addActionListeners();
+		addMouseListeners();
 	}
 	
 	@Override
