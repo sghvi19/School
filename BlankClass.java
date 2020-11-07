@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 
 import acm.program.*;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
 	public void run() {
 		addMouseListeners();
 	}
