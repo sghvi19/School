@@ -1,3 +1,4 @@
+
 /*
  * File: BlankClass.java
  * ---------------------
@@ -8,46 +9,35 @@
 
 import java.awt.event.MouseEvent;
 
+import acm.graphics.GLine;
 import acm.program.*;
 
 public class BlankClass extends GraphicsProgram {
+	private int startPointX;
+	private int startPointY;
+	private int endPointX;
+	private int endPointY;
+	private boolean first=true;
 	public void run() {
 		addMouseListeners();
 	}
-	
-	@Override
+
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Click!");
-	}	
-	
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		System.out.println("Dragged");
+		if (first) {
+			startPointX = e.getX();
+			startPointY = e.getY();
+			first=false;
+		}else if(!first) {
+			endPointX=e.getX();
+			endPointY=e.getY();
+		}
+		
+		
 	}
-	
-	@Override
+
 	public void mouseMoved(MouseEvent e) {
-		System.out.println("Moved");
-	}
-	
-	@Override
-	public void mousePressed(MouseEvent e) {
-		System.out.println("Pressed");
-	}
-	
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		System.out.println("Released");
+		GLine line=new GLine(startPointX,startPointY,e.getX(),e.getY());
+		add(line);
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		System.out.println("Entered");
-	}
-	
-	@Override
-	public void mouseExited(MouseEvent e) {
-		System.out.println("Exited");
-	}
 }
-
