@@ -31,7 +31,8 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		if(line != null && !t) {
+		if (line != null && !t) {
 			line.setEndPoint(e.getX(), e.getY());
 		}
+	}
 }
