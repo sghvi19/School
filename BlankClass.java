@@ -10,31 +10,22 @@
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GLine;
+import acm.graphics.GOval;
 import acm.program.*;
 
 public class BlankClass extends GraphicsProgram {
 	private GLine line;
 	private boolean t = true;
+	private GOval oval;
 
-	public void init() {
+	public void run() {
 		addMouseListeners();
+		oval = new GOval(20, 20, 20, 20);
+		add(oval);
 	}
 
-
-
-	public void mouseClicked(MouseEvent e) {
-		if (t) {
-			line = new GLine(e.getX(), e.getY(), e.getX(), e.getY());
-			add(line);
-			t = false;
-		} else {
-			t = true;
-		}
+	public void mouseDragged(MouseEvent e) {
+		oval.setLocation(e.getX(), e.getY());
 	}
 
-	public void mouseMoved(MouseEvent e) {
-		if (line != null && !t) {
-			line.setEndPoint(e.getX(), e.getY());
-		}
-	}
 }
