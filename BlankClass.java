@@ -13,21 +13,17 @@ import acm.graphics.GLine;
 import acm.graphics.GOval;
 import acm.program.*;
 
-public class BlankClass extends GraphicsProgram {
-	private GLine line;
-	private boolean t = true;
-	private GOval oval;
+public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		addMouseListeners();
-		oval = new GOval(20, 20, 20, 20);
-		add(oval);
-	}
-
-	public void mouseDragged(MouseEvent e) {
-		if (e.getX() >= oval.getX() && e.getX() <= oval.getX() + 20 && e.getY() >= oval.getY()
-				&& e.getY() <= oval.getY() + 20) {
-			oval.setLocation(e.getX() - 10, e.getY() - 10);
+		int result = 0;
+		String str = readLine("Enter text: ");
+		String n = readLine("Enter letter: ");
+		for (int i = 0; i < str.length(); i++) {
+			if (n.charAt(0) == str.charAt(i)) {
+				result++;
+			}
 		}
+		println(result);
 	}
 }
