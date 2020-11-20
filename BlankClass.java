@@ -16,25 +16,15 @@ import acm.program.*;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		int result = 0;
-		int temp = 0;
-		Character lett = ' ';
+		String rev= "";
 		String str = readLine("Enter text: ");
-		for (int i = 0; i < str.length()-1; i++) {
-				for (int j = i ; j < str.length(); j++) {
-					if (str.charAt(i) == str.charAt(j)) {
-						temp++;
-					}
-				}
-				if (result <= temp) {
-					result = temp;
-					lett=str.charAt(i);
-				}
-
-				temp = 0;
+		for (int i = str.length()-1; i >=0; i--) {
+			rev+=str.charAt(i);
 		}
-		println(result+" "+lett);
-		
-
+		if(rev==str) {
+			println("palindrome");
+		}else {
+			println("not palindrome");
+		}
 	}
 }
