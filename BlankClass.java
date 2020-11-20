@@ -21,7 +21,7 @@ public class BlankClass extends ConsoleProgram {
 		for (int i = str.length()-1; i >=0; i--) {
 			rev+=str.charAt(i);
 		}
-		if(rev==str) {
+		if(rev.equals(str)) {
 			println("palindrome");
 		}else {
 			println("not palindrome");
