@@ -17,23 +17,23 @@ public class BlankClass extends ConsoleProgram {
 
 	public void run() {
 		int result = 0;
-		int temp=0;
-		Character lett=' ';
+		int temp = 0;
+		Character lett = ' ';
 		String str = readLine("Enter text: ");
-		for (int i = 0; i < str.length(); i++) {
-			for (int j = 1; j < str.length(); j++) {
-				if(str.charAt(i)==str.charAt(j)) {
-					temp++;
-				}	
-			}
-			if(result<=temp) {
-				result=temp;
-				lett=str.charAt(i);
-			}
-			temp=0;
-			
+		for (int i = 0; i < str.length()-1; i++) {
+				for (int j = i + 1; j < str.length(); j++) {
+					if (str.charAt(i) == str.charAt(j)) {
+						temp++;
+					}
+				}
+				if (result <= temp) {
+					result = temp;
+					// lett=str.charAt(i);
+				}
+
+				temp = 0;
 		}
 		println(temp);
-		
+
 	}
 }
