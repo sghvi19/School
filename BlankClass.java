@@ -33,7 +33,7 @@ public class BlankClass extends ConsoleProgram {
 
 				temp = 0;
 		}
-		println(temp);
+		println(result);;
 
 	}
 }
