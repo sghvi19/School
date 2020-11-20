@@ -16,15 +16,9 @@ import acm.program.*;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		String rev= "";
+		String rev = "ragaca";
 		String str = readLine("Enter text: ");
-		for (int i = str.length()-1; i >=0; i--) {
-			rev+=str.charAt(i);
-		}
-		if(rev.equals(str)) {
-			println("palindrome");
-		}else {
-			println("not palindrome");
-		}
+		rev="sxva ragaca";
+		println(rev);
 	}
 }
