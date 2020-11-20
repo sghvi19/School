@@ -28,12 +28,13 @@ public class BlankClass extends ConsoleProgram {
 				}
 				if (result <= temp) {
 					result = temp;
-					// lett=str.charAt(i);
+					lett=str.charAt(i);
 				}
 
 				temp = 0;
 		}
-		println(result);;
+		println(result+" "+lett);
+		
 
 	}
 }
