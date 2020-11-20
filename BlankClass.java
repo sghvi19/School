@@ -17,7 +17,7 @@ public class BlankClass extends ConsoleProgram {
 
 	public void run() {
 		String rev = "ragaca";
-		String str = readLine("Enter text: ");
+	//	String str = readLine("Enter text: ");
 		rev="sxva ragaca";
 		println(rev);
 	}
