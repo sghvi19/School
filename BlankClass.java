@@ -17,9 +17,10 @@ import acm.program.*;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		StringTokenizer tok=new StringTokenizer(" ");
+	
 		
 		String str= readLine(" something: ");
+		StringTokenizer tok=new StringTokenizer(str," ");
 		while(tok.hasMoreTokens()) {
 			println(tok.nextToken());
 		}
