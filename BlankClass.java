@@ -20,7 +20,7 @@ public class BlankClass extends ConsoleProgram {
 		int s;
 		String str = readLine("enter number: ");
 		for (int i = 0; i < str.length(); i++) {
-			s=str.charAt(i)-'1';
+			s=str.charAt(i)-'0';
 			x*=10;
 			x+=s;
 		}
