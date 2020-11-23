@@ -16,21 +16,14 @@ import acm.program.*;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		// String rev = "ragaca";
-		int result = 0;
-		String str = readLine("Enter text: ");
+		int x=0;
+		int s;
+		String str = readLine("enter number: ");
 		for (int i = 0; i < str.length(); i++) {
-			if (i != 0) {
-				if (str.substring(0, i).indexOf(str.charAt(i)) == -1) {
-					for (int j = 0; j < str.length(); j++) {
-						if(str.charAt(i)==str.charAt(j)) {
-							result++;
-						}
-					}
-					println(str.charAt(i)+" "+result);
-					result=0;
-				}
-			}
+			s=str.charAt(i)-'1';
+			x*=10;
+			x+=s;
 		}
+		println(x);
 	}
 }
