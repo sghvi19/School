@@ -8,6 +8,7 @@
  */
 
 import java.awt.event.MouseEvent;
+import java.util.StringTokenizer;
 
 import acm.graphics.GLine;
 import acm.graphics.GOval;
@@ -16,14 +17,11 @@ import acm.program.*;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		int x=0;
-		int s;
-		String str = readLine("enter number: ");
-		for (int i = 0; i < str.length(); i++) {
-			s=str.charAt(i)-'0';
-			x*=10;
-			x+=s;
+		StringTokenizer tok=new StringTokenizer(" ");
+		
+		String str= readLine(" something: ");
+		while(tok.hasMoreTokens()) {
+			println(tok.nextToken());
 		}
-		println(x);
 	}
 }
