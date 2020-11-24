@@ -22,51 +22,32 @@ public class BlankClass extends GraphicsProgram {
 	private RandomGenerator rand = RandomGenerator.getInstance();
 	private GOval gOval = null;
 	private static final int DELAY = 100;
-	
+
+	private boolean f = false;
+
 	public void run() {
-		setup();
-		
-		while(true) {
-			
-			if(gOval != null && gOval.getFillColor()!= Color.GREEN) {
-				gOval.setColor(getRandomColor());
-				pause(DELAY);
+
+		while (true) {
+			if (f) {
+				while (true) {
+					Color col = rand.nextColor();
+					gOval.setFilled(col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN);
+					gOval.setColor(rand.nextColor());
+					if (gOval.getColor() == Color.GREEN)
+						break;
+					f = false;
+				}
 			}
 		}
 	}
-	
-	private void setup() {
-		addMouseListeners();
-	}
-	
+
 	public void mouseClicked(MouseEvent e) {
-		double x = e.getX();
-		double y = e.getY();
-		
-		GObject obj = getElementAt(x,y);
-		if( obj == null) {
-			GOval gOval = new GOval(x - CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			gOval.setFilled(true);
-			gOval.setColor(rand.nextColor());
-			add(gOval);
-		}else {
-		    gOval = (GOval) obj;
-		}
-	}
-	
-	private Color getRandomColor() {
-		int index = rand.nextInt(1, 5);
-		
-		if(index == 1) {
-			return Color.GREEN;
-		}else if(index == 2) {
-			return Color.RED;
-		}else if (index ==3) {
-			return Color.BLUE;
-		}else if(index ==4) {
-			return Color.BLACK;
-		}else {
-			return Color.YELLOW;
+		if (getElementAt(e.getX(), e.getY()) == null && !f) {
+			GOval oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+			add(oval);
+		} else {
+			f = true;
+			gOval = (GOval) getElementAt(e.getX(), e.getY());
 		}
 	}
 }
