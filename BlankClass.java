@@ -29,7 +29,7 @@ public class BlankClass extends GraphicsProgram {
 		addMouseListeners();
 
 		while (true) {
-			if (f && gOval.getColor() == Color.GREEN) {
+			if (f && gOval.getColor() != Color.GREEN) {
 				Color col = rand.nextColor();
 				gOval.setFilled(col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN);
 				gOval.setFillColor(col);
