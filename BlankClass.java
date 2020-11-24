@@ -31,9 +31,11 @@ public class BlankClass extends GraphicsProgram {
 		while (true) {
 			if (f && gOval.getFillColor() != Color.GREEN) {
 				Color col = rand.nextColor();
-				gOval.setFilled(col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN);
-				gOval.setFillColor(col);
-				
+				gOval.setFilled(true);
+				if (col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN) {
+					gOval.setFillColor(col);
+				}
+
 				f = false;
 			}
 		}
@@ -42,7 +44,7 @@ public class BlankClass extends GraphicsProgram {
 
 	public void mouseClicked(MouseEvent e) {
 		if (getElementAt(e.getX(), e.getY()) == null && !f) {
-			 gOval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+			gOval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
 			gOval.setFilled(true);
 			gOval.setFillColor(rand.nextColor());
 			add(gOval);
