@@ -42,7 +42,7 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (getElementAt(e.getX(), e.getY()) == null && !f) {
+		if (getElementAt(e.getX(), e.getY()) == null ) {
 			GOval oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
 			add(oval);
 //		} else {
