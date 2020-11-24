@@ -27,17 +27,10 @@ public class BlankClass extends GraphicsProgram {
 
 	public void run() {
 
-		while (true) {
-			if (f) {
+		
 				while (true) {
-					Color col = rand.nextColor();
-					gOval.setFilled(col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN);
-					gOval.setColor(rand.nextColor());
-					if (gOval.getColor() == Color.GREEN)
-						break;
-					f = false;
-				}
-			}
+		
+					
 		}
 	}
 
