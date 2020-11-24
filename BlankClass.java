@@ -27,17 +27,17 @@ public class BlankClass extends GraphicsProgram {
 
 	public void run() {
 		addMouseListeners();
+
 		while (true) {
-			if (f) {
-				while (true) {
-					Color col = rand.nextColor();
-					gOval.setFilled(col==Color.GREEN||col==Color.black||col==Color.RED||col==Color.CYAN);
-					gOval.setColor(rand.nextColor());
-					if(gOval.getColor()==Color.GREEN)break;
-					f=false;
-				}
+			if (f && gOval.getColor() == Color.GREEN) {
+				Color col = rand.nextColor();
+				gOval.setFilled(col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN);
+				gOval.setFillColor(col);
+				
+				f = false;
 			}
 		}
+
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -45,7 +45,7 @@ public class BlankClass extends GraphicsProgram {
 			GOval oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
 			add(oval);
 		} else {
-			f=true;
+			f = true;
 			gOval = (GOval) getElementAt(e.getX(), e.getY());
 		}
 	}
