@@ -27,7 +27,7 @@ public class BlankClass extends GraphicsProgram {
 
 	public void run() {
 
-		while (f) {
+		while (true) {
 			if (f) {
 				while (true) {
 					Color col = rand.nextColor();
