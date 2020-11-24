@@ -26,23 +26,27 @@ public class BlankClass extends GraphicsProgram {
 	private boolean f = false;
 
 	public void run() {
-
-		
+		addMouseListeners();
+		while (true) {
+			if (f) {
 				while (true) {
-		
-					
+					Color col = rand.nextColor();
+					gOval.setFilled(col==Color.GREEN||col==Color.black||col==Color.RED||col==Color.CYAN);
+					gOval.setColor(rand.nextColor());
+					if(gOval.getColor()==Color.GREEN)break;
+					f=false;
+				}
+			}
 		}
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (getElementAt(e.getX(), e.getY()) == null ) {
+		if (getElementAt(e.getX(), e.getY()) == null && !f) {
 			GOval oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setFillColor(Color.RED);
 			add(oval);
-//		} else {
-//			f = true;
-//			gOval = (GOval) getElementAt(e.getX(), e.getY());
-	}
+		} else {
+			f=true;
+			gOval = (GOval) getElementAt(e.getX(), e.getY());
+		}
 	}
 }
