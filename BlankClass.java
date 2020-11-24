@@ -42,10 +42,10 @@ public class BlankClass extends GraphicsProgram {
 
 	public void mouseClicked(MouseEvent e) {
 		if (getElementAt(e.getX(), e.getY()) == null && !f) {
-			GOval oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setFillColor(rand.nextColor());
-			add(oval);
+			 gOval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+			gOval.setFilled(true);
+			gOval.setFillColor(rand.nextColor());
+			add(gOval);
 		} else {
 			f = true;
 			gOval = (GOval) getElementAt(e.getX(), e.getY());
