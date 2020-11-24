@@ -34,6 +34,7 @@ public class BlankClass extends GraphicsProgram {
 				gOval.setFilled(true);
 				if (col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN) {
 					gOval.setFillColor(col);
+					pause(DELAY);
 				}
 
 				f = false;
