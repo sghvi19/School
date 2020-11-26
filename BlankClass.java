@@ -41,6 +41,7 @@ public class BlankClass extends GraphicsProgram {
 	public void mouseDragged(MouseEvent e) {
 		int x=e.getX();
 		int y= x-e.getX();
-		oval.setSize(x,y);
-	}
+		
+		oval.setSize(x+CIRCLE_D,y+CIRCLE_D);
+		}
 }
