@@ -18,30 +18,71 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 
 public class BlankClass extends GraphicsProgram {
-	private static final double CIRCLE_D = 4;
-	private RandomGenerator rand = RandomGenerator.getInstance();
+
 	private GOval oval;
-	private static final int DELAY = 100;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private static final int CIRCLE_RADIUS = 100;
 
-	private boolean f = false;
+	private double mouseX;
+	private double mouseY;
+	private double radius;
 
-	public void run() {
-		setup();
+	private int counter;
+
+	public void init() {
+		oval = null;
 		addMouseListeners();
-
+		radius = CIRCLE_RADIUS;
+		counter = 0;
 	}
 
-	private void setup() {
-		oval = new GOval(getWidth() / 2 - CIRCLE_D / 2, getHeight() / 2 - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-		oval.setFilled(true);
-		oval.setFillColor(Color.BLACK);
-		add(oval);
+	public void run() {
+		if (oval == null) {
+			oval = new GOval(getWidth() / 2.0 - CIRCLE_RADIUS, getHeight() / 2.0 - CIRCLE_RADIUS, 2 * CIRCLE_RADIUS,
+					2 * CIRCLE_RADIUS);
+			oval.setFilled(true);
+			oval.setFillColor(Color.RED);
+			add(oval);
+		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		if (getElementAt(e.getX(), e.getY()) == oval) {
+			oval.setFillColor(getRandomColor());
+		}
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		mouseX = e.getX();
+		mouseY = e.getY();
+	}
+
+	private Color getRandomColor() {
+		return rgen.nextColor();
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		int x=e.getX();
-		int y= x-e.getX();
-		oval.setLocation(getWidth() / 2 - CIRCLE_D / 2+y, getHeight() / 2 - CIRCLE_D / 2+y );
-		oval.setSize(y+CIRCLE_D,y+CIRCLE_D);
+		double xCentre = getWidth() / 2.0;
+		double yCentre = getHeight() / 2.0;
+		counter++;
+
+		if (counter % 2 == 0) {
+			mouseX = e.getX();
+			mouseY = e.getY();
 		}
+
+		double startDistance = getDistance(xCentre, yCentre, mouseX, mouseY);
+		double endDistance = getDistance(xCentre, yCentre, e.getX(), e.getY());
+
+		double diff = endDistance - startDistance;
+
+		double newRadius = radius + diff;
+		radius = newRadius;
+		oval.setBounds(xCentre - newRadius, yCentre - newRadius, 2 * newRadius, 2 * newRadius);
+	}
+
+	private double getDistance(double x1, double y1, double x2, double y2) {
+		return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+	}
+
 }
