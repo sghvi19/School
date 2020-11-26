@@ -18,40 +18,29 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 
 public class BlankClass extends GraphicsProgram {
-	private static final double CIRCLE_D = 60;
+	private static final double CIRCLE_D = 4;
 	private RandomGenerator rand = RandomGenerator.getInstance();
-	private GOval gOval = null;
+	private GOval oval;
 	private static final int DELAY = 100;
 
 	private boolean f = false;
 
 	public void run() {
+		setup();
 		addMouseListeners();
-
-		while (true) {
-			if (f && gOval.getFillColor() != Color.GREEN) {
-				Color col = rand.nextColor();
-				gOval.setFilled(true);
-				if (col == Color.GREEN || col == Color.black || col == Color.RED || col == Color.CYAN) {
-					gOval.setFillColor(col);
-					pause(DELAY);
-				}
-
-				f = false;
-			}
-		}
 
 	}
 
-	public void mouseClicked(MouseEvent e) {
-		if (getElementAt(e.getX(), e.getY()) == null && !f) {
-			gOval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			gOval.setFilled(true);
-			gOval.setFillColor(rand.nextColor());
-			add(gOval);
-		} else {
-			f = true;
-			gOval = (GOval) getElementAt(e.getX(), e.getY());
-		}
+	private void setup() {
+		oval = new GOval(getWidth() / 2 - CIRCLE_D / 2, getHeight() / 2 - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+		oval.setFilled(true);
+		oval.setFillColor(Color.BLACK);
+		add(oval);
+	}
+
+	public void mouseDragged(MouseEvent e) {
+		int x=e.getX();
+		int y= x-e.getX();
+		oval.setSize(x,y);
 	}
 }
