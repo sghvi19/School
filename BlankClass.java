@@ -52,11 +52,11 @@ public class BlankClass extends GraphicsProgram {
 //			}
 //			if(number!=9) {
 //				if(mouseX<e.getX()+1) {
-					num="";
+					String axali="";
 					number++;
-					num+=number;
+					axali+=number;
 					remove(label);
-					label = new GLabel(num);
+					label = new GLabel(axali);
 					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 				}
 				
