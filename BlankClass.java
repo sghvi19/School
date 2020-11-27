@@ -50,12 +50,14 @@ public class BlankClass extends GraphicsProgram {
 //					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 //				}
 //			}
+		GOval oval =new GOval(4,4,10,10);
+		add(oval);
 //			if(number!=9) {
 //				if(mouseX<e.getX()+1) {
 //					String axali="";
 //					number++;
 //					axali+=number;
-					remove(label);
+					//remove(label);
 //					label = new GLabel(axali);
 //					println(axali);
 //					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
