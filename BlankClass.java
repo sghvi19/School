@@ -55,7 +55,7 @@ public class BlankClass extends GraphicsProgram {
 					String axali="";
 					number++;
 					axali+=number;
-					remove(label);
+					//remove(label);
 					label = new GLabel(axali);
 					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 				}
