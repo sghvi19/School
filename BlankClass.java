@@ -59,7 +59,7 @@ public class BlankClass extends GraphicsProgram {
 //					label = new GLabel(axali);
 //					println(axali);
 //					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-//				}
+				}
 				
 		//	}
 		
