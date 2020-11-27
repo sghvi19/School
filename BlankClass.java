@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.util.StringTokenizer;
 
+import acm.graphics.GLabel;
 import acm.graphics.GLine;
 import acm.graphics.GObject;
 import acm.graphics.GOval;
@@ -19,8 +20,10 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 
 public class BlankClass extends GraphicsProgram {
-	GRect rect;
-
+	private GRect rect;
+	private int number=0;
+	private String num="0";
+	private GLabel label;
 	public void run() {
 		draw();
 	}
@@ -28,6 +31,19 @@ public class BlankClass extends GraphicsProgram {
 	private void draw() {
 		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
 		add(rect);
+		label=new GLabel(num);
+		add(label, getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
+	}
+	
+	public void mouseDragged(MouseEvent e) {
+		if(getElementAt(e.getX(),e.getY())!=null) {
+			if(number!=9 && number!=0) {
+				
+			}
+			
+			
+			
+		}
 	}
 
 }
