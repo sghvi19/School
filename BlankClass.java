@@ -70,7 +70,7 @@ public class BlankClass extends GraphicsProgram {
 			mouseX = e.getX();
 			mouseY = e.getY();
 		}
-		
+
 		double startDistance = getDistance(xCentre, yCentre, mouseX, mouseY);
 		double endDistance = getDistance(xCentre, yCentre, e.getX(), e.getY());
 
@@ -79,6 +79,10 @@ public class BlankClass extends GraphicsProgram {
 		double newRadius = radius + diff;
 		radius = newRadius;
 		oval.setBounds(xCentre - newRadius, yCentre - newRadius, 2 * newRadius, 2 * newRadius);
+	}
+
+	public void mousePressed(MouseEvent e) {
+		println("new");
 	}
 
 	private double getDistance(double x1, double y1, double x2, double y2) {
