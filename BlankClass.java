@@ -65,6 +65,8 @@ public class BlankClass extends GraphicsProgram {
 		double xCentre = getWidth() / 2.0;
 		double yCentre = getHeight() / 2.0;
 		counter++;
+		mouseX = e.getX();
+		mouseY = e.getY();
 		//println(counter);
 		if (counter % 2 == 0) {
 			mouseX = e.getX();
