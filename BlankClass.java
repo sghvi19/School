@@ -52,10 +52,10 @@ public class BlankClass extends GraphicsProgram {
 		}
 	}
 
-	public void mouseMoved(MouseEvent e) {
-		mouseX = e.getX();
-		mouseY = e.getY();
-	}
+//	public void mouseMoved(MouseEvent e) {
+//		mouseX = e.getX();
+//		mouseY = e.getY();
+//	}
 
 	private Color getRandomColor() {
 		return rgen.nextColor();
