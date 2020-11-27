@@ -38,36 +38,32 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseDragged(MouseEvent e) {
-	//	if (getElementAt(e.getX(), e.getY()) != null) {
-//			int mouseX = e.getX();
-//			int mouseY = e.getY();
-//			if (number != 0) {
-//				if (mouseX > e.getX()-1) {
-//					num = "";
-//					number--;
-//					num += number;
-//					remove(label);
-//					label = new GLabel(num);
-//					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-//				}
-//			}
-		GOval oval =new GOval(4,4,10,10);
-		add(oval);
-//			if(number!=9) {
-//				if(mouseX<e.getX()+1) {
-//					String axali="";
-//					number++;
-//					axali+=number;
-					//remove(label);
-//					label = new GLabel(axali);
-//					println(axali);
-//					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+		if (getElementAt(e.getX(), e.getY()) != null) {
+			int mouseX = e.getX();
+			int mouseY = e.getY();
+			if (number != 0) {
+				if (mouseX > e.getX()) {
+					num = "";
+					number--;
+					num += number;
+					remove(label);
+					label = new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+				}
+			}else if(number!=9) {
+				if(mouseX<e.getX()) {
+					num="";
+					number++;
+					num+=number;
+					remove(label);
+					label = new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 				}
 				
-		//	}
-		
+			}
 
-		
+		}
+	}
 
 }
 
