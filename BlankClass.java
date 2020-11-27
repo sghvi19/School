@@ -65,11 +65,11 @@ public class BlankClass extends GraphicsProgram {
 		double xCentre = getWidth() / 2.0;
 		double yCentre = getHeight() / 2.0;
 		counter++;
-		println(counter);
-		if (counter % 2 == 0) {
+		//println(counter);
+		//if (counter % 2 == 0) {
 			mouseX = e.getX();
 			mouseY = e.getY();
-		}
+	//	}
 
 		double startDistance = getDistance(xCentre, yCentre, mouseX, mouseY);
 		double endDistance = getDistance(xCentre, yCentre, e.getX(), e.getY());
@@ -81,9 +81,9 @@ public class BlankClass extends GraphicsProgram {
 		oval.setBounds(xCentre - newRadius, yCentre - newRadius, 2 * newRadius, 2 * newRadius);
 	}
 
-	public void mousePressed(MouseEvent e) {
-		println("new");
-	}
+//	public void mousePressed(MouseEvent e) {
+//		println("new");
+//	}
 
 	private double getDistance(double x1, double y1, double x2, double y2) {
 		return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
