@@ -26,6 +26,7 @@ public class BlankClass extends GraphicsProgram {
 	private GLabel label;
 
 	public void run() {
+		addMouseListeners();
 		draw();
 	}
 
