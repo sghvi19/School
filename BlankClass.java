@@ -21,9 +21,10 @@ import acm.util.RandomGenerator;
 
 public class BlankClass extends GraphicsProgram {
 	private GRect rect;
-	private int number=0;
-	private String num="0";
+	private int number = 0;
+	private String num = "0";
 	private GLabel label;
+
 	public void run() {
 		draw();
 	}
@@ -31,18 +32,35 @@ public class BlankClass extends GraphicsProgram {
 	private void draw() {
 		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
 		add(rect);
-		label=new GLabel(num);
-		add(label, getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
+		label = new GLabel(num);
+		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 	}
-	
+
 	public void mouseDragged(MouseEvent e) {
-		if(getElementAt(e.getX(),e.getY())!=null) {
-			if(number!=9 && number!=0) {
+		if (getElementAt(e.getX(), e.getY()) != null) {
+			int mouseX = e.getX();
+			int mouseY = e.getY();
+			if (number != 0) {
+				if (mouseX > e.getX()) {
+					num = "";
+					number--;
+					num += number;
+					remove(label);
+					label = new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+				}
+			}else if(number!=9) {
+				if(mouseX<e.getX()) {
+					num="";
+					number++;
+					num+=number;
+					remove(label);
+					label = new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+				}
 				
 			}
-			
-			
-			
+
 		}
 	}
 
