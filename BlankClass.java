@@ -25,8 +25,7 @@ public class BlankClass extends GraphicsProgram {
 	private String num = "0";
 	private GLabel label;
 	private int mouseX;
-	private int mouseiqs;
-	private int mouseigr;
+	private int mouseY;
 	private boolean t = true;
 
 	public void run() {
@@ -42,38 +41,38 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		mouseiqs = e.getX();
-		mouseigr= e.getY();
-		
+		mouseX = e.getX();
+		mouseY = e.getY();
 	}
 
 	public void mouseDragged(MouseEvent e) {
-	//	if (getElementAt(mouseiqs, mouseigr) != null) {
-			if (t) {
-				mouseX = e.getX();
-				t = false;
+	 if (getElementAt(e.getX(), e.getY()) != null) {
+		if(t) {
+		 mouseX = e.getX();
+		 t=false;
+		}
+		 //mouseY = e.getY();
+		if (number != 0) {
+			if (mouseX > e.getX()) {
+				num = "";
+				number--;
+				num += number;
+				remove(label);
+				label = new GLabel(num);
+				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+				t=true;
 			}
-			if (number != 0) {
-				if (mouseX > e.getX()) {
-					num = "";
-					number--;
-					num += number;
-					remove(label);
-					label = new GLabel(num);
-					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-					t = true;
-				}
-			}
-			if (number != 9) {
-				if (mouseX < e.getX()) {
-					num = "";
-					number++;
-					num += number;
-					remove(label);
-					label = new GLabel(num);
-					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-					t = true;
-				//}
+		} 
+		if (number != 9) {
+			if (mouseX < e.getX()) {
+				num = "";
+				number++;
+				num += number;
+				remove(label);
+				label = new GLabel(num);
+				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+				t=true;
+				 }
 
 			}
 
