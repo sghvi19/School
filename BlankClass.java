@@ -51,7 +51,7 @@ public class BlankClass extends GraphicsProgram {
 				}
 			}
 			if(number!=9) {
-				if(mouseX<e.getX()-1) {
+				if(mouseX<e.getX()+1) {
 					num="";
 					number++;
 					num+=number;
