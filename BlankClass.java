@@ -48,7 +48,7 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		if (getElementAt(mouseiqs, mouseigr) != null) {
+	//	if (getElementAt(mouseiqs, mouseigr) != null) {
 			if (t) {
 				mouseX = e.getX();
 				t = false;
@@ -73,7 +73,7 @@ public class BlankClass extends GraphicsProgram {
 					label = new GLabel(num);
 					add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 					t = true;
-				}
+				//}
 
 			}
 
