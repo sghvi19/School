@@ -36,9 +36,8 @@ public class BlankClass extends ConsoleProgram {
 		x++;
 		y += 1;
 		r.move(x, y);
-		println(s.indexOf('a'));
 		s = s.substring(s.indexOf('a'));
-		
+		println(s);
 		return (int) (x + y + r.getX() + s.length());
 	}
 }
