@@ -25,15 +25,18 @@ public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String str1 = readLine("Enter: ");
 		String str2 = readLine("Enter: ");
-		for (int i = 0; i < str1.length(); i++) {
-				if(str2.indexOf(str1.charAt(i))!=-1){
-					str2= str2.substring(0,i)+str2.substring(i,str2.length());
-				}else {
-					println(false);
-					break;
-				}
-		}
-		println(true);
+		
+		str1= str1.substring(0,3)+str1.substring(3,5);
+		println(str1);
+//		for (int i = 0; i < str1.length(); i++) {
+//				if(str2.indexOf(str1.charAt(i))!=-1){
+//					str2= str2.substring(0,i)+str2.substring(i,str2.length());
+//				}else {
+//					println(false);
+//					break;
+//				}
+//		}
+//		println(true);
 	}
 }
 
