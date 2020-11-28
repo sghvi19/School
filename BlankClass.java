@@ -20,33 +20,64 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 
 public class BlankClass extends ConsoleProgram {
-	// 1 varianti1 amocana 2
 
 	public void run() {
-		int result=0;
-		int n = readInt("Enter number: ");
-		for (int i = 1; i <= n; i++) {
-			if(n%i==0) {
-				if(isPrime(i) && result<i) {
-					result=i;
-				}
-			}
-		}
-		println(result);
-	}
-	
-	private boolean isPrime(int x) {
-		int prime=0;
-		for(int i=1; i<=x; i++) {
-			if(x%i==0) {
-				prime++;
-			}
-		}
-		if(prime==2) return true;
-		return false;
-	}
 
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1 varianti1 amocana 2
+
+//	public void run() {
+//		int result=0;
+//		int n = readInt("Enter number: ");
+//		for (int i = 1; i <= n; i++) {
+//			if(n%i==0) {
+//				if(isPrime(i) && result<i) {
+//					result=i;
+//				}
+//			}
+//		}
+//		println(result);
+//	}
+//	
+//	private boolean isPrime(int x) {
+//		int prime=0;
+//		for(int i=1; i<=x; i++) {
+//			if(x%i==0) {
+//				prime++;
+//			}
+//		}
+//		if(prime==2) return true;
+//		return false;
+//	}
 
 // 1 variant1 amocana 1
 //	private GRect rect;
