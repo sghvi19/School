@@ -25,8 +25,6 @@ public class BlankClass extends GraphicsProgram {
 	private String num = "0";
 	private GLabel label;
 	private int mouseX;
-	private int mouseY;
-	private boolean t = true;
 	private int counter=0;
 	public void run() {
 		addMouseListeners();
@@ -40,19 +38,14 @@ public class BlankClass extends GraphicsProgram {
 		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 	}
 
-//	public void mouseMoved(MouseEvent e) {
-//		mouseX = e.getX();
-//		mouseY = e.getY();
-//	}
+
 
 	public void mouseDragged(MouseEvent e) {
 	 if (getElementAt(e.getX(), e.getY()) != null) {
 		 counter++;
 		if(counter%2==0) {
 		 mouseX = e.getX();
-		 t=false;
 		}
-		 //mouseY = e.getY();
 		if (number != 0) {
 			if (mouseX > e.getX()) {
 				num = "";
@@ -61,7 +54,6 @@ public class BlankClass extends GraphicsProgram {
 				remove(label);
 				label = new GLabel(num);
 				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-				t=true;
 			}
 		} 
 		if (number != 9) {
@@ -72,7 +64,6 @@ public class BlankClass extends GraphicsProgram {
 				remove(label);
 				label = new GLabel(num);
 				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-				t=true;
 				 }
 
 			}
