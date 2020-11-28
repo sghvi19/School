@@ -27,9 +27,11 @@ public class BlankClass extends ConsoleProgram {
 		String str2 = readLine("Enter: ");
 		
 		for (int i = 0; i < str1.length(); i++) {
-				if(str2.indexOf(str1.charAt(i))!=-1){
-				
+				if(str2.indexOf(str1.charAt(i))!=-1 && str2.indexOf(str1.charAt(i))!= i ){
 					str2= str2.substring(0,str2.indexOf(str1.charAt(i)))+str2.substring(str2.indexOf(str1.charAt(i))+1,str2.length());
+					println(str2);
+				}else if(str2.indexOf(str1.charAt(i))!=-1 &&str2.indexOf(str1.charAt(i))!= i) {
+					str2= str2.substring(0,str2.indexOf(str1.charAt(i)));
 					println(str2);
 				}else {
 					println(false);
