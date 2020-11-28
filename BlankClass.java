@@ -27,6 +27,7 @@ public class BlankClass extends ConsoleProgram {
 		int x = 1;
 		int y = 2;
 		GObject o = new GRect(x, y);
+		println(o.getX());
 		String s = "shalaxo";
 		println(iseRa(x, y, o, s));
 		println(iseRa(x, y, o, s));
@@ -36,7 +37,6 @@ public class BlankClass extends ConsoleProgram {
 		x++;
 		y += 1;
 		r.move(x, y);
-		println(r.getX());
 		s = s.substring(s.indexOf('a'));
 		
 		return (int) (x + y + r.getX() + s.length());
