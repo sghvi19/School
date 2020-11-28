@@ -19,30 +19,73 @@ import acm.graphics.GRect;
 import acm.program.*;
 import acm.util.RandomGenerator;
 
+import acm.graphics.*;
+import acm.program.ConsoleProgram;
+
 public class BlankClass extends ConsoleProgram {
-	// 1 varianti1 amocana 3
-
 	public void run() {
-		String str1 = readLine("Enter: ");
-		String str2 = readLine("Enter: ");
+		int x = 1;
+		int y = 2;
+		GObject o = new GRect(x, y);
+		String s = "shalaxo";
+		println(iseRa(x, y, o, s));
+		println(iseRa(x, y, o, s));
+	}
 
-		for (int i = 0; i < str1.length(); i++) {
-				if(str2.indexOf(str1.charAt(i))!=-1 && str2.indexOf(str1.charAt(i))!= str2.length() ){
-					str2= str2.substring(0,str2.indexOf(str1.charAt(i)))+str2.substring(str2.indexOf(str1.charAt(i))+1,str2.length());
-					println(str2);
-				}else 
-//					if(str2.indexOf(str1.charAt(i))!=-1 &&str2.indexOf(str1.charAt(i))== str2.length()) {
-//					str2= str2.substring(0,str2.indexOf(str1.charAt(i)));
-//					println(str2);
-//				}else 
-					{
-					println(false);
-					break;
-				}
-		}
-		println(true);
+	private int iseRa(int x, double y, GObject r, String s) {
+		x++;
+		y += 1;
+		r.move(x, y);
+		s = s.substring(s.indexOf('a'));
+		return (int) (x + y + r.getX() + s.length());
 	}
 }
+
+//	// 1varianti amocana 3
+//	RandomGenerator rgen = RandomGenerator.getInstance();
+//	private int random;	
+//	public void run() {
+//		int results=0;
+//		int n = readInt("Enter number: ");
+//		int result = 0;
+//		for (int i = 0; i < 100; i++) {
+//			while (true) {
+//				random=rgen.nextInt(1,2);
+//				if(n==0)break;
+//				if (random == 1) {
+//					n=n/2;
+//					result++;
+//				}
+//				if(random==2) {
+//					n--;
+//					result++;
+//				}
+//			}
+//			results+=result;
+//			result=0;
+//		}
+//		results/=100;
+//	}
+//}
+
+// 1 varianti1 amocana 3
+
+//	public void run() {
+//		String str1 = readLine("Enter: ");
+//		String str2 = readLine("Enter: ");
+//
+//		for (int i = 0; i < str1.length(); i++) {
+//				if(str2.indexOf(str1.charAt(i))!=-1 && str2.indexOf(str1.charAt(i))!= str2.length() ){
+//					str2= str2.substring(0,str2.indexOf(str1.charAt(i)))+str2.substring(str2.indexOf(str1.charAt(i))+1,str2.length());
+//					println(str2);
+//				}else{
+//					println(false);
+//					break;
+//				}
+//		}
+//		println(true);
+//	}
+//}
 
 // 1 varianti1 amocana 2
 
