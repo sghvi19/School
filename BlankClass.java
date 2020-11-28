@@ -32,6 +32,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
+		println(result);
 	}
 	
 	private boolean isPrime(int x) {
