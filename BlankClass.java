@@ -20,38 +20,22 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 
 public class BlankClass extends ConsoleProgram {
+	// 1 varianti1 amocana 3
+	String str1 = readLine("Enter: ");
+	String str2 = readLine("Enter: ");
 
 	public void run() {
-
+		for (int i = 0; i < str1.length(); i++) {
+				if(str2.indexOf(str1.charAt(i))!=-1){
+					str2= str2.substring(0,i)+str2.substring(i,str2.length()-1);
+				}else {
+					println(false);
+					break;
+				}
+		}
+		println(true);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 1 varianti1 amocana 2
 
