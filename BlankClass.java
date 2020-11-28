@@ -19,60 +19,89 @@ import acm.graphics.GRect;
 import acm.program.*;
 import acm.util.RandomGenerator;
 
-public class BlankClass extends GraphicsProgram {
-	private GRect rect;
-	private int number = 0;
-	private String num = "0";
-	private GLabel label;
-	private int mouseX;
-	private int counter=0;
+public class BlankClass extends ConsoleProgram {
+	// 1 varianti1 amocana 2
+
 	public void run() {
-		addMouseListeners();
-		draw();
-	}
-
-	private void draw() {
-		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
-		add(rect);
-		label = new GLabel(num);
-		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-	}
-
-
-
-	public void mouseDragged(MouseEvent e) {
-	 if (getElementAt(e.getX(), e.getY()) != null) {
-		 counter++;
-		if(counter%2==0) {
-		 mouseX = e.getX();
-		}
-		if (number != 0) {
-			if (mouseX > e.getX()) {
-				num = "";
-				number--;
-				num += number;
-				remove(label);
-				label = new GLabel(num);
-				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+		int result=0;
+		int n = readInt("Enter number: ");
+		for (int i = 1; i <= n; i++) {
+			if(n%i==0) {
+				if(isPrime(i) && result<i) {
+					result=i;
+				}
 			}
-		} 
-		if (number != 9) {
-			if (mouseX < e.getX()) {
-				num = "";
-				number++;
-				num += number;
-				remove(label);
-				label = new GLabel(num);
-				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-				 }
-
-			}
-
 		}
+	}
+	
+	private boolean isPrime(int x) {
+		int prime=0;
+		for(int i=1; i<=x; i++) {
+			if(x%i==0) {
+				prime++;
+			}
+		}
+		if(prime==2) return true;
+		return false;
 	}
 
 }
 
+// 1 variant1 amocana 1
+//	private GRect rect;
+//	private int number = 0;
+//	private String num = "0";
+//	private GLabel label;
+//	private int mouseX;
+//	private int counter=0;
+//	public void run() {
+//		addMouseListeners();
+//		draw();
+//	}
+//
+//	private void draw() {
+//		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
+//		add(rect);
+//		label = new GLabel(num);
+//		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//	}
+//
+//
+//
+//	public void mouseDragged(MouseEvent e) {
+//	 if (getElementAt(e.getX(), e.getY()) != null) {
+//		 counter++;
+//		if(counter%2==0) {
+//		 mouseX = e.getX();
+//		}
+//		if (number != 0) {
+//			if (mouseX > e.getX()) {
+//				num = "";
+//				number--;
+//				num += number;
+//				remove(label);
+//				label = new GLabel(num);
+//				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//			}
+//		} 
+//		if (number != 9) {
+//			if (mouseX < e.getX()) {
+//				num = "";
+//				number++;
+//				num += number;
+//				remove(label);
+//				label = new GLabel(num);
+//				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//				 }
+//
+//			}
+//
+//		}
+//	}
+//
+//}
+
+// circle in center changing size;
 //	private GOval oval;
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private static final int CIRCLE_RADIUS = 100;
