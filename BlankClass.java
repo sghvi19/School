@@ -35,7 +35,7 @@ public class BlankClass extends ConsoleProgram {
 			for(j=i; i<str.length(); j++) {
 				if(str.charAt(i)==(str.charAt(j))) {
 					result++;
-					println(result);
+					
 				}else {
 					i=j-1;
 					break;
@@ -46,7 +46,7 @@ public class BlankClass extends ConsoleProgram {
 			//}else {
 //				newString=
 //			}
-			
+			result=0;
 		}
 		println(newString);
 		
