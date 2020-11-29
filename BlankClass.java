@@ -48,6 +48,7 @@ public class BlankClass extends ConsoleProgram {
 			println(newString);
 			 }else {
 				newString+=str.charAt(i);
+				println(newString);
 			}
 			result = 0;
 		}
