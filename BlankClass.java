@@ -41,7 +41,7 @@ public class BlankClass extends ConsoleProgram {
 						break;
 					}
 				}
-			}
+			
 			if (result != 1) {
 				newString += result + str.substring(i, j);
 				println(newString);
@@ -51,6 +51,7 @@ public class BlankClass extends ConsoleProgram {
 				println(newString);
 			}
 			result = 0;
+		}
 		}
 		// newString+=str.charAt(str.length()-1);
 		println(newString);
