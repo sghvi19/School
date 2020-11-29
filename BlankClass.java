@@ -44,11 +44,8 @@ public class BlankClass extends ConsoleProgram {
 			}
 			 if(result!=1) {
 			newString += result + str.substring(i, j);
-			
-			println(newString);
 			 }else {
 				newString+=str.charAt(i);
-				println(newString);
 			}
 			result = 0;
 		}
