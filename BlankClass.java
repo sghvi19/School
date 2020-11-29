@@ -258,7 +258,7 @@ public class BlankClass extends GraphicsProgram {
 		double startDistance = getDistance(xCentre, yCentre, e.getX() , e.getY());
 		double endDistance = getDistance(xCentre, yCentre, mouseX,mouseY );
 
-		double diff = startDistance - endDistance;
+		double diff = endDistance - startDistance;
 
 		double newRadius = radius + diff;
 		radius = newRadius;
