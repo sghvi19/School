@@ -23,45 +23,37 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	
-	
-	
+
 	public void run() {
-		int result=0;
-		String newString="";
-		String str=readLine("Enter: ");
+		int result = 0;
+		String newString = "";
+		String str = readLine("Enter: ");
 		int j;
-		for(int i=0; i<str.length(); i++) {
-			for(j=i; i<str.length(); j++) {
-				if(str.charAt(i)==(str.charAt(j))) {
-					result++;
-					
-				}else {
-					i=j-1;
-					break;
+		for (int i = 0; i < str.length(); i++) {
+
+			for (j = i; i < str.length(); j++) {
+				if (i != str.length() - 1) {
+					if (str.charAt(i) == (str.charAt(j))) {
+						result++;
+
+					} else {
+						i = j - 1;
+						break;
+					}
 				}
 			}
-		//	if(result!=1) {
-				newString+= result+str.substring(i,j);
-				println(newString);
-			//}else {
+			// if(result!=1) {
+			newString += result + str.substring(i, j);
+			println(newString);
+			// }else {
 //				newString=
 //			}
-			result=0;
+			result = 0;
 		}
 		println(newString);
-		
+
 	}
 }
-
-
-
-
-
-
-
-
-
 
 //meore varianti 1 amocana 3
 //
