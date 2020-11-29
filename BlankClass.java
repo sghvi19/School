@@ -41,17 +41,15 @@ public class BlankClass extends ConsoleProgram {
 						break;
 					}
 				}
-
-				if (result != 1) {
-					newString += result + str.substring(i, j);
-					println(newString);
-				} else {
-					newString += str.charAt(i);
-					println(newString);
-				}
-
-				result = 0;
 			}
+			if (result != 1) {
+				newString += result + str.substring(i, j);
+				println(newString);
+			} else {
+				newString += str.charAt(i);
+				println(newString);
+			}
+			result = 0;
 		}
 		// newString+=str.charAt(str.length()-1);
 		println(newString);
