@@ -237,10 +237,10 @@ public class BlankClass extends GraphicsProgram {
 		}
 	}
 
-//	public void mouseMoved(MouseEvent e) {
-//		mouseX = e.getX();
-//		mouseY = e.getY();
-//	}
+	public void mouseMoved(MouseEvent e) {
+		mouseX = e.getX();
+		mouseY = e.getY();
+	}
 
 	private Color getRandomColor() {
 		return rgen.nextColor();
@@ -251,12 +251,13 @@ public class BlankClass extends GraphicsProgram {
 		double yCentre = getHeight() / 2.0;
 		counter++;
 		
-		if (counter % 2 == 0) {
-			mouseX = e.getX();
-			mouseY = e.getY();
-		}
-		double startDistance = getDistance(xCentre, yCentre, e.getX() , e.getY());
-		double endDistance = getDistance(xCentre, yCentre, mouseX,mouseY );
+//		if (counter % 2 == 0) {
+//			mouseX = e.getX();
+//			mouseY = e.getY();
+//		}
+	
+		double startDistance = getDistance(xCentre, yCentre, mouseX, mouseY);
+		double endDistance = getDistance(xCentre, yCentre, e.getX(), e.getY());
 
 		double diff = endDistance - startDistance;
 
