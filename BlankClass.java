@@ -50,7 +50,7 @@ public class BlankClass extends ConsoleProgram {
 			}
 			result = 0;
 		}
-		 newString+=str.charAt(str.length()-1);
+		// newString+=str.charAt(str.length()-1);
 		println(newString);
 
 	}
