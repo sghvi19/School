@@ -28,20 +28,22 @@ public class BlankClass extends ConsoleProgram {
 		int result = 0;
 		String newString = "";
 		String str = readLine("Enter: ");
-		int j;
+		int j=0;
 		for (int i = 0; i < str.length(); i++) {
+			if (i != str.length() - 1) {
 			for (j = i; i < str.length(); j++) {
-				//if (i != str.length() - 1) {
+				
 					if (str.charAt(i) == (str.charAt(j))) {
 						result++;
-
+						
 					} else {
 						i = j - 1;
 						break;
 					}
-				//}
+				}
 			}
-			 if(result!=1) {
+			 if(result!=1)
+			 {
 			newString += result + str.substring(i, j);
 			println(newString);
 			 }else {
