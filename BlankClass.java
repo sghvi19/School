@@ -218,7 +218,7 @@ public class BlankClass extends GraphicsProgram {
 		oval = null;
 		addMouseListeners();
 		radius = CIRCLE_RADIUS;
-		counter = 0;
+		counter = 1;
 	}
 
 	public void run() {
