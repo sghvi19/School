@@ -23,23 +23,57 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	// meore varianti 1 amocana 3
+	
+	
 	
 	public void run() {
-			int n=readInt("Enter: ");
-			int m=readInt("Enter: ");
-			int result=0;
-			while(m/n!=0) {
-				m/=n;
-				result++;
+		int result=0;
+		String newString="";
+		String str=readLine("Enter: ");
+		int j;
+		for(int i=0; i<str.length(); i++) {
+			for(j=i; i<str.length(); j++) {
+				if(str.charAt(i)==str.charAt(j)) {
+					result++;
+				}else {
+					i=j;
+					break;
+				}
 			}
-			println(result);
+		//	if(result!=1) {
+				newString= result+str.substring(0,j);
+			//}else {
+//				newString=
+//			}
 			
+		}
+		println(newString);
+		
 	}
-	
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+//meore varianti 1 amocana 3
+//
+//	public void run() {
+//			int n=readInt("Enter: ");
+//			int m=readInt("Enter: ");
+//			int result=0;
+//			while(m/n!=0) {
+//				m/=n;
+//				result++;
+//			}
+//			println(result);
+//			
+//	}
 
 //	// 1varianti amocana 3
 //	RandomGenerator rgen = RandomGenerator.getInstance();
