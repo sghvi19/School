@@ -23,24 +23,22 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
+	// meore varianti 1 amocana 3
+	
 	public void run() {
-		int x = 1;
-		int y = 2;
-		GObject o = new GRect(x, y);
-		println(o.getX());
-		String s = "shalaxo";
-		println(iseRa(x, y, o, s));
-		println(iseRa(x, y, o, s));
+			int n=readInt("Enter: ");
+			int m=readInt("Enter: ");
+			int result=0;
+			while(m/n!=0) {
+				m/=n;
+				result++;
+			}
+			println(result);
+			
 	}
-
-	private int iseRa(int x, double y, GObject r, String s) {
-		x++;
-		y += 1;
-		r.move(x, y);
-		s = s.substring(s.indexOf('a'));
-		
-		return (int) (x + y + r.getX() + s.length());
-	}
+	
+	
+	
 }
 
 //	// 1varianti amocana 3
