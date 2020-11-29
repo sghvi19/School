@@ -30,7 +30,6 @@ public class BlankClass extends ConsoleProgram {
 		String str = readLine("Enter: ");
 		int j;
 		for (int i = 0; i < str.length(); i++) {
-
 			for (j = i; i < str.length(); j++) {
 				if (i != str.length() - 1) {
 					if (str.charAt(i) == (str.charAt(j))) {
@@ -44,8 +43,10 @@ public class BlankClass extends ConsoleProgram {
 			}
 			 if(result!=1) {
 			newString += result + str.substring(i, j);
+			println(newString);
 			 }else {
 				newString+=str.charAt(i);
+				println(newString);
 			}
 			result = 0;
 		}
