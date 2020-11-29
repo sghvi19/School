@@ -31,7 +31,7 @@ public class BlankClass extends ConsoleProgram {
 		int j = 0;
 		for (int i = 0; i < str.length(); i++) {
 			if (i != str.length() - 1) {
-				for (j = i; j < str.length(); j++) {
+				for (j = i; j  < str.length(); j++) {
 
 					if (str.charAt(i) == (str.charAt(j))) {
 						result++;
