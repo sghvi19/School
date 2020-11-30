@@ -23,6 +23,28 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
+	public void run() {
+		boolean t=true;
+		int n = readInt("Enter: ");
+		int result = 0;
+		while (n != -1) {
+			if(t) {
+			result+=n;
+			t=false;
+			}
+			if(!t) {
+				result-=n;
+				t=true;
+			}
+		}
+		if(result==0) {
+			println("progression");
+		}else {
+			println("not a progression";)
+		}
+
+	}
+}
 
 // meore varianti 1 amocana 4
 //	public void run() {
@@ -148,60 +170,58 @@ public class BlankClass extends GraphicsProgram {
 //	}
 
 // 1 variant1 amocana 1
-	private GRect rect;
-	private int number = 0;
-	private String num = "0";
-	private GLabel label;
-	private int mouseX;
-	private int counter=0;
-	public void run() {
-		addMouseListeners();
-		draw();
-	}
-
-	private void draw() {
-		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
-		add(rect);
-		label = new GLabel(num);
-		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-	}
-
-
-
-	public void mouseDragged(MouseEvent e) {
-	 if (getElementAt(e.getX(), e.getY()) != null) {
-		 counter++;
-		if(counter%2==0) {
-		 mouseX = e.getX();
-		}
-		if (number != 0) {
-			if (mouseX > e.getX()) {
-				num = "";
-				number--;
-				num += number;
-				remove(label);
-				label = new GLabel(num);
-				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-			}
-		} 
-		if (number != 9) {
-			if (mouseX < e.getX()) {
-				num = "";
-				number++;
-				num += number;
-				remove(label);
-	label = new GLabel(num);
-			add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-				 }
-
-			}
-
-		}
-}
-
-}
-
-
+//	private GRect rect;
+//	private int number = 0;
+//	private String num = "0";
+//	private GLabel label;
+//	private int mouseX;
+//	private int counter=0;
+//	public void run() {
+//		addMouseListeners();
+//		draw();
+//	}
+//
+//	private void draw() {
+//		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
+//		add(rect);
+//		label = new GLabel(num);
+//		add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//	}
+//
+//
+//
+//	public void mouseDragged(MouseEvent e) {
+//	 if (getElementAt(e.getX(), e.getY()) != null) {
+//		 counter++;
+//		if(counter%2==0) {
+//		 mouseX = e.getX();
+//		}
+//		if (number != 0) {
+//			if (mouseX > e.getX()) {
+//				num = "";
+//				number--;
+//				num += number;
+//				remove(label);
+//				label = new GLabel(num);
+//				add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//			}
+//		} 
+//		if (number != 9) {
+//			if (mouseX < e.getX()) {
+//				num = "";
+//				number++;
+//				num += number;
+//				remove(label);
+//	label = new GLabel(num);
+//			add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
+//				 }
+//
+//			}
+//
+//		}
+//}
+//
+//}
 
 // circle in center changing size;
 //	private GOval oval;
