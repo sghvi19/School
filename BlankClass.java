@@ -28,19 +28,22 @@ public class BlankClass extends GraphicsProgram {
 		int n = readInt("Enter: ");
 		int result = 0;
 		while (n != -1) {
+			int temp=n;
+			n = readInt("Enter: ");
+			int x=temp-n;
 			if(t) {
-			result+=n;
+			result+=x;
 			t=false;
 			}
 			if(!t) {
-				result-=n;
+				result-=x;
 				t=true;
 			}
 		}
 		if(result==0) {
 			println("progression");
 		}else {
-			println("not a progression";)
+			println("not a progression");
 		}
 
 	}
