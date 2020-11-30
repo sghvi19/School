@@ -29,7 +29,7 @@ public class BlankClass extends ConsoleProgram {
 		ArrayList<Integer> list= new ArrayList<Integer>();
 		list.add(1);
 		list.add(2);
-		list.set(1, 3);
+		list.remove(1);
 		for(Integer a: list) {
 			println(a);
 		}
