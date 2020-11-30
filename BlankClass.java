@@ -9,6 +9,7 @@
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import acm.graphics.GLabel;
@@ -25,21 +26,14 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		int[] arr = new int[5];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i]=arr.length-i;
+		ArrayList<Integer> list= new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(1, 3);
+		for(Integer a: list) {
+			println(a);
 		}
-		int n = arr.length;
-		for (int i = 0; i < n - 1; i++)
-			for (int j = 0; j < n - i - 1; j++)
-				if (arr[j] > arr[j + 1]) {
-					// swap arr[j+1] and arr[j]
-					int temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp;
-					println(arr);
-				}
-	
+		
 	}
 }
 // mesame varianti 2 amocana 3
