@@ -23,31 +23,50 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	public void run() {
-		boolean t=true;
-		int n = readInt("Enter: ");
-		int result = 0;
-		while (n != -1) {
-			int temp=n;
-			n = readInt("Enter: ");
-			int x=temp-n;
-			if(t) {
-			result+=x;
-			t=false;
-			}
-			if(!t) {
-				result-=x;
-				t=true;
-			}
-		}
-		if(result==0) {
-			println("progression");
-		}else {
-			println("not a progression");
-		}
 
+	public void run() {
+		int[] arr = new int[5];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i]=arr.length-i;
+		}
+		int n = arr.length;
+		for (int i = 0; i < n - 1; i++)
+			for (int j = 0; j < n - i - 1; j++)
+				if (arr[j] > arr[j + 1]) {
+					// swap arr[j+1] and arr[j]
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+		println(arr);
 	}
 }
+// mesame varianti 2 amocana 3
+//	public void run() {
+//		boolean t=true;
+//		int n = readInt("Enter: ");
+//		int result = 0;
+//		while (n != -1) {
+//			int temp=n;
+//			n = readInt("Enter: ");
+//			int x=temp-n;
+//			if(t) {
+//			result+=x;
+//			t=false;
+//			}
+//			if(!t) {
+//				result-=x;
+//				t=true;
+//			}
+//		}
+//		if(result==0) {
+//			println("progression");
+//		}else {
+//			println("not a progression");
+//		}
+//
+//	}
+//}
 
 // meore varianti 1 amocana 4
 //	public void run() {
