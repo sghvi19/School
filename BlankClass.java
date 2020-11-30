@@ -37,8 +37,9 @@ public class BlankClass extends ConsoleProgram {
 					int temp = arr[j];
 					arr[j] = arr[j + 1];
 					arr[j + 1] = temp;
+					println(arr);
 				}
-		println(arr);
+	
 	}
 }
 // mesame varianti 2 amocana 3
