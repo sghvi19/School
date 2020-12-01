@@ -47,8 +47,10 @@ public class BlankClass extends GraphicsProgram {
 				add(oval);
 			}
 		}
+		
 		while (true) {
-			pause(DELAY);
+			if(oval1=null &&oval2==null&& oval==null)break;
+			pause(20000);
 			Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
@@ -61,6 +63,7 @@ public class BlankClass extends GraphicsProgram {
 
 		}
 	}
+
 
 	
 	public void mouseClicked(MouseEvent e) {
