@@ -34,6 +34,7 @@ public class BlankClass extends GraphicsProgram {
 	private GOval oval1=null;
 	private GOval oval2=null;
 	public void run() {
+		addMouseListeners();
 		for (int i = 0; i < CIRCLE_NUM; i++) {
 			Color color=rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
