@@ -69,7 +69,7 @@ public class BlankClass extends GraphicsProgram {
 				oval2= (GOval) getElementAt(e.getX(),e.getY());
 			result--;
 		}
-		if(oval1.getColor()==oval2.getColor() && oval1!=oval2) {
+		if(oval1.getColor()==oval2.getColor() && oval1!=oval2 ) {
 			remove(oval1);
 			remove(oval2);
 		}
