@@ -23,32 +23,63 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
+	// mesame varianti 2 amocana 5
+	private RandomGenerator rgen= RandomGenerator.getInstance();
+	private final static int CIRCLE_D = 40;
+	private final static int CIRCLE_NUM = 25;
+	private final static int DELAY = 2000;
+	private GOval oval=null;
 	public void run() {
-		// str+=" ";
-		// println(str.substring(3));
-		while (true) {
-			String str = readLine("Enter: ");
-			while (doubledElements(str)) {
-				for (int i = 0; i < str.length() - 1; i++) {
-					if (str.charAt(i) == str.charAt(i + 1)) {
-						str = str.substring(0, i) + str.substring(i + 2);
-					}
-				}
-			}
-			println(str);
+//		for (int i = 0; i < CIRCLE_NUM; i++) {
+//			for (int j = 0; j < 2; j++) {
+//				int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
+//				int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
+//				oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
+//				add(oval);
+//			}
+//		}
+//		while(true) {
+//			pause(DELAY);
+//			int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
+//			int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
+//			oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
+//			add(oval);
+//		}
+		int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
+		int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
+		oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
+		add(oval);
+		remove(oval);
+		if(oval==null) {
+			println("wtf");
 		}
-	}
-
-	private boolean doubledElements(String str) {
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == str.charAt(i + 1)) {
-				return true;
-			}
-		}
-		return false;
 	}
 }
+
+// mesame varianti2 amocana 4
+//	public void run() {
+//	
+//			String str = readLine("Enter: ");
+//			while (doubledElements(str)) {
+//				for (int i = 0; i < str.length() - 1; i++) {
+//					if (str.charAt(i) == str.charAt(i + 1)) {
+//						str = str.substring(0, i) + str.substring(i + 2);
+//					}
+//				}
+//			}
+//			println(str);
+//	}
+//
+//	private boolean doubledElements(String str) {
+//		for (int i = 0; i < str.length() - 1; i++) {
+//			if (str.charAt(i) == str.charAt(i + 1)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//}
 // mesame varianti 2 amocana 3
 //	public void run() {
 //		boolean t=true;
