@@ -62,6 +62,7 @@ public class BlankClass extends GraphicsProgram {
 		}
 	}
 
+	
 	public void mouseClicked(MouseEvent e) {
 
 		if (result % 2 == 0) {
@@ -74,7 +75,7 @@ public class BlankClass extends GraphicsProgram {
 
 		}
 		if (oval1 != oval2 && oval1 != null && oval2 != null) {
-			if (oval1.getColor() == oval2.getColor()) {
+			if (oval1.getFillColor() == oval2.getFillColor()) {
 				remove(oval1);
 				remove(oval2);
 				oval1 = null;
@@ -83,13 +84,7 @@ public class BlankClass extends GraphicsProgram {
 		}
 	}
 }
-
-//		}
-//		if (getElementAt(e.getX(), e.getY()) != null && result == 2) {
-//			oval2 = (GOval) getElementAt(e.getX(), e.getY());
-//			result--;
-//		}
-//		
+	
 
 // mesame varianti2 amocana 4
 //	public void run() {
