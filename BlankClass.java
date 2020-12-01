@@ -25,10 +25,10 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		String str = readLine("Enter: ");
 		// str+=" ";
 		// println(str.substring(3));
 		while (true) {
+			String str = readLine("Enter: ");
 			while (doubledElements(str)) {
 				for (int i = 0; i < str.length() - 1; i++) {
 					if (str.charAt(i) == str.charAt(i + 1)) {
