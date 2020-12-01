@@ -36,7 +36,7 @@ public class BlankClass extends GraphicsProgram {
 
 	public void run() {
 		addMouseListeners();
-		for (int i = 0; i < CIRCLE_NUM; i++) {
+		//for (int i = 0; i < CIRCLE_NUM; i++) {
 			Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
@@ -46,12 +46,13 @@ public class BlankClass extends GraphicsProgram {
 				oval.setFillColor(color);
 				add(oval);
 			}
-		}
+		//}
 		
 		while (true) {
-			if(oval1==null && oval2==null && oval==null)break;
 			pause(20000);
-			Color color = rgen.nextColor();
+			if(oval1==null && oval2==null && oval==null)break;
+			
+			//Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
 				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
