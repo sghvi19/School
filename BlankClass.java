@@ -35,10 +35,13 @@ public class BlankClass extends GraphicsProgram {
 	private GOval oval2=null;
 	public void run() {
 		for (int i = 0; i < CIRCLE_NUM; i++) {
+			Color color=rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
 				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
 				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				oval.setFilled(true);
+				oval.setFillColor(color);
 				add(oval);
 			}
 		}
