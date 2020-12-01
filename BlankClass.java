@@ -26,7 +26,22 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		
+		String word = readLine("word:");
+
+		for (int i = 0; i < word.length(); i++) {
+			for (int j = 1; j < word.length(); j++) {
+
+				int result = 1;
+				if (word.charAt(i) != word.charAt(i + j)) {
+					break;
+				}
+				if (word.charAt(i) == word.charAt(i + j)) {
+					result++;
+				}
+				println(result + word.charAt(i));
+
+			}
+		}
 	}
 }
 // mesame varianti 2 amocana 3
