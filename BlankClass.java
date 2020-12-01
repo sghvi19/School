@@ -25,34 +25,49 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
 	// mesame varianti 2 amocana 5
-	private RandomGenerator rgen= RandomGenerator.getInstance();
+	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private final static int CIRCLE_D = 40;
 	private final static int CIRCLE_NUM = 25;
 	private final static int DELAY = 2000;
-	private GOval oval=null;
+	private GOval oval = null;
+	private int result = 1;
+	private GOval oval1=null;
+	private GOval oval2=null;
 	public void run() {
-//		for (int i = 0; i < CIRCLE_NUM; i++) {
-//			for (int j = 0; j < 2; j++) {
-//				int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
-//				int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
-//				oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
-//				add(oval);
-//			}
-//		}
-//		while(true) {
-//			pause(DELAY);
-//			int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
-//			int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
-//			oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
-//			add(oval);
-//		}
-		int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
-		int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
-		//oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
-	//	add(oval);
-		//remove(oval);
-		if(oval==null) {
-			println("wtf");
+		for (int i = 0; i < CIRCLE_NUM; i++) {
+			for (int j = 0; j < 2; j++) {
+				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				add(oval);
+			}
+		}
+		while (true) {
+			pause(DELAY);
+			for (int j = 0; j < 2; j++) {
+				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				add(oval);
+			}
+
+		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// int temperory=result;
+		
+		if (getElementAt(e.getX(), e.getY()) != null && result == 1) {
+			 oval1 = (GOval) getElementAt(e.getX(), e.getY());
+			result++;
+		}
+		if (getElementAt(e.getX(), e.getY()) != null && result == 2) {
+				oval2= (GOval) getElementAt(e.getX(),e.getY());
+			result--;
+		}
+		if(oval1.getColor()==oval2.getColor() && oval1!=oval2) {
+			remove(oval1);
+			remove(oval2);
 		}
 	}
 }
