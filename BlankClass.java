@@ -48,9 +48,9 @@ public class BlankClass extends GraphicsProgram {
 //		}
 		int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
 		int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
-		oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
-		add(oval);
-		remove(oval);
+		//oval =new GOval(x,y,CIRCLE_D,CIRCLE_D);
+	//	add(oval);
+		//remove(oval);
 		if(oval==null) {
 			println("wtf");
 		}
