@@ -74,12 +74,12 @@ public class BlankClass extends GraphicsProgram {
 			result++;
 			
 		}
-		if (oval1.getColor() == oval2.getColor() && oval1 != oval2 && oval1!=null && oval2!=null) {
-			remove(oval1);
-			remove(oval2);
-			oval1=null;
-			oval2=null;
-		}
+//		if (oval1.getColor() == oval2.getColor() && oval1 != oval2 && oval1!=null && oval2!=null) {
+//			remove(oval1);
+//			remove(oval2);
+//			oval1=null;
+//			oval2=null;
+//		}
 	}
 }
 
