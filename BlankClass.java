@@ -30,13 +30,14 @@ public class BlankClass extends GraphicsProgram {
 	private final static int CIRCLE_NUM = 25;
 	private final static int DELAY = 2000;
 	private GOval oval = null;
-	private int result = 1;
-	private GOval oval1=null;
-	private GOval oval2=null;
+	private int result = 0;
+	private GOval oval1 = null;
+	private GOval oval2 = null;
+
 	public void run() {
 		addMouseListeners();
 		for (int i = 0; i < CIRCLE_NUM; i++) {
-			Color color=rgen.nextColor();
+			Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
 				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
@@ -48,10 +49,13 @@ public class BlankClass extends GraphicsProgram {
 		}
 		while (true) {
 			pause(DELAY);
+			Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
 				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
 				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				oval.setFilled(true);
+				oval.setFillColor(color);
 				add(oval);
 			}
 
@@ -60,18 +64,23 @@ public class BlankClass extends GraphicsProgram {
 
 	public void mouseClicked(MouseEvent e) {
 		// int temperory=result;
-		
-		if (getElementAt(e.getX(), e.getY()) != null && result == 1) {
-			 oval1 = (GOval) getElementAt(e.getX(), e.getY());
+		if (result == 0) {
+			println("fuck");
 			result++;
-		}
-		if (getElementAt(e.getX(), e.getY()) != null && result == 2) {
-				oval2= (GOval) getElementAt(e.getX(),e.getY());
-			result--;
-		}
-		if(oval1.getColor()==oval2.getColor() && oval1!=oval2 ) {
-			remove(oval1);
-			remove(oval2);
+		} else {
+
+			if (getElementAt(e.getX(), e.getY()) != null && result == 1) {
+				oval1 = (GOval) getElementAt(e.getX(), e.getY());
+				result++;
+			}
+			if (getElementAt(e.getX(), e.getY()) != null && result == 2) {
+				oval2 = (GOval) getElementAt(e.getX(), e.getY());
+				result--;
+			}
+			if (oval1.getColor() == oval2.getColor() && oval1 != oval2) {
+				remove(oval1);
+				remove(oval2);
+			}
 		}
 	}
 }
