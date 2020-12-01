@@ -49,7 +49,7 @@ public class BlankClass extends GraphicsProgram {
 		}
 		
 		while (true) {
-			if(oval1=null &&oval2==null&& oval==null)break;
+			if(oval1==null && oval2==null && oval==null)break;
 			pause(20000);
 			Color color = rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
