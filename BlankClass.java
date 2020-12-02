@@ -31,7 +31,7 @@ public class BlankClass extends ConsoleProgram {
 			println("a");
 			for (int i = 0; i < str.length(); i++) {
 				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z' )) {
-					int n = str.charAt(i) - '0';
+					int n = (char)str.charAt(i) - '0';
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
 						str=str.substring(i+2);
