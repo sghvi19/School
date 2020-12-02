@@ -34,11 +34,12 @@ public class BlankClass extends ConsoleProgram {
 					int n = str.charAt(i) - '0';
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
-					//	str=str.substring(i+2);
+						str=str.substring(i+2);
 						println("b");
 					}
 				}else {
 					result+=str.charAt(i);
+					str=str.substring(i+1);
 					println("c");
 				}
 			}
