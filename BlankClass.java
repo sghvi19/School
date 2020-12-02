@@ -28,10 +28,10 @@ public class BlankClass extends ConsoleProgram {
 		String str = readLine("Enter text: ");
 		String result="";
 		while (numbersInText(str)) {
-			println("a");
 			for (int i = 0; i < str.length(); i++) {
 				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z' )) {
 					int n = (char)str.charAt(i) - '0';
+					println(n);
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
 						break;
