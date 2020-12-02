@@ -23,61 +23,103 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
+//meotxe varianti 3 amocana5
+
+	private final static int CIRCLE_D = 40;
+	private final static int DELAY = 50;
+	private boolean t = false;
+	RandomGenerator rgen = RandomGenerator.getInstance();
+	GOval oval=null;
+
 	public void run() {
-		String str = readLine("Enter text: ");
-		String result = "";
-		while (numbersInText(str)&& str!=null) {
-			for (int i = 0; i < str.length(); i++) {
-				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
-					int n = (char) str.charAt(i) - '0';
-					for (int j = 0; j < n; j++) {
-						result += str.charAt(i + 1);
-						println(result);
-
-					}
-					str = str.substring(i + 2);
-
-					break;
-				}
-			}
-			while (true) {
-				if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
-					result += str.charAt(0);
-					if (str.length() != 1) {
-						str = str.substring(1);
-					}else {
-						str=null;
-						break;
-					}
-					//println(result);
-				} else {
-					break;
-				}
-			}
+		addMouseListeners();
+		while (t) {
+			Color col=getRandomColor();
+			oval.setFillColor(col);
+			if(col==Color.green) break;
 		}
-//		while (true) {
-//			if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
-//				result += str.charAt(0);
-//				str = str.substring(1);
-//			} else {
-//				break;
-//			}
-//
-//		}
-		println(result);
 	}
 
-	private boolean numbersInText(String str) {
-		for (int i = 0; i < str.length(); i++) {
-			if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
-				return true;
-			}
+	public void mouseClicked(MouseEvent e) {
+		if(getElementAt(e.getX(),e.getY())==null) {
+			oval=new GOval(e.getX()-CIRCLE_D/2,e.getY()-CIRCLE_D/2,CIRCLE_D,CIRCLE_D);
+			oval.setFilled(true);
+			oval.setFillColor(rgen.nextColor());
+			add(oval);
+		}else {
+			oval= (GOval)getElementAt(e.getX(),e.getY());
+			t=true;
 		}
-		return false;
+	}
+
+	private Color getRandomColor() {
+		int x = rgen.nextInt(0, 4);
+		if (x == 0) {
+			return Color.BLUE;
+		}
+		if (x == 1) {
+			return Color.RED;
+		}
+		if (x == 2) {
+			return Color.CYAN;
+		}
+		if (x == 3) {
+			return Color.GRAY;
+		} else {
+			return Color.green;
+		}
+
 	}
 
 }
+
+// meotxe varianti 3 amocana 4
+//	public void run() {
+//		String str = readLine("Enter text: ");
+//		String result = "";
+//		while (numbersInText(str)&& str!=null) {
+//			for (int i = 0; i < str.length(); i++) {
+//				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
+//					int n = (char) str.charAt(i) - '0';
+//					for (int j = 0; j < n; j++) {
+//						result += str.charAt(i + 1);
+//						println(result);
+//
+//					}
+//					str = str.substring(i + 2);
+//
+//					break;
+//				}
+//			}
+//			while (true) {
+//				if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
+//					result += str.charAt(0);
+//					if (str.length() != 1) {
+//						str = str.substring(1);
+//					}else {
+//						str=null;
+//						break;
+//					}
+//					//println(result);
+//				} else {
+//					break;
+//				}
+//			}
+//		}
+//
+//		println(result);
+//	}
+//	private boolean numbersInText(String str) {
+//		for (int i = 0; i < str.length(); i++) {
+//			if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//
+//}
 
 // meotxe varianti 3 amocana 3
 
