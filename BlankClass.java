@@ -35,9 +35,8 @@ public class BlankClass extends GraphicsProgram {
 	public void run() {
 		addMouseListeners();
 		while (true) {
-			Color col = getRandomColor();
 			if (oval != null && oval.getFillColor() != Color.green) {
-				oval.setColor(col);
+				oval.setColor(getRandomColor());
 				pause(DELAY);
 			}
 		}
@@ -48,7 +47,7 @@ public class BlankClass extends GraphicsProgram {
 		double y=e.getY();
 		GObject obj=getElementAt(x,y);
 		if (obj==null) {
-			oval = new GOval(x- CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+			GOval oval = new GOval(x- CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
 			oval.setFilled(true);
 			oval.setColor(rgen.nextColor());
 			add(oval);
