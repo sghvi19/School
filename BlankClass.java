@@ -38,20 +38,28 @@ public class BlankClass extends ConsoleProgram {
 
 					}
 					str = str.substring(i + 2);
-					
+
 					break;
-				} 
+				}
 			}
-			while(!numbersInText(str)) {
-				result+=str.charAt(0);
-				str=str.substring(1);
-				
+			while (true) {
+				if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
+					result += str.charAt(0);
+					str = str.substring(1);
+				}else {
+					break;
+				}
+
 			}
 		}
-		while(!numbersInText(str)) {
-			result+=str.charAt(0);
-			str=str.substring(1);
-			
+		while (true) {
+			if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
+				result += str.charAt(0);
+				str = str.substring(1);
+			}else {
+				break;
+			}
+
 		}
 		println(result);
 	}
