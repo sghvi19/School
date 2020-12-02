@@ -39,6 +39,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
+		println(result);
 	}
 
 	private boolean numbersInText(String str) {
