@@ -46,17 +46,16 @@ public class BlankClass extends ConsoleProgram {
 				if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
 					result += str.charAt(0);
 					str = str.substring(1);
-				}else {
+				} else {
 					break;
 				}
-
 			}
 		}
 		while (true) {
 			if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
 				result += str.charAt(0);
 				str = str.substring(1);
-			}else {
+			} else {
 				break;
 			}
 
