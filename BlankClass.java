@@ -24,7 +24,7 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
-
+		
 }
 // mesame varianti 2 amocana 5
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
