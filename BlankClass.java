@@ -48,7 +48,8 @@ public class BlankClass extends GraphicsProgram {
 			oval.setFilled(true);
 			oval.setFillColor(rgen.nextColor());
 			add(oval);
-		}else {
+		}
+		if(getElementAt(e.getX(),e.getY())!=null){
 			oval= (GOval)getElementAt(e.getX(),e.getY());
 			t=true;
 		}
