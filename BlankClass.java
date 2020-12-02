@@ -30,7 +30,7 @@ public class BlankClass extends GraphicsProgram {
 	private final static int DELAY = 50;
 	private boolean t = false;
 	RandomGenerator rgen = RandomGenerator.getInstance();
-	private GOval oval;
+	private GOval oval=null;
 
 	public void run() {
 		addMouseListeners();
