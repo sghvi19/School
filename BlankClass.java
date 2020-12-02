@@ -53,6 +53,7 @@ public class BlankClass extends GraphicsProgram {
 		if(getElementAt(e.getX(),e.getY())!=null){
 			oval= (GOval)getElementAt(e.getX(),e.getY());
 			t=true;
+			println("yes");
 		}
 	}
 
