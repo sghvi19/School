@@ -48,8 +48,9 @@ public class BlankClass extends ConsoleProgram {
 						str = str.substring(1);
 					}else {
 						str=null;
+						break;
 					}
-					println(result);
+					//println(result);
 				} else {
 					break;
 				}
@@ -64,7 +65,7 @@ public class BlankClass extends ConsoleProgram {
 //			}
 //
 //		}
-		//println(result);
+		println(result);
 	}
 
 	private boolean numbersInText(String str) {
