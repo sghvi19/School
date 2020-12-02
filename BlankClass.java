@@ -31,7 +31,6 @@ public class BlankClass extends ConsoleProgram {
 			for (int i = 0; i < str.length(); i++) {
 				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
 					int n = (char) str.charAt(i) - '0';
-
 					for (int j = 0; j < n; j++) {
 						result += str.charAt(i + 1);
 						println(result);
@@ -61,7 +60,7 @@ public class BlankClass extends ConsoleProgram {
 //			}
 //
 //		}
-		//println(result);
+		println(result);
 	}
 
 	private boolean numbersInText(String str) {
