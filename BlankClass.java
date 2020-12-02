@@ -44,6 +44,11 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseClicked(MouseEvent e) {
+		if(getElementAt(e.getX(),e.getY())!=null){
+			oval= (GOval)getElementAt(e.getX(),e.getY());
+			t=true;
+			println("yes");
+		}
 		if(getElementAt(e.getX(),e.getY())==null) {
 			oval=new GOval(e.getX()-CIRCLE_D/2,e.getY()-CIRCLE_D/2,CIRCLE_D,CIRCLE_D);
 			oval.setFilled(true);
@@ -51,11 +56,7 @@ public class BlankClass extends GraphicsProgram {
 			add(oval);
 			println("no");
 		}
-		if(getElementAt(e.getX(),e.getY())!=null){
-			oval= (GOval)getElementAt(e.getX(),e.getY());
-			t=true;
-			println("yes");
-		}
+	
 	}
 
 	private Color getRandomColor() {
