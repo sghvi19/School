@@ -64,7 +64,7 @@ public class BlankClass extends ConsoleProgram {
 //			}
 //
 //		}
-		println(result);
+		//println(result);
 	}
 
 	private boolean numbersInText(String str) {
