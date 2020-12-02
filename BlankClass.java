@@ -52,7 +52,7 @@ public class BlankClass extends GraphicsProgram {
 			while (t) {
 				Color col = getRandomColor();
 				oval.setFilled(true);
-				oval.setFillColor(rgen.nextColor());
+				oval.setFillColor(col);
 				if (col == Color.green)
 					break;
 				pause(DELAY);
