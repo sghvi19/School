@@ -28,8 +28,8 @@ public class BlankClass extends ConsoleProgram {
 	// meotxe varianti 3 amocana 3
 
 	public void run() {
-		int n=readInt("Enter number: ");
 		int m=readInt("Enter number: ");
+		int n=readInt("Enter number: ");
 		if((n!=1 || m!=0) && (n!=0 || m!=1))println("false");
 		while (true) {
 			 int c = readInt("Enter number: ");
