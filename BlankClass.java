@@ -34,9 +34,11 @@ public class BlankClass extends ConsoleProgram {
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
 						str=str.substring(i+2);
+						println("w");
 					}
 				}else {
 					result+=str.charAt(i);
+					println("w");
 				}
 			}
 		}
