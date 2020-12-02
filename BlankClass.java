@@ -25,54 +25,106 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
 //meotxe varianti 3 amocana5
+//
+//	private final static int CIRCLE_D = 40;
+//	private final static int DELAY = 50;
+//	private boolean t = false;
+//	RandomGenerator rgen = RandomGenerator.getInstance();
+//	private GOval oval = null;
 
-	private final static int CIRCLE_D = 40;
-	private final static int DELAY = 50;
-	private boolean t = false;
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	private GOval oval=null;
+	//public void run() {
+//		addMouseListeners();
+//		while (true) {
+//			Color col = getRandomColor();
+//			if (oval != null && oval.getFillColor() != Color.green) {
+//				oval.setColor(col);
+//				pause(DELAY);
+//			}
+//		}
+//	}
+//
+//	public void mouseClicked(MouseEvent e) {
+//		if (getElementAt(e.getX(), e.getY()) != null) {
+//			oval = (GOval) getElementAt(e.getX(), e.getY());
+//		}
+//		if (getElementAt(e.getX(), e.getY()) == null) {
+//			oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+//			oval.setFilled(true);
+//			oval.setColor(rgen.nextColor());
+//			add(oval);
+//	}
+//
+//	}
+//
+//	private Color getRandomColor() {
+//		int x = rgen.nextInt(0, 4);
+//		if (x == 0) {
+//			return Color.BLUE;
+//		}
+//		if (x == 1) {
+//			return Color.RED;
+//		}
+//		if (x == 2) {
+//			return Color.CYAN;
+//		}
+//		if (x == 3) {
+//			return Color.GRAY;
+//		} else {
+//			return Color.green;
+//		}
+//
+//	}
 
+	private static final double CIRCLE_D = 60;
+	private RandomGenerator rand = RandomGenerator.getInstance();
+	private GOval gOval = null;
+	private static final int DELAY = 100;
+	
 	public void run() {
-		addMouseListeners();
-		while (true) {
-			Color col = getRandomColor();
-			if (oval != null && oval.getFillColor() != Color.green) {
-				oval.setColor(col);
+		setup();
+		
+		while(true) {
+			
+			if(gOval != null && gOval.getFillColor()!= Color.GREEN) {
+				gOval.setColor(getRandomColor());
 				pause(DELAY);
 			}
 		}
 	}
-
-	public void mouseClicked(MouseEvent e) {
-		if (getElementAt(e.getX(), e.getY()) != null) {
-			oval = (GOval) getElementAt(e.getX(), e.getY());
-		}
-		if (getElementAt(e.getX(), e.getY()) == null) {
-			oval = new GOval(e.getX() - CIRCLE_D / 2, e.getY() - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		}
-
+	
+	private void setup() {
+		addMouseListeners();
 	}
-
+	
+	public void mouseClicked(MouseEvent e) {
+		double x = e.getX();
+		double y = e.getY();
+		
+		GObject obj = getElementAt(x,y);
+		if( obj == null) {
+			GOval gOval = new GOval(x - CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+			gOval.setFilled(true);
+			gOval.setColor(rand.nextColor());
+			add(gOval);
+		}else {
+		    gOval = (GOval) obj;
+		}
+	}
+	
 	private Color getRandomColor() {
-		int x = rgen.nextInt(0, 4);
-		if (x == 0) {
-			return Color.BLUE;
-		}
-		if (x == 1) {
+		int index = rand.nextInt(1, 5);
+		
+		if(index == 1) {
+			return Color.GREEN;
+		}else if(index == 2) {
 			return Color.RED;
+		}else if (index ==3) {
+			return Color.BLUE;
+		}else if(index ==4) {
+			return Color.BLACK;
+		}else {
+			return Color.YELLOW;
 		}
-		if (x == 2) {
-			return Color.CYAN;
-		}
-		if (x == 3) {
-			return Color.GRAY;
-		} else {
-			return Color.green;
-		}
-
 	}
 
 }
