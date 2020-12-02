@@ -39,7 +39,7 @@ public class BlankClass extends GraphicsProgram {
 			oval.setFilled(true);
 			oval.setFillColor(col);
 			if(col==Color.green) break;
-			pause(10);
+			pause(1000);
 		}
 	}
 
