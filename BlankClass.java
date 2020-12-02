@@ -24,59 +24,64 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
-//meotxe varianti 3 amocana5
-
-	private final static int CIRCLE_D = 40;
-	private final static int DELAY = 50;
-	private boolean t = false;
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	private GOval oval=null;
-
 	public void run() {
-		addMouseListeners();
-		while (true) {
-			if (oval != null && oval.getFillColor() != Color.green) {
-				oval.setColor(getRandomColor());
-				pause(DELAY);
-			}
-		}
-	}
-
-	public void mouseClicked(MouseEvent e) {
-		double x=e.getX();
-		double y=e.getY();
-		GObject obj=getElementAt(x,y);
-		if (obj==null) {
-			GOval oval = new GOval(x- CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		}else  {
-			oval = (GOval) obj;
-		}
-
-	}
-
-	private Color getRandomColor() {
-		int x = rgen.nextInt(0, 4);
-		if (x == 0) {
-			return Color.BLUE;
-		}
-		if (x == 1) {
-			return Color.RED;
-		}
-		if (x == 2) {
-			return Color.CYAN;
-		}
-		if (x == 3) {
-			return Color.GRAY;
-		} else {
-			return Color.green;
-		}
 
 	}
 
 }
+//meotxe varianti 3 amocana5
+//
+//	private final static int CIRCLE_D = 40;
+//	private final static int DELAY = 50;
+//	private boolean t = false;
+//	RandomGenerator rgen = RandomGenerator.getInstance();
+//	private GOval oval=null;
+//
+//	public void run() {
+//		addMouseListeners();
+//		while (true) {
+//			if (oval != null && oval.getFillColor() != Color.green) {
+//				oval.setColor(getRandomColor());
+//				pause(DELAY);
+//			}
+//		}
+//	}
+//
+//	public void mouseClicked(MouseEvent e) {
+//		double x=e.getX();
+//		double y=e.getY();
+//		GObject obj=getElementAt(x,y);
+//		if (obj==null) {
+//			GOval oval = new GOval(x- CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
+//			oval.setFilled(true);
+//			oval.setColor(rgen.nextColor());
+//			add(oval);
+//		}else  {
+//			oval = (GOval) obj;
+//		}
+//
+//	}
+//
+//	private Color getRandomColor() {
+//		int x = rgen.nextInt(0, 4);
+//		if (x == 0) {
+//			return Color.BLUE;
+//		}
+//		if (x == 1) {
+//			return Color.RED;
+//		}
+//		if (x == 2) {
+//			return Color.CYAN;
+//		}
+//		if (x == 3) {
+//			return Color.GRAY;
+//		} else {
+//			return Color.green;
+//		}
+//
+//	}
+//
+//}
 
 // meotxe varianti 3 amocana 4
 //	public void run() {
