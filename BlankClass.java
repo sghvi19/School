@@ -27,7 +27,7 @@ public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String str = readLine("Enter text: ");
 		String result = "";
-		while (numbersInText(str)) {
+		while (numbersInText(str)&& str!=null) {
 			for (int i = 0; i < str.length(); i++) {
 				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
 					int n = (char) str.charAt(i) - '0';
@@ -44,7 +44,11 @@ public class BlankClass extends ConsoleProgram {
 			while (true) {
 				if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
 					result += str.charAt(0);
-					str = str.substring(1);
+					if (str.length() != 1) {
+						str = str.substring(1);
+					}else {
+						str=null;
+					}
 					println(result);
 				} else {
 					break;
