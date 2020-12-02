@@ -52,15 +52,15 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
-		while (true) {
-			if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
-				result += str.charAt(0);
-				str = str.substring(1);
-			} else {
-				break;
-			}
-
-		}
+//		while (true) {
+//			if ((char) str.charAt(0) >= 'A' && (char) str.charAt(0) <= 'z') {
+//				result += str.charAt(0);
+//				str = str.substring(1);
+//			} else {
+//				break;
+//			}
+//
+//		}
 		println(result);
 	}
 
