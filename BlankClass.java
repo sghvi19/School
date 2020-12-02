@@ -53,8 +53,9 @@ public class BlankClass extends GraphicsProgram {
 				Color col = getRandomColor();
 				oval.setFilled(true);
 				oval.setFillColor(col);
-				if (col == Color.green)
+				if (col == Color.green) {
 					break;
+				}
 				pause(DELAY);
 			}
 		}
@@ -80,9 +81,9 @@ public class BlankClass extends GraphicsProgram {
 			return Color.CYAN;
 		}
 		if (x == 3) {
-			return Color.GRAY;
-		} else {
 			return Color.green;
+		} else {
+			return Color.GRAY;
 		}
 
 	}
