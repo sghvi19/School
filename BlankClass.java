@@ -23,8 +23,27 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
-		
+public class BlankClass extends ConsoleProgram {
+
+	// meotxe varianti 3 amocana 3
+
+	public void run() {
+		int n=readInt("Enter number: ");
+		int m=readInt("Enter number: ");
+		if((n!=1 || m!=0) && (n!=0 || m!=1))println("false");
+		while (true) {
+			 int c = readInt("Enter number: ");
+			 if(c==-1)break;
+			 if(c!=m+n) {
+				 println("false");
+				 break;
+			 }
+			 m=n;
+			 n=c;
+			 
+		}
+		println(true);
+	}
 }
 // mesame varianti 2 amocana 5
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
