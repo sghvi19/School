@@ -36,6 +36,7 @@ public class BlankClass extends GraphicsProgram {
 		addMouseListeners();
 		while (t) {
 			Color col=getRandomColor();
+			oval.setFilled(true);
 			oval.setFillColor(col);
 			if(col==Color.green) break;
 			pause(DELAY);
