@@ -26,24 +26,25 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String str = readLine("Enter text: ");
-		String result="";
+		String result = "";
 		while (numbersInText(str)) {
 			for (int i = 0; i < str.length(); i++) {
-				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z' )) {
-					int n = (char)str.charAt(i) - '0';
-					
+				if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
+					int n = (char) str.charAt(i) - '0';
+
 					for (int j = 0; j < n; j++) {
-						result+=str.charAt(i+1);
+						result += str.charAt(i + 1);
 						println(result);
-						
+
 					}
-					str=str.substring(i+2);
+					str = str.substring(i + 2);
 					break;
-				}else {
-					result+=str.charAt(i);
-					str=str.substring(i+1);
-					break;
-				}
+				} 
+			}
+			while(!numbersInText(str)) {
+				result+=str.charAt(0);
+				str=str.substring(1);
+				
 			}
 		}
 		println(result);
@@ -51,7 +52,7 @@ public class BlankClass extends ConsoleProgram {
 
 	private boolean numbersInText(String str) {
 		for (int i = 0; i < str.length(); i++) {
-			if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z' )) {
+			if (!((char) str.charAt(i) >= 'A' && (char) str.charAt(i) <= 'z')) {
 				return true;
 			}
 		}
