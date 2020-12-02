@@ -24,27 +24,55 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-
-	// meotxe varianti 3 amocana 3
-
 	public void run() {
-		int m=readInt("Enter number: ");
-		int n=readInt("Enter number: ");
-		if((n!=1 || m!=0) && (n!=0 || m!=1))println("false");
-		while (true) {
-			 int c = readInt("Enter number: ");
-			 if(c==-1)break;
-			 if(c!=m+n) {
-				 println("false");
-				 break;
-			 }
-			 m=n;
-			 n=c;
-			 
+		String str = readLine("Enter text: ");
+		String result="";
+		while (numbersInText(str)) {
+			for (int i = 0; i < str.length(); i++) {
+				if (!((char) str.charAt(i) > 'a')) {
+					int n = str.charAt(i) - '0';
+					for (int j = 0; j < n; j++) {
+						result+=str.charAt(i+1);
+					}
+				}else {
+					result+=str.charAt(i);
+				}
+			}
 		}
-		println(true);
 	}
+
+	private boolean numbersInText(String str) {
+		for (int i = 0; i < str.length(); i++) {
+			if (!((char) str.charAt(i) > 'a')) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
+
+// meotxe varianti 3 amocana 3
+
+//	public void run() {
+//		int m=readInt("Enter number: ");
+//		int n=readInt("Enter number: ");
+//		if((n!=1 || m!=0) && (n!=0 || m!=1))println("false");
+//		while (true) {
+//			 int c = readInt("Enter number: ");
+//			 if(c==-1)break;
+//			 if(c!=m+n) {
+//				 println("not fibonacci");
+//				 break;
+//			 }
+//			 m=n;
+//			 n=c;
+//			 
+//		}
+//		println("fibonacci");
+//	}
+//}
+
 // mesame varianti 2 amocana 5
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private final static int CIRCLE_D = 40;
