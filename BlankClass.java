@@ -38,6 +38,7 @@ public class BlankClass extends ConsoleProgram {
 
 					}
 					str = str.substring(i + 2);
+					
 					break;
 				} 
 			}
@@ -46,6 +47,11 @@ public class BlankClass extends ConsoleProgram {
 				str=str.substring(1);
 				
 			}
+		}
+		while(!numbersInText(str)) {
+			result+=str.charAt(0);
+			str=str.substring(1);
+			
 		}
 		println(result);
 	}
