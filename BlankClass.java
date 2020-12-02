@@ -27,9 +27,6 @@ public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String str = readLine("Enter text: ");
 		String result="";
-		result="amongus";
-		result=result.substring(3);
-		println(result);
 		while (numbersInText(str)) {
 			println("a");
 			for (int i = 0; i < str.length(); i++) {
@@ -38,12 +35,12 @@ public class BlankClass extends ConsoleProgram {
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
 						str=str.substring(i+1);
-						println("b");
+						break;
 					}
 				}else {
 					result+=str.charAt(i);
 					str=str.substring(i+1);
-					println("c");
+					break;
 				}
 			}
 		}
