@@ -28,18 +28,18 @@ public class BlankClass extends ConsoleProgram {
 		String str = readLine("Enter text: ");
 		String result="";
 		while (numbersInText(str)) {
-			println("f");
+			println("a");
 			for (int i = 0; i < str.length(); i++) {
 				if (!((char) str.charAt(i) > 'a')) {
 					int n = str.charAt(i) - '0';
 					for (int j = 0; j < n; j++) {
 						result+=str.charAt(i+1);
 						str=str.substring(i+2);
-						println("w");
+						println("b");
 					}
 				}else {
 					result+=str.charAt(i);
-					println("w");
+					println("c");
 				}
 			}
 		}
