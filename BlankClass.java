@@ -51,11 +51,11 @@ public class BlankClass extends GraphicsProgram {
 			println("yes");
 			while (t) {
 				Color col = getRandomColor();
-				oval.setFilled(true);
+				//oval.setFilled(true);
 				oval.setFillColor(col);
-//				if (col == Color.green) {
-//					break;
-//				}
+				if (col == Color.green) {
+					break;
+				}
 				pause(DELAY);
 			}
 		}
