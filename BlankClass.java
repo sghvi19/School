@@ -38,6 +38,7 @@ public class BlankClass extends GraphicsProgram {
 			Color col=getRandomColor();
 			oval.setFillColor(col);
 			if(col==Color.green) break;
+			pause(DELAY);
 		}
 	}
 
