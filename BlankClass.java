@@ -43,11 +43,12 @@ public class BlankClass extends ConsoleProgram {
 			if (str.charAt(i) == str.charAt(i + 1)) {
 				result++;
 				index = i;
+				println("a");
 			}
 		}
 		int result1 = 1;
 		str = str.substring(index, index + n);
-		if (str.length() == n) {
+		if (str.length() == n && result==n) {
 			for (int i = 0; i < str.length(); i++) {
 				if (str.charAt(i) == str.charAt(i + 1)) {
 					result1++;
