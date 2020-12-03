@@ -39,7 +39,7 @@ public class BlankClass extends ConsoleProgram {
 				result++;
 			}
 			count++;
-			if (count == 9) {
+			if (count == 10) {
 				break;
 			}
 		}
