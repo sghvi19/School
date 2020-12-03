@@ -51,8 +51,7 @@ public class BlankClass extends ConsoleProgram {
 		if (result == n) {
 			st = st.substring(index - n, index);
 			if (st.length() == n) {
-				println(n);
-				for (int i = 0; i < st.length(); i++) {
+				for (int i = 0; i < st.length()-1; i++) {
 					if (st.charAt(i) == st.charAt(i + 1)) {
 						result1++;
 						println(result1);
