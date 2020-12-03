@@ -31,7 +31,7 @@ public class BlankClass extends ConsoleProgram {
 		int count = 1;
 		for (int i = 0; i < arr[0].length; i++) {
 			for (int j = 0; j < arr.length; j++) {
-				arr[i][j]=readInt("Enter");
+				arr[i][j] = readInt("Enter: ");
 			}
 		}
 		while (true) {
@@ -44,7 +44,7 @@ public class BlankClass extends ConsoleProgram {
 			}
 		}
 		if (result == 9) {
-			println("Maagic");
+			println("Magic");
 		} else {
 			println("Not a magic!");
 		}
