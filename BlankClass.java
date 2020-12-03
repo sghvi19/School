@@ -38,10 +38,12 @@ public class BlankClass extends ConsoleProgram {
 			if(t) {
 				result*=x;
 				t=false;
+				println(result);
 			}
 			if(!t) {
 				result/=x;
 				t=true;
+				println(result);
 			}
 		}
 		if(result==1) {
