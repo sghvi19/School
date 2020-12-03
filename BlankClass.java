@@ -46,7 +46,8 @@ public class BlankClass extends ConsoleProgram {
 		if (result == 1) {
 			println("geometric progression");
 
-		} else {
+		} 
+		if(result!=1){
 			println("not progression");
 		}
 	}
