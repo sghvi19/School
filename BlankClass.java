@@ -48,12 +48,14 @@ public class BlankClass extends ConsoleProgram {
 		}
 		int result1 = 1;
 
-		if (str.length() == n && result == n) {
-			str = str.substring(index - n, index);
-			for (int i = 0; i < str.length(); i++) {
-				if (str.charAt(i) == str.charAt(i + 1)) {
-					result1++;
-					println(result1);
+		if (result == n) {
+			if (str.length() == n) {
+				str = str.substring(index - n, index);
+				for (int i = 0; i < str.length(); i++) {
+					if (str.charAt(i) == str.charAt(i + 1)) {
+						result1++;
+						println(result1);
+					}
 				}
 			}
 		}
