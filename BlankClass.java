@@ -43,20 +43,19 @@ public class BlankClass extends ConsoleProgram {
 			if (st.charAt(i) == st.charAt(i + 1)) {
 				result++;
 				index = i;
-				//println(result);
-				println(i);
+			//	println(i);
 			}
 		}
 		int result1 = 1;
 
 		if (result == n) {
-			st = st.substring(index - n, index);
+			st = st.substring(index - n+1, index+1);
 			if (st.length() == n) {
 				for (int i = 0; i < st.length()-1; i++) {
 					//println(st.charAt(i));
 					if (st.charAt(i) == st.charAt(i + 1)) {
 						result1++;
-						//println(result1);
+						println(result1);
 					}
 				}
 			}
