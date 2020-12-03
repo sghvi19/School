@@ -27,15 +27,15 @@ public class BlankClass extends ConsoleProgram {
 	private int[][] arr = new int[3][3];
 
 	public void run() {
-		int result = 1;
-		int count = 0;
+		int result = 0;
+		int count = 1;
 		for (int i = 0; i < arr[0].length; i++) {
 			for (int j = 0; j < arr.length; j++) {
 				arr[i][j]=readInt("Enter");
 			}
 		}
 		while (true) {
-			if (check(result)) {
+			if (check(count)) {
 				result++;
 			}
 			count++;
