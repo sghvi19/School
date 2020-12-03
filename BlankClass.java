@@ -24,41 +24,31 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	private int[][] arr = new int[3][3];
 
 	public void run() {
-		int result = 0;
-		int count = 1;
-		for (int i = 0; i < arr[0].length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				arr[i][j] = readInt("Enter: ");
-			}
-		}
-		while (true) {
-			if (check(count)) {
-				result++;
-			}
-			count++;
-			if (count == 10) {
-				break;
-			}
-		}
-		if (result == 9) {
-			println("Magic");
-		} else {
-			println("Not a magic!");
-		}
-	}
 
-	private boolean check(int result) {
-		for (int i = 0; i < arr[0].length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[i][j] == result) {
-					return true;
-				}
+		boolean t = true;
+		int result = 1;
+		int n = readInt("Enter: ");
+		while (n != -1) {
+			int temp = n;
+			n = readInt("Enter: ");
+			int x = n / temp;
+			if (t) {
+				result *= x;
+				t = false;
+			}
+			if (!t) {
+				result /= x;
+				t = true;
 			}
 		}
-		return false;
+		if (result == 1) {
+			println("geometric progression");
+
+		} else {
+			println("not progression");
+		}
 	}
 
 }
