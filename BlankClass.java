@@ -39,8 +39,7 @@ public class BlankClass extends ConsoleProgram {
 				result*=x;
 				t=false;
 				println(result);
-			}
-			if(!t) {
+			}else {
 				result/=x;
 				t=true;
 				println(result);
