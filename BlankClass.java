@@ -31,9 +31,10 @@ public class BlankClass extends ConsoleProgram {
 		int result=1;
 		int n = readInt("Enter: ");
 		int x;
-		while (n != -1) {
+		while (true) {
 			int temp = n;
 			n = readInt("Enter: ");
+			if(n==-1)break;
 			 x=n/temp;
 			if(t) {
 				result*=x;
