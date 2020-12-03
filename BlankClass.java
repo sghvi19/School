@@ -43,7 +43,8 @@ public class BlankClass extends ConsoleProgram {
 			if (st.charAt(i) == st.charAt(i + 1)) {
 				result++;
 				index = i;
-				println(result);
+				//println(result);
+				println(i);
 			}
 		}
 		int result1 = 1;
@@ -55,7 +56,7 @@ public class BlankClass extends ConsoleProgram {
 					println(st.charAt(i));
 					if (st.charAt(i) == st.charAt(i + 1)) {
 						result1++;
-						println(result1);
+						//println(result1);
 					}
 				}
 			}
