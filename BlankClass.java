@@ -36,11 +36,11 @@ public class BlankClass extends ConsoleProgram {
 		println(str);
 	}
 
-	private boolean nPlet(String str, int n) {
+	private boolean nPlet(String st, int n) {
 		int index = 0;
 		int result = 1;
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == str.charAt(i + 1)) {
+		for (int i = 0; i < st.length() - 1; i++) {
+			if (st.charAt(i) == st.charAt(i + 1)) {
 				result++;
 				index = i;
 				println(result);
@@ -49,11 +49,11 @@ public class BlankClass extends ConsoleProgram {
 		int result1 = 1;
 
 		if (result == n) {
-			str = str.substring(index - n, index);
-			if (str.length() == n) {
+			st = st.substring(index - n, index);
+			if (st.length() == n) {
 				
-				for (int i = 0; i < str.length(); i++) {
-					if (str.charAt(i) == str.charAt(i + 1)) {
+				for (int i = 0; i < st.length(); i++) {
+					if (st.charAt(i) == st.charAt(i + 1)) {
 						result1++;
 						println(result1);
 					}
@@ -62,7 +62,7 @@ public class BlankClass extends ConsoleProgram {
 		}
 
 		if (result1 == n) {
-			stri = str;
+			stri = st;
 			return true;
 		}
 
