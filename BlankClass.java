@@ -24,28 +24,47 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
+	private String stri = "";
 
-//	public void run() {
-//		String str = readLine("Enter: ");
-//		int n = readInt("Enter number: ");
-//		while (nPlet(str, n)) {
-//			
-//		}
-//	}
-//
-//	private boolean nPlet(String str, int n) {
-//		int result = 1;
-//		for (int i = 0; i < str.length() - 1; i++) {
-//			if (str.charAt(i) == str.charAt(i + 1)) {
-//				result++;	
-//			}
-//		}
-//		if(result==n)return true;
-//		return false;
-//
-//	}
-//
-//}
+	public void run() {
+		String str = readLine("Enter: ");
+		int n = readInt("Enter number: ");
+		while (nPlet(str, n)) {
+			int ind = str.indexOf(stri);
+			str= str.substring(ind, ind+n);
+		}
+		println(str);
+	}
+
+	private boolean nPlet(String str, int n) {
+		int index = 0;
+		int result = 1;
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == str.charAt(i + 1)) {
+				result++;
+				index = i;
+			}
+		}
+		int result1 = 1;
+		str = str.substring(index, index + n);
+		if (str.length() == n) {
+			for (int i = 0; i < str.length(); i++) {
+				if (str.charAt(i) == str.charAt(i + 1)) {
+					result1++;
+				}
+			}
+		}
+
+		if (result1 == n) {
+			stri = str;
+			return true;
+		}
+
+		return false;
+
+	}
+
+}
 //mexute varianti 4 amocana3
 //	public void run() {
 //		int n = readInt("Enter: ");
@@ -260,28 +279,28 @@ public class BlankClass extends ConsoleProgram {
 //	
 
 // mesame varianti2 amocana 4
-	public void run() {
-	
-			String str = readLine("Enter: ");
-			while (doubledElements(str)) {
-				for (int i = 0; i < str.length() - 1; i++) {
-					if (str.charAt(i) == str.charAt(i + 1)) {
-						str = str.substring(0, i) + str.substring(i + 2);
-					}
-				}
-			}
-			println(str);
-	}
-
-	private boolean doubledElements(String str) {
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == str.charAt(i + 1)) {
-				return true;
-			}
-		}
-		return false;
-	}
-}
+//	public void run() {
+//	
+//			String str = readLine("Enter: ");
+//			while (doubledElements(str)) {
+//				for (int i = 0; i < str.length() - 1; i++) {
+//					if (str.charAt(i) == str.charAt(i + 1)) {
+//						str = str.substring(0, i) + str.substring(i + 2);
+//					}
+//				}
+//			}
+//			println(str);
+//	}
+//
+//	private boolean doubledElements(String str) {
+//		for (int i = 0; i < str.length() - 1; i++) {
+//			if (str.charAt(i) == str.charAt(i + 1)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//}
 // mesame varianti 2 amocana 3
 //	public void run() {
 //		boolean t=true;
