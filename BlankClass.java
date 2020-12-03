@@ -33,7 +33,7 @@ public class BlankClass extends ConsoleProgram {
 			int ind = str.indexOf(stri);
 			str = str.substring(ind, ind + n);
 		}
-		println(str);
+		//println(str);
 	}
 
 	private boolean nPlet(String st, int n) {
