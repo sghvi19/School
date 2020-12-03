@@ -25,24 +25,46 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 
-	public void run() {
-		int n = readInt("Enter: ");
-		int temp = n;
-		int m=readInt("Enter: ");
-		int x=m/temp;
-		while (true) {
-			temp= m;
-			m = readInt("Enter: ");
-			if(m==-1)break;
-			if(x!=m/temp) {
-				println("not a progression");
-			}
-			 x=m/temp;
-		}
-		println("progression");
-	}
-
-}
+//	public void run() {
+//		String str = readLine("Enter: ");
+//		int n = readInt("Enter number: ");
+//		while (nPlet(str, n)) {
+//			
+//		}
+//	}
+//
+//	private boolean nPlet(String str, int n) {
+//		int result = 1;
+//		for (int i = 0; i < str.length() - 1; i++) {
+//			if (str.charAt(i) == str.charAt(i + 1)) {
+//				result++;	
+//			}
+//		}
+//		if(result==n)return true;
+//		return false;
+//
+//	}
+//
+//}
+//mexute varianti 4 amocana3
+//	public void run() {
+//		int n = readInt("Enter: ");
+//		int temp = n;
+//		int m=readInt("Enter: ");
+//		int x=m/temp;
+//		while (true) {
+//			temp= m;
+//			m = readInt("Enter: ");
+//			if(m==-1)break;
+//			if(x!=m/temp) {
+//				println("not a progression");
+//			}
+//			 x=m/temp;
+//		}
+//		println("progression");
+//	}
+//
+//}
 //meotxe varianti 3 amocana5
 //
 //	private final static int CIRCLE_D = 40;
@@ -238,28 +260,28 @@ public class BlankClass extends ConsoleProgram {
 //	
 
 // mesame varianti2 amocana 4
-//	public void run() {
-//	
-//			String str = readLine("Enter: ");
-//			while (doubledElements(str)) {
-//				for (int i = 0; i < str.length() - 1; i++) {
-//					if (str.charAt(i) == str.charAt(i + 1)) {
-//						str = str.substring(0, i) + str.substring(i + 2);
-//					}
-//				}
-//			}
-//			println(str);
-//	}
-//
-//	private boolean doubledElements(String str) {
-//		for (int i = 0; i < str.length() - 1; i++) {
-//			if (str.charAt(i) == str.charAt(i + 1)) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-//}
+	public void run() {
+	
+			String str = readLine("Enter: ");
+			while (doubledElements(str)) {
+				for (int i = 0; i < str.length() - 1; i++) {
+					if (str.charAt(i) == str.charAt(i + 1)) {
+						str = str.substring(0, i) + str.substring(i + 2);
+					}
+				}
+			}
+			println(str);
+	}
+
+	private boolean doubledElements(String str) {
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == str.charAt(i + 1)) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
 // mesame varianti 2 amocana 3
 //	public void run() {
 //		boolean t=true;
