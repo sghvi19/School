@@ -31,7 +31,7 @@ public class BlankClass extends ConsoleProgram {
 		int n = readInt("Enter number: ");
 		while (nPlet(str, n)) {
 			int ind = str.indexOf(stri);
-			str = str.substring(0, ind )+str.substring(ind+n+1);
+			str = str.substring(0, ind) + str.substring(ind + n + 1);
 		}
 		println(str);
 	}
@@ -43,19 +43,15 @@ public class BlankClass extends ConsoleProgram {
 			if (st.charAt(i) == st.charAt(i + 1)) {
 				result++;
 				index = i;
-			//	println(i);
 			}
 		}
 		int result1 = 1;
-
 		if (result == n) {
-			st = st.substring(index - n+2, index+2);
+			st = st.substring(index - n + 2, index + 2);
 			if (st.length() == n) {
-				for (int i = 0; i < st.length()-1; i++) {
-					//println(st.charAt(i));
+				for (int i = 0; i < st.length() - 1; i++) {
 					if (st.charAt(i) == st.charAt(i + 1)) {
 						result1++;
-						println(result1);
 					}
 				}
 			}
@@ -65,11 +61,8 @@ public class BlankClass extends ConsoleProgram {
 			stri = st;
 			return true;
 		}
-
 		return false;
-
 	}
-
 }
 //mexute varianti 4 amocana3
 //	public void run() {
