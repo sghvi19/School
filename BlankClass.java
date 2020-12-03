@@ -31,7 +31,7 @@ public class BlankClass extends ConsoleProgram {
 		int n = readInt("Enter number: ");
 		while (nPlet(str, n)) {
 			int ind = str.indexOf(stri);
-			str= str.substring(ind, ind+n);
+			str = str.substring(ind, ind + n);
 		}
 		println(str);
 	}
@@ -43,16 +43,17 @@ public class BlankClass extends ConsoleProgram {
 			if (str.charAt(i) == str.charAt(i + 1)) {
 				result++;
 				index = i;
-				println("a");
 				println(result);
 			}
 		}
 		int result1 = 1;
-		str = str.substring(index, index + n);
-		if (str.length() == n && result==n) {
+
+		if (str.length() == n && result == n) {
+			str = str.substring(index - n, index);
 			for (int i = 0; i < str.length(); i++) {
 				if (str.charAt(i) == str.charAt(i + 1)) {
 					result1++;
+					println(result1);
 				}
 			}
 		}
