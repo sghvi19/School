@@ -26,32 +26,20 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 
 	public void run() {
-		
-		boolean t=true;
-		int result=1;
 		int n = readInt("Enter: ");
-		int x;
+		int temp = n;
+		int m=readInt("Enter: ");
+		int x=m/temp;
 		while (true) {
-			int temp = n;
-			n = readInt("Enter: ");
-			if(n==-1)break;
-			 x=n/temp;
-			if(t) {
-				result*=x;
-				t=false;
-				println(result);
-			}else {
-				result/=x;
-				t=true;
-				println(result);
+			temp= m;
+			m = readInt("Enter: ");
+			if(m==-1)break;
+			if(x!=m/temp) {
+				println("not a progression");
 			}
+			 x=m/temp;
 		}
-		if(result==1) {
-			println("geometric progression");
-			
-		}else {
-			println("not progression");
-		}
+		println("progression");
 	}
 
 }
