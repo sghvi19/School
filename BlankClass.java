@@ -44,6 +44,7 @@ public class BlankClass extends ConsoleProgram {
 				result++;
 				index = i;
 				println("a");
+				println(result);
 			}
 		}
 		int result1 = 1;
