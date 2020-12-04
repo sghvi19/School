@@ -23,48 +23,98 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
-	private String stri = "";
-
+public class BlankClass extends GraphicsProgram {
+	private final static int CIRCLE_D = 40;
+	private final static int CIRCLE_NUM = 50;
+	private final static int DELAY = 2000;
+	private GOval oval = null;
+	private RandomGenerator rgen=RandomGenerator.getInstance();
+	private int click=0;
+	private GObject obj;
+	private boolean t=true;
 	public void run() {
-		String str = readLine("Enter: ");
-		int n = readInt("Enter number: ");
-		while (nPlet(str, n)) {
-			int ind = str.indexOf(stri);
-			str = str.substring(0, ind) + str.substring(ind + n + 1);
+		addMouseListeners();
+		for (int i = 0; i < CIRCLE_NUM; i++) {
+			int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
+			int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
+			oval=new GOval(x,y,CIRCLE_D,CIRCLE_D);
+			oval.setFilled(true);
+			oval.setColor(rgen.nextColor());
+			add(oval);
 		}
-		println(str);
+		int counter=CIRCLE_NUM;
+		while(true) {
+			pause(DELAY);
+			counter++;
+			int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
+			int y=rgen.nextInt(0,getHeight()-CIRCLE_D);
+			oval=new GOval(x,y,CIRCLE_D,CIRCLE_D);
+			oval.setFilled(true);
+		}
 	}
 
-	private boolean nPlet(String st, int n) {
-		int index = 0;
-		int result = 1;
-		for (int i = 0; i < st.length() - 1; i++) {
-			if (st.charAt(i) == st.charAt(i + 1)) {
-				result++;
-				index = i;
-				if(result==n)break;
-			}
+	public void mouseClicked(MouseEvent e) {
+		if(t) {
+			obj=(GOval) getElementAt(e.getX(),e.getY());
+			t=false;
 		}
-		int result1 = 1;
-		if (result == n) {
-			st = st.substring(index - n + 2, index + 2);
-			if (st.length() == n) {
-				for (int i = 0; i < st.length() - 1; i++) {
-					if (st.charAt(i) == st.charAt(i + 1)) {
-						result1++;
-					}
-				}
-			}
+		if(getElementAt(e.getX(),e.getY())!=null &&getElementAt(e.getX(),e.getY())==obj) {
+			click++;
+		}else {
+			click=0;
 		}
-
-		if (result1 == n) {
-			stri = st;
-			return true;
+		if(click==3) {
+			remove(getElementAt(e.getX(),e.getY()));
 		}
-		return false;
+		
+		 obj=(GOval) getElementAt(e.getX(),e.getY());
 	}
+
 }
+
+//mexute varianti 4 amocana4 (almost done)
+//	private String stri = "";
+//
+//	public void run() {
+//		String str = readLine("Enter: ");
+//		int n = readInt("Enter number: ");
+//		while (nPlet(str, n)) {
+//			int ind = str.indexOf(stri);
+//			str = str.substring(0, ind) + str.substring(ind + n + 1);
+//		}
+//		println(str);
+//	}
+//
+//	private boolean nPlet(String st, int n) {
+//		int index = 0;
+//		int result = 1;
+//		for (int i = 0; i < st.length() - 1; i++) {
+//			if (st.charAt(i) == st.charAt(i + 1)) {
+//				result++;
+//				index = i;
+//				if(result==n)break;
+//			}
+//		}
+//		int result1 = 1;
+//		if (result == n) {
+//			st = st.substring(index - n + 2, index + 2);
+//			if (st.length() == n) {
+//				for (int i = 0; i < st.length() - 1; i++) {
+//					if (st.charAt(i) == st.charAt(i + 1)) {
+//						result1++;
+//					}
+//				}
+//			}
+//		}
+//
+//		if (result1 == n) {
+//			stri = st;
+//			return true;
+//		}
+//		return false;
+//	}
+//}
+
 //mexute varianti 4 amocana3
 //	public void run() {
 //		int n = readInt("Enter: ");
