@@ -32,6 +32,7 @@ public class BlankClass extends GraphicsProgram {
 	private int click=0;
 	private GObject obj;
 	private boolean t=true;
+	private int counter;
 	public void run() {
 		addMouseListeners();
 		for (int i = 0; i < CIRCLE_NUM; i++) {
@@ -42,8 +43,9 @@ public class BlankClass extends GraphicsProgram {
 			oval.setColor(rgen.nextColor());
 			add(oval);
 		}
-		int counter=CIRCLE_NUM;
+		counter=CIRCLE_NUM;
 		while(true) {
+			if(counter==0)break;
 			pause(DELAY);
 			counter++;
 			int x=rgen.nextInt(0,getWidth()-CIRCLE_D);
@@ -64,6 +66,7 @@ public class BlankClass extends GraphicsProgram {
 			click=0;
 		}
 		if(click==3) {
+			counter--;
 			remove(getElementAt(e.getX(),e.getY()));
 		}
 		
