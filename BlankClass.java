@@ -35,7 +35,6 @@ public class BlankClass extends GraphicsProgram {
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private int click = 0;
 //	private GObject obj;
-//	private boolean t = true;
 //	private int counter;
 //
 //	public void run() {
@@ -66,7 +65,6 @@ public class BlankClass extends GraphicsProgram {
 //	public void mouseClicked(MouseEvent e) {
 //		if (click==0) {
 //			obj = (GOval) getElementAt(e.getX(), e.getY());
-//			t = false;
 //		}
 //		if (getElementAt(e.getX(), e.getY()) != null && getElementAt(e.getX(), e.getY()) == obj) {
 //			click++;
