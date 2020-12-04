@@ -24,62 +24,66 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
-	private final static int CIRCLE_D = 40;
-	private final static int CIRCLE_NUM = 50;
-	private final static int DELAY = 2000;
-	private GOval oval = null;
-	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private int click = 0;
-	private GObject obj;
-	private boolean t = true;
-	private int counter;
-
-	public void run() {
-		addMouseListeners();
-		for (int i = 0; i < CIRCLE_NUM; i++) {
-			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		}
-		counter = CIRCLE_NUM;
-		while (true) {
-			if (counter == 0)
-				break;
-			pause(DELAY);
-			counter++;
-			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		}
-	}
-
-	public void mouseClicked(MouseEvent e) {
-		if (click==0) {
-			obj = (GOval) getElementAt(e.getX(), e.getY());
-			t = false;
-		}
-		if (getElementAt(e.getX(), e.getY()) != null && getElementAt(e.getX(), e.getY()) == obj) {
-			click++;
-		}
-		if (getElementAt(e.getX(), e.getY()) == null || getElementAt(e.getX(), e.getY()) != obj) {
-			click = 0;
-		}
-		if (click == 1) {
-			counter--;
-			remove(getElementAt(e.getX(), e.getY()));
-			click = 0;
-		}
-
-		obj = (GOval) getElementAt(e.getX(), e.getY());
-	}
 
 }
+//mexute varianti 4 amocana 5
+
+//	private final static int CIRCLE_D = 40;
+//	private final static int CIRCLE_NUM = 50;
+//	private final static int DELAY = 2000;
+//	private GOval oval = null;
+//	private RandomGenerator rgen = RandomGenerator.getInstance();
+//	private int click = 0;
+//	private GObject obj;
+//	private boolean t = true;
+//	private int counter;
+//
+//	public void run() {
+//		addMouseListeners();
+//		for (int i = 0; i < CIRCLE_NUM; i++) {
+//			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+//			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+//			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+//			oval.setFilled(true);
+//			oval.setColor(rgen.nextColor());
+//			add(oval);
+//		}
+//		counter = CIRCLE_NUM;
+//		while (true) {
+//			if (counter == 0)
+//				break;
+//			pause(DELAY);
+//			counter++;
+//			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+//			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+//			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+//			oval.setFilled(true);
+//			oval.setColor(rgen.nextColor());
+//			add(oval);
+//		}
+//	}
+//
+//	public void mouseClicked(MouseEvent e) {
+//		if (click==0) {
+//			obj = (GOval) getElementAt(e.getX(), e.getY());
+//			t = false;
+//		}
+//		if (getElementAt(e.getX(), e.getY()) != null && getElementAt(e.getX(), e.getY()) == obj) {
+//			click++;
+//		}
+//		if (getElementAt(e.getX(), e.getY()) == null || getElementAt(e.getX(), e.getY()) != obj) {
+//			click = 0;
+//		}
+//		if (click == 3) {
+//			counter--;
+//			remove(getElementAt(e.getX(), e.getY()));
+//			click = 0;
+//		}
+//
+//		obj = (GOval) getElementAt(e.getX(), e.getY());
+//	}
+//
+//}
 
 //mexute varianti 4 amocana4 (almost done)
 //	private String stri = "";
