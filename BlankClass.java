@@ -68,6 +68,7 @@ public class BlankClass extends GraphicsProgram {
 		if(click==3) {
 			counter--;
 			remove(getElementAt(e.getX(),e.getY()));
+			click=0;
 		}
 		
 		 obj=(GOval) getElementAt(e.getX(),e.getY());
