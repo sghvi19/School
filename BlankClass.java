@@ -65,7 +65,7 @@ public class BlankClass extends GraphicsProgram {
 		}else {
 			click=0;
 		}
-		if(click==3) {
+		if(click==2) {
 			counter--;
 			remove(getElementAt(e.getX(),e.getY()));
 			click=0;
