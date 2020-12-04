@@ -54,6 +54,7 @@ public class BlankClass extends GraphicsProgram {
 			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
 			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
 			oval.setFilled(true);
+			oval.setColor(rgen.nextColor());
 			add(oval);
 		}
 	}
@@ -69,7 +70,7 @@ public class BlankClass extends GraphicsProgram {
 		if (getElementAt(e.getX(), e.getY()) == null || getElementAt(e.getX(), e.getY()) != obj) {
 			click = 0;
 		}
-		if (click == 3) {
+		if (click == 1) {
 			counter--;
 			remove(getElementAt(e.getX(), e.getY()));
 			click = 0;
