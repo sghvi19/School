@@ -24,7 +24,9 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
-
+	public void run() {
+		String[] str=new String[3];
+	}
 }
 //mexute varianti 4 amocana 5
 
