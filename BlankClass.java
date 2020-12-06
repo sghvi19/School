@@ -49,8 +49,8 @@ public class BlankClass extends ConsoleProgram {
 		}
 
 		char[][] ch = new char[number-1][number];
-		for (int r = 0; r < i; r++) {
-			for (int c = 0; c < i + 1; c++) {
+		for (int r = 0; r <number-1 ; r++) {
+			for (int c = 0; c < number; c++) {
 				if (result.length() != 1) {
 					
 					ch[r][c] = result.charAt(0);
@@ -64,7 +64,9 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
-	println(ch[1][1]);
+		
+	println(ch[2][3]);
+		
 		for (int c = 0; c < i + 1; c++) {
 			for (int r = 0; r < i; r++) {
 				if (r != i - 1) {
