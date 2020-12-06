@@ -64,18 +64,25 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
+		
+		for (int r = 0; r < number - 1; r++) {
+			for (int c = 0; c < number; c++) {
+				println(ch[r][c]);
+			}
+		}
+		
 
 		for (int c = 0; c < number; c++) {
 			for (int r = 0; r < number - 1; r++) {
 				if (r != number-2&& ch[c][r]!='0') {
 					result += ch[c][r];
-					println(result);
+					//println(result);
 
 				}
 				if (r == number-2 && ch[c][r]!='0') {
 					result += ch[c][r];
 					result += " ";
-					println(result);
+					//println(result);
 				}
 			}
 		}
