@@ -51,17 +51,18 @@ public class BlankClass extends ConsoleProgram {
 		char[][] ch = new char[number - 1][number];
 		for (int r = 0; r < number - 1; r++) {
 			for (int c = 0; c < number; c++) {
+				if (result.length() == 1) {
+					ch[r][c] = result.charAt(0);
+					result = "0";
+
+				}
 				if (result.length() != 1) {
 
 					ch[r][c] = result.charAt(0);
 					result = result.substring(1);
 
 				}
-				if (result.length() == 1) {
-					ch[r][c] = result.charAt(0);
-					result = "0";
-
-				}
+				
 			}
 		}
 		
