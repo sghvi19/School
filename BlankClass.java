@@ -25,7 +25,51 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
 	public void run() {
-		String[] str=new String[3];
+		String s=readLine("Enter");
+		String res=encrypte(s);
+		println(res);
+	}
+	
+	
+	private String encrypte(String s) {
+		String result="";
+        StringTokenizer st = new StringTokenizer(s);
+   while (st.hasMoreTokens()) {
+       result+=st.nextToken();
+   }
+  int length=result.length();
+  double sqrt=Math.sqrt(length);
+  int i;
+  for( i=1; i<sqrt+2; i++){
+      if(i>=sqrt){
+          break;
+      } 
+  }
+      char[][] ch=new char[i][i+1];
+      for(int r=0; r<i; r++){
+          for(int c=0; c<i+1; c++){
+              if(result.length()!=1){
+              ch[r][c]=result.charAt(0);
+              result=result.substring(1);
+          }
+          if(result.length()==1){
+               ch[r][c]=result.charAt(0);
+               result="";
+          }
+          }
+      }
+       for(int c=0; c<i+1; c++){
+          for(int r=0; r<i; r++){
+              if(r!=i-1){
+              result+=ch[c][r];
+              }
+              if(r==i-1){
+                  result+=ch[c][r];
+                  result+=" ";
+              }
+          }
+       }
+       return result;
 	}
 }
 //mexute varianti 4 amocana 5
