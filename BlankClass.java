@@ -54,21 +54,21 @@ public class BlankClass extends ConsoleProgram {
 					
 					ch[r][c] = result.charAt(0);
 					result = result.substring(1);
-					println(ch[r][c]);
+				
 				}
 				if (result.length() == 1) {
 					ch[r][c] = result.charAt(0);
 					result = "0";
-					println(ch[r][c]);
+					
 				}
 			}
 		}
-		
+		println(ch[i][i+1]);
 		for (int c = 0; c < i + 1; c++) {
 			for (int r = 0; r < i; r++) {
 				if (r != i - 1) {
 					result += ch[c][r];
-					//println(result);
+					
 				}
 				if (r == i - 1) {
 					result += ch[c][r];
