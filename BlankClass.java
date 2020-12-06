@@ -63,7 +63,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
-	println(ch[1][1]);
+	println(ch[5][5]);
 		for (int c = 0; c < i + 1; c++) {
 			for (int r = 0; r < i; r++) {
 				if (r != i - 1) {
