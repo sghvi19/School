@@ -76,7 +76,7 @@ public class BlankClass extends ConsoleProgram {
 					 
 
 				}
-				if (r == number - 2) {
+				if (r == number - 2 && c!=number-1) {
 					result += " ";
 					 println(result);
 				}
