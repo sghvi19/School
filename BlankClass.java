@@ -39,41 +39,39 @@ public class BlankClass extends ConsoleProgram {
 
 		int length = result.length();
 		double sqrt = Math.sqrt(length);
-		int number=0;
+		int number = 0;
 		int i;
 		for (i = 1; i < sqrt + 2; i++) {
 			if (i >= sqrt) {
-				number=i;
+				number = i;
 				break;
 			}
 		}
 
-		char[][] ch = new char[number-1][number];
-		for (int r = 0; r <number-1 ; r++) {
+		char[][] ch = new char[number - 1][number];
+		for (int r = 0; r < number - 1; r++) {
 			for (int c = 0; c < number; c++) {
 				if (result.length() != 1) {
-					
+
 					ch[r][c] = result.charAt(0);
 					result = result.substring(1);
-				
+
 				}
 				if (result.length() == 1) {
 					ch[r][c] = result.charAt(0);
 					result = "0";
-					
+
 				}
 			}
 		}
-		
-	println(ch[number-2][number-1]);
-		
-		for (int c = 0; c < i + 1; c++) {
-			for (int r = 0; r < i; r++) {
-				if (r != i - 1) {
+
+		for (int c = 0; c < number; c++) {
+			for (int r = 0; r < number - 1; r++) {
+				if (r != number-2) {
 					result += ch[c][r];
-					
+
 				}
-				if (r == i - 1) {
+				if (r == number-2) {
 					result += ch[c][r];
 					result += " ";
 				}
