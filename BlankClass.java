@@ -77,7 +77,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
-		
+		result=result.substring(1);
 		return result;
 	}
 }
