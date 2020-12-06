@@ -70,17 +70,16 @@ public class BlankClass extends ConsoleProgram {
 			for (int r = 0; r < number - 1; r++) {
 				if (r != number - 2 && ch[c][r] != '0') {
 					result += ch[r][c];
-					// println(result);
+					 println(result);
 
 				}
 				if (r == number - 2 && ch[c][r] != '0') {
 					result += ch[r][c];
 					result += " ";
-					// println(result);
+					 println(result);
 				}
 			}
 		}
-		println(result);
 		return result;
 	}
 }
