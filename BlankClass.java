@@ -69,6 +69,7 @@ public class BlankClass extends ConsoleProgram {
 			for (int r = 0; r < number - 1; r++) {
 				if (r != number-2) {
 					result += ch[c][r];
+					println(result);
 
 				}
 				if (r == number-2) {
