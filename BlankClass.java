@@ -68,7 +68,7 @@ public class BlankClass extends ConsoleProgram {
 
 		for (int c = 0; c < number; c++) {
 			for (int r = 0; r < number - 1; r++) {
-				println(ch[c][r]);
+				println(ch[r][c]);
 			}
 		}
 
