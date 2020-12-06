@@ -47,7 +47,7 @@ public class BlankClass extends ConsoleProgram {
           break;
       } 
   }
-  println(i);
+ 
       char[][] ch=new char[i][i+1];
       for(int r=0; r<i; r++){
           for(int c=0; c<i+1; c++){
@@ -61,6 +61,7 @@ public class BlankClass extends ConsoleProgram {
           }
           }
       }
+      println(ch);
        for(int c=0; c<i+1; c++){
           for(int r=0; r<i; r++){
               if(r!=i-1){
