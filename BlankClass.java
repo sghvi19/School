@@ -37,9 +37,10 @@ public class BlankClass extends ConsoleProgram {
    while (st.hasMoreTokens()) {
        result+=st.nextToken();
    }
-   println(result);
+   
   int length=result.length();
   double sqrt=Math.sqrt(length);
+  println(sqrt);
   int i;
   for( i=1; i<sqrt+2; i++){
       if(i>=sqrt){
