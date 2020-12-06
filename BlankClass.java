@@ -66,7 +66,7 @@ public class BlankClass extends ConsoleProgram {
 
 			}
 		}
-		println(ch[0][0]);
+
 		for (int c = 0; c < number; c++) {
 			for (int r = 0; r < number - 1; r++) {
 				if (r != number - 2 && ch[c][r] != '0') {
@@ -77,7 +77,7 @@ public class BlankClass extends ConsoleProgram {
 				if (r == number - 2 && ch[c][r] != '0') {
 					result += ch[r][c];
 					result += " ";
-					 println(result);
+					// println(result);
 				}
 			}
 		}
