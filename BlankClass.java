@@ -23,7 +23,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String s=readLine("Enter");
 		String res=encrypte(s);
