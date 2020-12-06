@@ -25,7 +25,7 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		if('0'!='s') {
+		if('0'!='0') {
 			println("y");
 		}
 		String s = readLine("Enter");
