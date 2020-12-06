@@ -51,6 +51,7 @@ public class BlankClass extends ConsoleProgram {
 		for (int r = 0; r < i; r++) {
 			for (int c = 0; c < i + 1; c++) {
 				if (result.length() != 1) {
+					println(result);
 					ch[r][c] = result.charAt(0);
 					result = result.substring(1);
 				}
@@ -65,7 +66,7 @@ public class BlankClass extends ConsoleProgram {
 			for (int r = 0; r < i; r++) {
 				if (r != i - 1) {
 					result += ch[c][r];
-					println(result);
+					//println(result);
 				}
 				if (r == i - 1) {
 					result += ch[c][r];
