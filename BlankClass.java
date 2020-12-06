@@ -68,19 +68,13 @@ public class BlankClass extends ConsoleProgram {
 
 		for (int c = 0; c < number; c++) {
 			for (int r = 0; r < number - 1; r++) {
-				println(ch[r][c]);
-			}
-		}
-
-		for (int c = 0; c < number; c++) {
-			for (int r = 0; r < number - 1; r++) {
 				if (r != number - 2 && ch[c][r] != '0') {
-					result += ch[c][r];
+					result += ch[r][c];
 					// println(result);
 
 				}
 				if (r == number - 2 && ch[c][r] != '0') {
-					result += ch[c][r];
+					result += ch[r][c];
 					result += " ";
 					// println(result);
 				}
