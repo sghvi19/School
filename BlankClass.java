@@ -40,13 +40,14 @@ public class BlankClass extends ConsoleProgram {
    
   int length=result.length();
   double sqrt=Math.sqrt(length);
-  println(sqrt);
+
   int i;
   for( i=1; i<sqrt+2; i++){
       if(i>=sqrt){
           break;
       } 
   }
+  println(i);
       char[][] ch=new char[i][i+1];
       for(int r=0; r<i; r++){
           for(int c=0; c<i+1; c++){
