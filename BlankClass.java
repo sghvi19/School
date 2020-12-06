@@ -72,6 +72,7 @@ public class BlankClass extends ConsoleProgram {
 				if (r != number - 2 && ch[c][r] != '0') {
 					result += ch[r][c];
 					 println(result);
+					 break;
 
 				}
 				if (r == number - 2 && ch[c][r] != '0') {
