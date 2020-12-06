@@ -25,6 +25,9 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
+		if('0'!='s') {
+			println("y");
+		}
 		String s = readLine("Enter");
 		String res = encrypte(s);
 		println(res);
