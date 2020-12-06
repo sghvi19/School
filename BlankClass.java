@@ -58,7 +58,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 				if (result.length() == 1) {
 					ch[r][c] = result.charAt(0);
-					result = "";
+					result = "0";
 					println(ch[r][c]);
 				}
 			}
