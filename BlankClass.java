@@ -80,6 +80,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
+		println(result);
 		return result;
 	}
 }
