@@ -37,6 +37,7 @@ public class BlankClass extends ConsoleProgram {
 				}
 			}
 		}
+		println(s);
 	}
 
 	private boolean doubledElements(String s) {
