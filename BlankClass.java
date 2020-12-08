@@ -29,7 +29,7 @@ public class BlankClass extends ConsoleProgram {
 		for (int i = 0; i < s.length() - 1; i++) {
 			String bla = s.substring(i + 1);
 			if (bla.indexOf(s.charAt(i)) != -1) {
-				println("a");
+				println(bla);
 				s = s.substring(0, i + 1) + s.substring(bla.indexOf(s.charAt(i))+1);
 			}
 		}
