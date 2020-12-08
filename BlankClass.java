@@ -29,14 +29,24 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		try {
-			BufferedReader buf = new BufferedReader(new FileReader("BlankClass.java"));
-			while (buf.readLine() != null) {
-				println(buf.readLine());
-			}
-		} catch (IOException ex) {
-			throw new ErrorException(ex);
-		}
+		
+		int n=readInt("N=");
+		int[] arr=new int[n];
+		 for(int i=0; i<n; i++) {
+			arr[i]=readInt("enter"); 
+		 }
+		 for (int i = 0; i < n-1; i++) 
+	            for (int j = 0; j < n-i-1; j++) 
+	                if (arr[j] > arr[j+1]) 
+	                { 
+	                    // swap arr[j+1] and arr[j] 
+	                    int temp = arr[j]; 
+	                    arr[j] = arr[j+1]; 
+	                    arr[j+1] = temp; 
+	                } 
+		 for(int i:arr) {
+			 println(i);
+		 }
 	}
 }
 //mexute varianti 4 amocana 5
