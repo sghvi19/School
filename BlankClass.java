@@ -30,18 +30,16 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 	public void run() {
 		try {
-		BufferedReader buf=new BufferedReader(new FileReader("BlankClass.java"));
-		while(buf.readLine()!=null) {
-			println(buf.readLine());
-		}
-		}catch(IOException ex){
+			BufferedReader buf = new BufferedReader(new FileReader("BlankClass.java"));
+			while (buf.readLine() != null) {
+				println(buf.readLine());
+			}
+		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
 	}
-
 }
 //mexute varianti 4 amocana 5
-
 //	private final static int CIRCLE_D = 40;
 //	private final static int CIRCLE_NUM = 50;
 //	private final static int DELAY = 2000;
@@ -96,7 +94,6 @@ public class BlankClass extends ConsoleProgram {
 //	}
 //
 //}
-
 //mexute varianti 4 amocana4 (almost done)
 //	private String stri = "";
 //
@@ -139,7 +136,6 @@ public class BlankClass extends ConsoleProgram {
 //		return false;
 //	}
 //}
-
 //mexute varianti 4 amocana3
 //	public void run() {
 //		int n = readInt("Enter: ");
@@ -258,9 +254,7 @@ public class BlankClass extends ConsoleProgram {
 //	}
 //
 //}
-
 // meotxe varianti 3 amocana 3
-
 //	public void run() {
 //		int m=readInt("Enter number: ");
 //		int n=readInt("Enter number: ");
@@ -350,7 +344,6 @@ public class BlankClass extends ConsoleProgram {
 //	}
 //}
 //	
-
 // mesame varianti2 amocana 4
 //	public void run() {
 //	
