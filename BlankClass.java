@@ -28,13 +28,14 @@ public class BlankClass extends ConsoleProgram {
 		String s = readLine();
 		for (int i = 0; i < s.length() - 1; i++) {
 			String bla = s.substring(i + 1);
-			println(bla);
+			
 			if (bla.indexOf(s.charAt(i)) != -1) {
 				
 				s = s.substring(0, i + 1) + s.substring(bla.indexOf(s.charAt(i))+1);
+				println(s);
 			}
 		}
-		println(s);
+		//println(s);
 	}
 }
 //mexute varianti 4 amocana 5
