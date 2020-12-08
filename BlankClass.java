@@ -212,7 +212,6 @@ public class BlankClass extends ConsoleProgram {
 //	}
 //
 //}
-
 // meotxe varianti 3 amocana 4
 //	public void run() {
 //		String str = readLine("Enter text: ");
@@ -280,7 +279,6 @@ public class BlankClass extends ConsoleProgram {
 //		println("fibonacci");
 //	}
 //}
-
 // mesame varianti 2 amocana 5
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private final static int CIRCLE_D = 40;
@@ -525,7 +523,6 @@ public class BlankClass extends ConsoleProgram {
 //		if(prime==2) return true;
 //		return false;
 //	}
-
 // 1 variant1 amocana 1
 //	private GRect rect;
 //	private int number = 0;
@@ -579,7 +576,6 @@ public class BlankClass extends ConsoleProgram {
 //}
 //
 //}
-
 // circle in center changing size;
 //	private GOval oval;
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
