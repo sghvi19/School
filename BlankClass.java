@@ -29,26 +29,29 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		
-		int n=readInt("N=");
-		int[] arr=new int[n];
-		 for(int i=0; i<n; i++) {
-			arr[i]=readInt("enter"); 
-		 }
-		 for (int i = 0; i < n-1; i++) 
-	            for (int j = 0; j < n-i-1; j++) 
-	                if (arr[j] > arr[j+1]) 
-	                { 
-	                    // swap arr[j+1] and arr[j] 
-	                    int temp = arr[j]; 
-	                    arr[j] = arr[j+1]; 
-	                    arr[j+1] = temp; 
-	                } 
-		 for(int i:arr) {
-			 println(i);
-		 }
+
+		String s1 = readLine("Enter: ");
+		String s2 = readLine("Enter: ");
+		int[] arr1 = new int[26];
+		int[] arr2 = new int[26];
+		if (arr1.length != arr2.length) {
+			println(false);
+		}
+		for (int i = 0; i < s1.length(); i++) {
+			arr1[s1.charAt(i) - 'a' + 1]++;
+		}
+		for (int i = 0; i < s1.length(); i++) {
+			arr2[s2.charAt(i) - 'a' + 1]++;
+		}
+		for (int i = 0; i < s1.length(); i++) {
+			if (arr1[i] != arr2[i]) {
+				println("not anagram");
+			}
+		}
+		println("anagram");
 	}
 }
+
 //mexute varianti 4 amocana 5
 //	private final static int CIRCLE_D = 40;
 //	private final static int CIRCLE_NUM = 50;
