@@ -9,6 +9,9 @@
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -18,6 +21,7 @@ import acm.graphics.GObject;
 import acm.graphics.GOval;
 import acm.graphics.GRect;
 import acm.program.*;
+import acm.util.ErrorException;
 import acm.util.RandomGenerator;
 
 import acm.graphics.*;
@@ -25,30 +29,14 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		String s = readLine();
-
-		while (doubledElements(s)) {
-			for (int i = 0; i < s.length() - 1; i++) {
-				for (int j = i + 1; j < s.length(); j++) {
-					if(s.charAt(i)==s.charAt(j)) {
-						s=s.substring(0,j)+s.substring(j+1);
-						break;
-					}
-				}
-			}
+		try {
+		BufferedReader buf=new BufferedReader(new FileReader("BlankClass.java"));
+		while(buf.readLine()!=null) {
+			println(buf.readLine());
 		}
-		println(s);
-	}
-
-	private boolean doubledElements(String s) {
-		for (int i = 0; i < s.length() - 1; i++) {
-			for (int j = i + 1; j < s.length(); j++) {
-				if(s.charAt(i)==s.charAt(j)) {
-					return true;
-				}
-			}
+		}catch(IOException ex){
+			throw new ErrorException(ex);
 		}
-		return false;
 	}
 
 }
