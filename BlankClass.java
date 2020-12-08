@@ -41,7 +41,7 @@ public class BlankClass extends ConsoleProgram {
 		for (int i = 0; i < s2.length(); i++) {
 			arr2[s2.charAt(i) - 'a' + 1]++;
 		}
-		for (int i = 0; i < s1.length(); i++) {
+		for (int i = 0; i < 26; i++) {
 			if (arr1[i] != arr2[i]) {
 				println("not anagram");
 			}
