@@ -25,60 +25,15 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-
-		String s = readLine("Enter");
-		String res = encrypte(s);
-		println(res);
-	}
-
-	private String encrypte(String s) {
-		String result = "";
-		StringTokenizer st = new StringTokenizer(s);
-		while (st.hasMoreTokens()) {
-			result += st.nextToken();
-		}
-
-		int length = result.length();
-		double sqrt = Math.sqrt(length);
-		int number = 0;
-		int i;
-		for (i = 1; i < sqrt + 2; i++) {
-			if (i >= sqrt) {
-				number = i;
-				break;
-			}
-		}
-
-		char[][] ch = new char[number - 1][number];
-		for (int r = 0; r < number - 1; r++) {
-			for (int c = 0; c < number; c++) {
-				if (result.length() == 1) {
-					ch[r][c] = result.charAt(0);
-					result = "0";
-
-				}
-				if (result.length() != 1) {
-
-					ch[r][c] = result.charAt(0);
-					result = result.substring(1);
-
-				}
-
-			}
-		}
-
-		for (int c = 0; c < number; c++) {
-			for (int r = 0; r < number - 1; r++) {
-				if (ch[r][c] != '0') {
-					result += ch[r][c];
-				}
-				if (r == number - 2) {
-					result += " ";
+		String s = readLine();
+		for (int i = 0; i < s.length()-1; i++) {
+			for (int j = i+1; j < s.length(); j++) {
+				if(s.substring(i+1).indexOf(s.charAt(i))!=-1) {
+					s=s.substring(0,i+1)+s.substring(s.substring(i+1).indexOf(s.charAt(i)));	
 				}
 			}
 		}
-		result=result.substring(1);
-		return result;
+		println(s);
 	}
 }
 //mexute varianti 4 amocana 5
