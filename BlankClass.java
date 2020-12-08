@@ -34,9 +34,7 @@ public class BlankClass extends ConsoleProgram {
 		String s2 = readLine("Enter: ");
 		int[] arr1 = new int[26];
 		int[] arr2 = new int[26];
-		if (arr1.length != arr2.length) {
-			println(false);
-		}
+	
 		for (int i = 0; i < s1.length(); i++) {
 			arr1[s1.charAt(i) - 'a' + 1]++;
 		}
