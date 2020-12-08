@@ -26,17 +26,30 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram {
 	public void run() {
 		String s = readLine();
-		for (int i = 0; i < s.length() - 1; i++) {
-			String bla = s.substring(i + 1);
-			
-			if (bla.indexOf(s.charAt(i)) != -1) {
-				
-				s = s.substring(0, i + 1) + s.substring(bla.indexOf(s.charAt(i))+1);
-				println(s);
+
+		while (doubledElements(s)) {
+			for (int i = 0; i < s.length() - 1; i++) {
+				for (int j = i + 1; j < s.length(); j++) {
+					if(s.charAt(i)==s.charAt(j)) {
+						s=s.substring(0,j)+s.substring(j+1);
+						break;
+					}
+				}
 			}
 		}
-		//println(s);
 	}
+
+	private boolean doubledElements(String s) {
+		for (int i = 0; i < s.length() - 1; i++) {
+			for (int j = i + 1; j < s.length(); j++) {
+				if(s.charAt(i)==s.charAt(j)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 }
 //mexute varianti 4 amocana 5
 
