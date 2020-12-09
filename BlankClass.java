@@ -37,7 +37,7 @@ public class BlankClass extends ConsoleProgram {
 			if(map.containsKey(str)) {
 				map.put(str,map.get(str)+1);
 			}else {
-				map.put(str,  0);
+				map.put(str,  1);
 			}
 		}
 		println(map.toString());
