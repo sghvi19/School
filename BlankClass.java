@@ -35,10 +35,12 @@ public class BlankClass extends ConsoleProgram {
 			String str=readLine("Enter: ");
 			if(str.equals("")) break;
 			if(map.containsKey(str)) {
-				println(map.get(str));
-				
+				map.put(str,map.get(str)+1);
+			}else {
+				map.put(str,  0);
 			}
 		}
+		println(map.toString());
 		
 	}
 }
