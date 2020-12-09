@@ -29,10 +29,16 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		String str= "56+57*8";
-		StringTokenizer tok=new StringTokenizer(str,"+*");
-		while(tok.hasMoreTokens()) {
-			println(tok.nextToken());
+		int n;
+		ArrayList<Integer> list= new ArrayList<Integer>();
+		while(true){
+			n=readInt("Enter");
+			if(n==-1)break;
+			list.add(0, n);
+		}
+		
+		for(int i: list) {
+			println(i);
 		}
 	}
 }
