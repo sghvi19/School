@@ -29,16 +29,20 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		int n;
-		ArrayList<Integer> list= new ArrayList<Integer>();
-		while(true){
-			n=readInt("Enter");
-			if(n==-1)break;
-			list.add(0, n);
+		int n = readInt("Enter n: ");
+		int m = readInt("Enter n: ");
+
+		int[] arr = new int[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = readInt("Fill array: ");
 		}
-		
-		for(int i: list) {
-			println(i);
+
+		for (int i = 0; i < n-1; i++) {
+			for (int j = i+1; j < n; j++) {
+				if(arr[i]+arr[j]==m) {
+					println(arr[i]+"+"+arr[j]+"="+m);
+				}
+			}
 		}
 	}
 }
