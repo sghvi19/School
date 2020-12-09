@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 import acm.graphics.GLabel;
@@ -29,21 +30,16 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		int n = readInt("Enter n: ");
-		int m = readInt("Enter n: ");
-
-		int[] arr = new int[n];
-		for (int i = 0; i < n; i++) {
-			arr[i] = readInt("Fill array: ");
-		}
-
-		for (int i = 0; i < n-1; i++) {
-			for (int j = i+1; j < n; j++) {
-				if(arr[i]+arr[j]==m) {
-					println(arr[i]+"+"+arr[j]+"="+m);
-				}
+		HashMap<String,Integer> map=new HashMap<String,Integer>();
+		while(true) {
+			String str=readLine("Enter: ");
+			if(str.equals("")) break;
+			if(map.containsKey(str)) {
+				println(map.get(str));
+				
 			}
 		}
+		
 	}
 }
 
