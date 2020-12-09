@@ -29,24 +29,77 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
+		int[][] matrix = { { 0, 1, 0, 1 }, { 1, 1, 1, 1 }, { 1, 1, 1, 0 } };
+		println("The maximum area is: " + maxRectangleSizeIn(matrix));
+	}
 
-		String s1 = readLine("Enter: ");
-		String s2 = readLine("Enter: ");
-		int[] arr1 = new int[26];
-		int[] arr2 = new int[26];
-	
-		for (int i = 0; i < s1.length(); i++) {
-			arr1[s1.charAt(i) - 'a' + 1]++;
-		}
-		for (int i = 0; i < s2.length(); i++) {
-			arr2[s2.charAt(i) - 'a' + 1]++;
-		}
-		for (int i = 0; i < 26; i++) {
-			if (arr1[i] != arr2[i]) {
-				println("not anagram");
+	/**
+	 * Returns area of the largest rectangle with all 1s in the matrix
+	 */
+	public int maxRectangleSizeIn(int matrix[][]) {
+		int rows = matrix.length;
+		int cols = matrix[0].length;
+
+		// Calculate area for first row and initialize it as result
+		int result = largestRectangleArea(matrix[0]);
+
+		// Iterate over rows to find maximum rectangular area considering each row as
+		// histogram
+		for (int i = 1; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+
+				// increment from the top if matrix[i][j] is 1
+				if (matrix[i][j] == 1) {
+					matrix[i][j] += matrix[i - 1][j];
+				}
 			}
+
+			result = Math.max(result, largestRectangleArea(matrix[i]));
 		}
-		println("anagram");
+
+		return result;
+	}
+
+	public int largestRectangleArea(int[] histogram) {
+		if (histogram.length == 0) {
+			return 0;
+		}
+		int maxArea = 0;
+
+		// Each time assume the given histogram is the smallest one
+		for (int i = 0; i < histogram.length; i++) {
+			// Find the left limit index for current block
+			int leftLimitIdx = findLeftLimitIn(histogram, i);
+
+			// Find the right limit index for current block
+			int rightLimitIdx = findRightLimitIn(histogram, i);
+
+			int currentHeight = histogram[i];
+			int numberOfBars = rightLimitIdx - leftLimitIdx - 1;
+
+			int currentArea = numberOfBars * currentHeight;
+			maxArea = Integer.max(maxArea, currentArea);
+		}
+
+		return maxArea;
+	}
+
+	private int findLeftLimitIn(int[] heights, int idx) {
+		int i = idx - 1;
+		while (i >= 0 && heights[i] >= heights[idx]) {
+			i--;
+		}
+
+		return i;
+	}
+
+	private int findRightLimitIn(int[] heights, int idx) {
+		int i = idx + 1;
+		while (i < heights.length && heights[i] >= heights[idx]) {
+			i++;
+		}
+
+		return i;
 	}
 }
 
