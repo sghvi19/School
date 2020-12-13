@@ -29,20 +29,74 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
+	
+	
 	public void run() {
-		HashMap<String,Integer> map=new HashMap<String,Integer>();
-		while(true) {
-			String str=readLine("Enter: ");
-			if(str.equals("")) break;
-			if(map.containsKey(str)) {
-				map.put(str,map.get(str)+1);
-			}else {
-				map.put(str,  1);
+		maxFriends();
+	}
+	private void maxFriends() {
+		HashMap<String, ArrayList<String>> friendshipMap = new HashMap<>();
+
+		readData(friendshipMap, true);
+
+		if (friendshipMap.size() == 0) {
+			println("No data");
+			return;
+		}
+		String maxPerson = getPersonWithMaxFriends(friendshipMap);
+
+		println("The person who has the most number of friends is: " + maxPerson + " with "
+				+ friendshipMap.get(maxPerson).size() + " friends");
+	}
+
+	private String getPersonWithMaxFriends(HashMap<String, ArrayList<String>> friendshipMap) {
+		int maxFrindsNumber = Integer.MIN_VALUE;
+		String maxPerson = "";
+
+		for (String person : friendshipMap.keySet()) {
+
+			ArrayList<String> friends = friendshipMap.get(person);
+
+			int friendsNumber = friends.size();
+
+			if (friendsNumber >= maxFrindsNumber) {
+				maxFrindsNumber = friendsNumber;
+				maxPerson = person;
 			}
 		}
-		println(map.toString());
-		
+		return maxPerson;
 	}
+
+	private void readData(HashMap<String, ArrayList<String>> map, boolean friendship) {
+		while (true) {
+			String data = readLine("Please, enter friendship: ");
+
+			if (data.equals("")) {
+				break;
+			}
+
+			String[] splitData = data.split(" ");
+			String friend;
+			String person;
+
+			if (friendship == true) {
+				friend = splitData[0];
+				person = splitData[1];
+			} else {
+				friend = splitData[1];
+				person = splitData[0];
+			}
+
+			if (map.containsKey(person)) {
+				map.get(person).add(friend);
+			} else {
+				ArrayList<String> friends = new ArrayList<>();
+				friends.add(friend);
+				map.put(person, friends);
+			}
+		}
+	}
+
 }
 
 //mexute varianti 4 amocana 5
