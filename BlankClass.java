@@ -31,7 +31,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends Program {
+public class BlankClass extends GraphicsProgram {
 	private JTextField field;
 	private GCanvas canvas;
 
@@ -46,7 +46,7 @@ public class BlankClass extends Program {
 	public void actionPerformed(ActionEvent e) {
 
 		GImage image = new GImage(field.getText());
-		image.setSize(40,40);
+		image.setSize(40, 40);
 		canvas.add(image, 10, 10);
 
 	}
