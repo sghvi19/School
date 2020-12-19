@@ -33,7 +33,7 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends GraphicsProgram {
 
 	public void run() {
-		JTextField field=new JTextField();
+		JTextField field=new JTextField(10);
 		add(field,SOUTH);
 	}
 
