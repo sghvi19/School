@@ -29,12 +29,12 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	
-	
+
 	public void run() {
-		maxFriends();
+		noMutualFriends();
 	}
-	private void maxFriends() {
+
+	private void noMutualFriends() {
 		HashMap<String, ArrayList<String>> friendshipMap = new HashMap<>();
 
 		readData(friendshipMap, true);
@@ -43,10 +43,20 @@ public class BlankClass extends ConsoleProgram {
 			println("No data");
 			return;
 		}
-		String maxPerson = getPersonWithMaxFriends(friendshipMap);
-
-		println("The person who has the most number of friends is: " + maxPerson + " with "
-				+ friendshipMap.get(maxPerson).size() + " friends");
+	ArrayList<String> list=new ArrayList<String>();
+		for(String s1: friendshipMap.keySet()) {
+			for(String s2: friendshipMap.keySet()) {
+				if(!list.contains(s2+s1) && !list.contains(s2+s1)  ) {
+					if(check(s1,s2,friendshipMap)) {
+						list.add(s2+s1);
+					}
+				}
+			}
+		}
+		
+		for(String str:list) {
+			println(str);
+		}
 	}
 
 	private String getPersonWithMaxFriends(HashMap<String, ArrayList<String>> friendshipMap) {
@@ -67,6 +77,16 @@ public class BlankClass extends ConsoleProgram {
 		return maxPerson;
 	}
 
+	private boolean check(String s1, String s2, HashMap friendshipMap) {
+		ArrayList<String> list1=(ArrayList<String>) friendshipMap.get(s1);
+		ArrayList<String> list2=(ArrayList<String>) friendshipMap.get(s2);
+		for(String str:list1) {
+			if(list2.contains(str)) {
+				return false;
+			}
+		}
+		return true;
+	}
 	private void readData(HashMap<String, ArrayList<String>> map, boolean friendship) {
 		while (true) {
 			String data = readLine("Please, enter friendship: ");
