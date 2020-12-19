@@ -34,23 +34,22 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends Program {
 	private JTextField field;
 	private GCanvas canvas;
+
 	public void run() {
 		field = new JTextField(10);
 		add(field, SOUTH);
 		field.addActionListener(this);
-		canvas=new GCanvas();
-		add(canvas,CENTER);
+		canvas = new GCanvas();
+		add(canvas, CENTER);
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		int x=5;
-		int y=5;
-		try {
-		GImage image=new GImage(field.getText());
-		canvas.add(image,x,y);
-		}catch(ErrorException ex){
-			println("wtf");
-		}
+		int x = 5;
+		int y = 5;
+
+		GImage image = new GImage(field.getText());
+		canvas.add(image, x, y);
+
 	}
 
 }
