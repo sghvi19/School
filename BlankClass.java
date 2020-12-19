@@ -31,7 +31,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
 	private JTextField field;
 	private GCanvas canvas;
 	public void run() {
