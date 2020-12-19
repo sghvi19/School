@@ -30,7 +30,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends ConsoleProgram{
 
 	public void run() {
 		JTextField field=new JTextField(10);
