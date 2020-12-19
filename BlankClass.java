@@ -39,7 +39,7 @@ public class BlankClass extends Program {
 		add(field, SOUTH);
 		field.addActionListener(this);
 		canvas=new GCanvas();
-		add(canvas);
+		add(canvas,CENTER);
 	}
 
 	public void actionPerformed(ActionEvent e) {
