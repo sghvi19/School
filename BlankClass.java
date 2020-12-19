@@ -8,6 +8,7 @@
  */
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -30,11 +31,24 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram{
+public class BlankClass extends GraphicsProgram {
+	private JTextField field;
 
 	public void run() {
-		JTextField field=new JTextField(10);
-		add(field,SOUTH);
+		field = new JTextField(10);
+		add(field, SOUTH);
+		field.addActionListener(this);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		int x=5;
+		int y=5;
+		try {
+		GImage image=new GImage(field.getText());
+		add(image,x,y);
+		}catch(ErrorException ex){
+			println("wtf");
+		}
 	}
 
 }
