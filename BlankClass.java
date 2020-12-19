@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
+import javax.swing.JTextField;
+
 import acm.graphics.GLabel;
 import acm.graphics.GLine;
 import acm.graphics.GObject;
@@ -28,93 +30,11 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
 
 	public void run() {
-		noMutualFriends();
-	}
-
-	private void noMutualFriends() {
-		HashMap<String, ArrayList<String>> friendshipMap = new HashMap<>();
-
-		readData(friendshipMap, true);
-
-		if (friendshipMap.size() == 0) {
-			println("No data");
-			return;
-		}
-	ArrayList<String> list=new ArrayList<String>();
-		for(String s1: friendshipMap.keySet()) {
-			for(String s2: friendshipMap.keySet()) {
-				if(!list.contains(s2+s1) && !list.contains(s2+s1)  ) {
-					if(check(s1,s2,friendshipMap)) {
-						list.add(s2+s1);
-					}
-				}
-			}
-		}
-		
-		for(String str:list) {
-			println(str);
-		}
-	}
-
-	private String getPersonWithMaxFriends(HashMap<String, ArrayList<String>> friendshipMap) {
-		int maxFrindsNumber = Integer.MIN_VALUE;
-		String maxPerson = "";
-
-		for (String person : friendshipMap.keySet()) {
-
-			ArrayList<String> friends = friendshipMap.get(person);
-
-			int friendsNumber = friends.size();
-
-			if (friendsNumber >= maxFrindsNumber) {
-				maxFrindsNumber = friendsNumber;
-				maxPerson = person;
-			}
-		}
-		return maxPerson;
-	}
-
-	private boolean check(String s1, String s2, HashMap friendshipMap) {
-		ArrayList<String> list1=(ArrayList<String>) friendshipMap.get(s1);
-		ArrayList<String> list2=(ArrayList<String>) friendshipMap.get(s2);
-		for(String str:list1) {
-			if(list2.contains(str)) {
-				return false;
-			}
-		}
-		return true;
-	}
-	private void readData(HashMap<String, ArrayList<String>> map, boolean friendship) {
-		while (true) {
-			String data = readLine("Please, enter friendship: ");
-
-			if (data.equals("")) {
-				break;
-			}
-
-			String[] splitData = data.split(" ");
-			String friend;
-			String person;
-
-			if (friendship == true) {
-				friend = splitData[0];
-				person = splitData[1];
-			} else {
-				friend = splitData[1];
-				person = splitData[0];
-			}
-
-			if (map.containsKey(person)) {
-				map.get(person).add(friend);
-			} else {
-				ArrayList<String> friends = new ArrayList<>();
-				friends.add(friend);
-				map.put(person, friends);
-			}
-		}
+		JTextField field=new JTextField();
+		add(field,SOUTH);
 	}
 
 }
