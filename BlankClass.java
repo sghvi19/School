@@ -44,11 +44,10 @@ public class BlankClass extends Program {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		int x = 5;
-		int y = 5;
 
 		GImage image = new GImage(field.getText());
-		canvas.add(image, x, y);
+		image.setSize(40,40);
+		canvas.add(image, 10, 10);
 
 	}
 
