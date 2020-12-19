@@ -31,13 +31,15 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends Program {
 	private JTextField field;
-
+	private GCanvas canvas;
 	public void run() {
 		field = new JTextField(10);
 		add(field, SOUTH);
 		field.addActionListener(this);
+		canvas=new GCanvas();
+		add(canvas);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -45,7 +47,7 @@ public class BlankClass extends GraphicsProgram {
 		int y=5;
 		try {
 		GImage image=new GImage(field.getText());
-		add(image,x,y);
+		canvas.add(image,x,y);
 		}catch(ErrorException ex){
 			println("wtf");
 		}
