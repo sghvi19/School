@@ -34,23 +34,22 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram {
 	private JTextField field;
-	private GCanvas canvas;
 	private JButton enter;
-	private GLabel label;
+	
 	private ArrayList<GLabel> list;
 	public void run() {
 		field = new JTextField(10);
-		add(field, SOUTH);
 		field.addActionListener(this);
+		add(field, SOUTH);
 		enter = new JButton("enter");
 		add(enter,SOUTH);
 		addActionListeners();
-
+		list=new ArrayList<GLabel>();
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		
-		list=new ArrayList<GLabel>();
+		GLabel label;
+	
 		
 		if (!field.getText().equals("")) {
 			label=new GLabel(field.getText());
