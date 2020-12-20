@@ -36,6 +36,7 @@ public class BlankClass extends GraphicsProgram {
 	private JTextField field;
 	private GCanvas canvas;
 	private JButton enter;
+	private GLabel label;
 	private ArrayList<GLabel> list;
 	public void run() {
 		field = new JTextField(10);
@@ -48,7 +49,7 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		GLabel label;
+		
 		list=new ArrayList<GLabel>();
 		
 		if (!field.getText().equals("")) {
@@ -58,7 +59,7 @@ public class BlankClass extends GraphicsProgram {
 		}
 	
 			for(int i=0; i<list.size(); i++) {
-				list.get(i).move(0,10);
+				list.get(i).move(0,-15);
 			}
 		
 		field.setText("");
