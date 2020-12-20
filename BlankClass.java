@@ -64,11 +64,6 @@ public class BlankClass extends GraphicsProgram {
 		}
 	}
 
-	private void goUp(GLabel l) {
-		l.move(0, -l.getHeight() - 2);
-
-	}
-
 }
 
 //mexute varianti 4 amocana 5
