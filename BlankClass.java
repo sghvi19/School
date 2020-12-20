@@ -50,12 +50,13 @@ public class BlankClass extends GraphicsProgram {
 		GLabel label;
 		list=new ArrayList<GLabel>();
 		if(list.size()!=0) {
-			for(GLabel l:list) {
-				goUp(l);
+			for(int i=0; i<list.size(); i++) {
+				goUp(list.get(i));
 			}
 		}
 		if (!field.getText().equals("")) {
-			label=new GLabel(field.getText());
+			label=new GLabel(fiel
+					d.getText());
 			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
 			list.add(label);
 		}
