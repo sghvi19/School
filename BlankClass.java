@@ -42,6 +42,7 @@ public class BlankClass extends GraphicsProgram {
 		add(field, SOUTH);
 		field.addActionListener(this);
 		enter = new JButton("enter");
+		add(enter,SOUTH);
 		addActionListeners();
 
 	}
