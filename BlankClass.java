@@ -51,7 +51,7 @@ public class BlankClass extends GraphicsProgram {
 		list=new ArrayList<GLabel>();
 		if(list.size()!=0) {
 			for(int i=0; i<list.size(); i++) {
-				list.get(i).move(0,-list.get(i).getHeight()-2);
+				list.get(i).move(0,10);
 			}
 		}
 		if (!field.getText().equals("")) {
