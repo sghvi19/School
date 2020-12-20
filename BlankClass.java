@@ -49,8 +49,7 @@ public class BlankClass extends GraphicsProgram {
 	public void actionPerformed(ActionEvent e) {
 		GLabel label;
 		list=new ArrayList<GLabel>();
-		if(list.size()!=0
-				) {
+		if(list.size()!=0) {
 			for(GLabel l:list) {
 				goUp(l);
 			}
