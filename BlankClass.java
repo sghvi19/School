@@ -59,7 +59,7 @@ public class BlankClass extends GraphicsProgram {
 			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
 			list.add(label);
 		}
-
+		field.setText("");
 	}
 	
 	private void goUp(GLabel l) {
