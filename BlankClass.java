@@ -55,8 +55,7 @@ public class BlankClass extends GraphicsProgram {
 			}
 		}
 		if (!field.getText().equals("")) {
-			label=new GLabel(fiel
-					d.getText());
+			label=new GLabel(field.getText());
 			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
 			list.add(label);
 		}
