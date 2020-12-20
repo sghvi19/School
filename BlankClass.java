@@ -56,11 +56,11 @@ public class BlankClass extends GraphicsProgram {
 			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
 			list.add(label);
 		}
-		if(list.size()!=0) {
+	
 			for(int i=0; i<list.size(); i++) {
 				list.get(i).move(0,10);
 			}
-		}
+		
 		field.setText("");
 	}
 	
