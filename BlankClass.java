@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
@@ -34,21 +35,36 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends GraphicsProgram {
 	private JTextField field;
 	private GCanvas canvas;
-
+	private JButton enter;
+	private ArrayList<GLabel> list;
 	public void run() {
 		field = new JTextField(10);
 		add(field, SOUTH);
 		field.addActionListener(this);
-		canvas = new GCanvas();
-		add(canvas, CENTER);
+		enter = new JButton("enter");
+		addActionListeners();
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		GLabel label;
+		list=new ArrayList<GLabel>();
+		if(list!=null) {
+			for(GLabel l:list) {
+				goUp(l);
+			}
+		}
+		if (!field.getText().equals("")) {
+			label=new GLabel(field.getText());
+			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
+			list.add(label);
+		}
 
-		GImage image = new GImage(field.getText());
-		image.setSize(40, 40);
-		canvas.add(image, 10, 10);
-
+	}
+	
+	private void goUp(GLabel l) {
+		l.move(0,-l.getHeight()-2);
+		
 	}
 
 }
