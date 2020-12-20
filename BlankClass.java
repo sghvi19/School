@@ -50,19 +50,18 @@ public class BlankClass extends GraphicsProgram {
 
 	public void actionPerformed(ActionEvent e) {
 		GLabel label;
-		if (list.size() != 0) {
-			for (int i = 0; i < list.size(); i++) {
-				list.get(i).move(0, -15);
-			}
-		}
 		if (!field.getText().equals("")) {
+			if (list.size() != 0) {
+				for (int i = 0; i < list.size(); i++) {
+					list.get(i).move(0, -15);
+				}
+			}
+
 			label = new GLabel(field.getText());
 			add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 			list.add(label);
+			field.setText("");
 		}
-		
-
-		field.setText("");
 	}
 
 	private void goUp(GLabel l) {
