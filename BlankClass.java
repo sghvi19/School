@@ -35,38 +35,39 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends GraphicsProgram {
 	private JTextField field;
 	private JButton enter;
-	
+
 	private ArrayList<GLabel> list;
+
 	public void run() {
 		field = new JTextField(10);
 		field.addActionListener(this);
 		add(field, SOUTH);
 		enter = new JButton("enter");
-		add(enter,SOUTH);
+		add(enter, SOUTH);
 		addActionListeners();
-		list=new ArrayList<GLabel>();
+		list = new ArrayList<GLabel>();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		GLabel label;
-	
-		
+		if (list.size() != 0) {
+			for (int i = 0; i < list.size(); i++) {
+				list.get(i).move(0, -15);
+			}
+		}
 		if (!field.getText().equals("")) {
-			label=new GLabel(field.getText());
-			add(label,getWidth()/2-label.getWidth()/2,getHeight()/2-label.getHeight()/2);
+			label = new GLabel(field.getText());
+			add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
 			list.add(label);
 		}
-	
-			for(int i=0; i<list.size(); i++) {
-				list.get(i).move(0,-15);
-			}
 		
+
 		field.setText("");
 	}
-	
+
 	private void goUp(GLabel l) {
-		l.move(0,-l.getHeight()-2);
-		
+		l.move(0, -l.getHeight() - 2);
+
 	}
 
 }
