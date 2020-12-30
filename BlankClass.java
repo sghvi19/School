@@ -39,6 +39,7 @@ public class BlankClass extends GraphicsProgram implements ComponentListener {
 
 	public void run() {
 		drawLines();
+		addComponentListener(this);
 	}
 
 	private void drawLines() {
