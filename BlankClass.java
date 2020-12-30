@@ -36,45 +36,33 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends GraphicsProgram implements ComponentListener {
-	private JButton showButton;
-	private JButton hideButton;
-	private JTextArea status;
 
-	public void init() {
-		createControllerUI();
+	public void run() {
+		drawLines();
 	}
 
-	private void createControllerUI() {
-		showButton = new JButton("Show");
-		hideButton = new JButton("Hide");
+	private void drawLines() {
+		drawColumns();
+		drawRows();
 
-		status = new JTextArea("Hello World!");
-
-		status.addComponentListener(this);
-		// Enables ComponenetListener events on the particular object.
-		// (componentHidden, componenMoved, componentResized, componentShown)
-		// So, now we can handle these events on [status] JTextArea object too
-
-		add(status, SOUTH);
-		add(showButton, NORTH);
-		add(hideButton, NORTH);
-
-		addComponentListener(this); // adds componentListener on the Frame
-		addActionListeners(); // adds action listeners to buttons
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
-
-		if (source == showButton) {
-			status.setVisible(true);
-		} else if (source == hideButton) {
-			status.setVisible(false);
+	private void drawColumns() {
+		for (int i = 0; i < 10; i++) {
+			GLine line = new GLine(i * getWidth() / 10, 0, i * getWidth() / 10, getHeight());
+			add(line);
 		}
 	}
 
-	@Override
+	private void drawRows() {
+		for (int i = 0; i < 10; i++) {
+			GLine line = new GLine(0, i*getHeight()/10, getWidth(), i*getHeight()/10);
+			add(line);
+		}
+	}
+
+
+
 	public void componentHidden(ComponentEvent e) {
 		println("Hidden " + e.getComponent().getClass().getName());
 	}
@@ -86,7 +74,8 @@ public class BlankClass extends GraphicsProgram implements ComponentListener {
 
 	@Override
 	public void componentResized(ComponentEvent e) {
-		println("Resized " + e.getComponent().getClass().getName());
+		removeAll();
+		drawLines();
 	}
 
 	@Override
