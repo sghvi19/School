@@ -9,6 +9,8 @@
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,6 +20,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
@@ -32,36 +35,63 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
-	private JTextField field;
-	private JButton enter;
+public class BlankClass extends GraphicsProgram implements ComponentListener {
+	private JButton showButton;
+	private JButton hideButton;
+	private JTextArea status;
 
-	private ArrayList<GLabel> list;
-
-	public void run() {
-		field = new JTextField(10);
-		field.addActionListener(this);
-		add(field, SOUTH);
-		enter = new JButton("enter");
-		add(enter, SOUTH);
-		addActionListeners();
-		list = new ArrayList<GLabel>();
+	public void init() {
+		createControllerUI();
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		GLabel label;
-		if (!field.getText().equals("")) {
-			if (list.size() != 0) {
-				for (int i = 0; i < list.size(); i++) {
-					list.get(i).move(0, -15);
-				}
-			}
+	private void createControllerUI() {
+		showButton = new JButton("Show");
+		hideButton = new JButton("Hide");
 
-			label = new GLabel(field.getText());
-			add(label, getWidth() / 2 - label.getWidth() / 2, getHeight() / 2 - label.getHeight() / 2);
-			list.add(label);
-			field.setText("");
+		status = new JTextArea("Hello World!");
+
+		status.addComponentListener(this);
+		// Enables ComponenetListener events on the particular object.
+		// (componentHidden, componenMoved, componentResized, componentShown)
+		// So, now we can handle these events on [status] JTextArea object too
+
+		add(status, SOUTH);
+		add(showButton, NORTH);
+		add(hideButton, NORTH);
+
+		addComponentListener(this); // adds componentListener on the Frame
+		addActionListeners(); // adds action listeners to buttons
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+
+		if (source == showButton) {
+			status.setVisible(true);
+		} else if (source == hideButton) {
+			status.setVisible(false);
 		}
+	}
+
+	@Override
+	public void componentHidden(ComponentEvent e) {
+		println("Hidden " + e.getComponent().getClass().getName());
+	}
+
+	@Override
+	public void componentMoved(ComponentEvent e) {
+		println("Moved " + e.getComponent().getClass().getName());
+	}
+
+	@Override
+	public void componentResized(ComponentEvent e) {
+		println("Resized " + e.getComponent().getClass().getName());
+	}
+
+	@Override
+	public void componentShown(ComponentEvent e) {
+		println("Shown " + e.getComponent().getClass().getName());
 	}
 
 }
