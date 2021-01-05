@@ -54,17 +54,17 @@ public class BlankClass extends GraphicsProgram{
 		JButton disPup=new JButton("Display Pupils");
 		JButton disTeach=new JButton("Display Teachers");
 		
-		add(teach);
-		add(field1);
-		add(subj);
-		add(field2);
-		add(pupil);
-		add(field3);
-		add(addTeach);
-		add(addSubj);
-		add(addPupil);
-		add(disPup);
-		add(disTeach);
+		add(teach,SOUTH);
+		add(field1,SOUTH);
+		add(subj,SOUTH);
+		add(field2,SOUTH);
+		add(pupil,SOUTH);
+		add(field3,SOUTH);
+		add(addTeach,SOUTH);
+		add(addSubj,SOUTH);
+		add(addPupil,SOUTH);
+		add(disPup,SOUTH);
+		add(disTeach,SOUTH);
 		addActionListeners();
 		
 	}
