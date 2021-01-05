@@ -36,7 +36,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram{
+public class BlankClass extends GraphicsProgram{
 
 	public void run() {
 		JLabel teach=new JLabel("Teach:");
