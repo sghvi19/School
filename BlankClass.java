@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -35,53 +36,37 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram implements ComponentListener {
+public class BlankClass extends ConsoleProgram{
 
 	public void run() {
-		drawLines();
-		addComponentListener(this);
-	}
-
-	private void drawLines() {
-		drawColumns();
-		drawRows();
-
-	}
-
-	private void drawColumns() {
-		for (int i = 0; i < 10; i++) {
-			GLine line = new GLine(i * getWidth() / 10, 0, i * getWidth() / 10, getHeight());
-			add(line);
-		}
-	}
-
-	private void drawRows() {
-		for (int i = 0; i < 10; i++) {
-			GLine line = new GLine(0, i*getHeight()/10, getWidth(), i*getHeight()/10);
-			add(line);
-		}
-	}
-
-
-
-	public void componentHidden(ComponentEvent e) {
-		println("Hidden " + e.getComponent().getClass().getName());
-	}
-
-	@Override
-	public void componentMoved(ComponentEvent e) {
-		println("Moved " + e.getComponent().getClass().getName());
-	}
-
-	@Override
-	public void componentResized(ComponentEvent e) {
-		removeAll();
-		drawLines();
-	}
-
-	@Override
-	public void componentShown(ComponentEvent e) {
-		println("Shown " + e.getComponent().getClass().getName());
+		JLabel teach=new JLabel("Teach:");
+		JTextField field1=new JTextField("field1");
+		field1.addActionListener(this);
+		JLabel subj=new JLabel("subj:");
+		JTextField field2=new JTextField("field2");
+		field2.addActionListener(this);
+		JLabel pupil=new JLabel("Pupil:");
+		JTextField field3=new JTextField("field3");
+		field3.addActionListener(this);
+		JButton addTeach=new JButton("Add Teach");
+		JButton addSubj=new JButton("Add Subj");
+		JButton addPupil=new JButton("Add Pupil");
+		JButton disPup=new JButton("Display Pupils");
+		JButton disTeach=new JButton("Display Teachers");
+		
+		add(teach);
+		add(field1);
+		add(subj);
+		add(field2);
+		add(pupil);
+		add(field3);
+		add(addTeach);
+		add(addSubj);
+		add(addPupil);
+		add(disPup);
+		add(disTeach);
+		addActionListeners();
+		
 	}
 
 }
