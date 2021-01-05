@@ -32,41 +32,79 @@ import acm.graphics.GRect;
 import acm.program.*;
 import acm.util.ErrorException;
 import acm.util.RandomGenerator;
-
+import acmx.export.java.util.Iterator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram{
+public class BlankClass extends GraphicsProgram {
+	private JTextField field1;
+	private JTextField field2;
+	private JTextField field3;
+	private JButton addTeach;
+	private JButton addSubj;
+	private JButton addPupil;
+	private JButton disPup;
+	private JButton disTeach;
+	private School school;
 
 	public void run() {
-		JLabel teach=new JLabel("Teach:");
-		JTextField field1=new JTextField(5);
-		field1.addActionListener(this);
-		JLabel subj=new JLabel("subj:");
-		JTextField field2=new JTextField(5);
-		field2.addActionListener(this);
-		JLabel pupil=new JLabel("Pupil:");
-		JTextField field3=new JTextField(5);
-		field3.addActionListener(this);
-		JButton addTeach=new JButton("Add Teach");
-		JButton addSubj=new JButton("Add Subj");
-		JButton addPupil=new JButton("Add Pupil");
-		JButton disPup=new JButton("Display Pupils");
-		JButton disTeach=new JButton("Display Teachers");
-		
-		add(teach,SOUTH);
-		add(field1,SOUTH);
-		add(subj,SOUTH);
-		add(field2,SOUTH);
-		add(pupil,SOUTH);
-		add(field3,SOUTH);
-		add(addTeach,SOUTH);
-		add(addSubj,SOUTH);
-		add(addPupil,SOUTH);
-		add(disPup,SOUTH);
-		add(disTeach,SOUTH);
+		school = new School();
+		JLabel teach = new JLabel("Teach:");
+		field1 = new JTextField(5);
+		// field1.addActionListener(this);
+		JLabel subj = new JLabel("subj:");
+		field2 = new JTextField(5);
+		// field2.addActionListener(this);
+		JLabel pupil = new JLabel("Pupil:");
+		field3 = new JTextField(5);
+		// field3.addActionListener(this);
+		addTeach = new JButton("Add Teach");
+		addSubj = new JButton("Add Subj");
+		addPupil = new JButton("Add Pupil");
+		disPup = new JButton("Display Pupils");
+		disTeach = new JButton("Display Teachers");
+
+		add(teach, SOUTH);
+		add(field1, SOUTH);
+		add(subj, SOUTH);
+		add(field2, SOUTH);
+		add(pupil, SOUTH);
+		add(field3, SOUTH);
+		add(addTeach, SOUTH);
+		add(addSubj, SOUTH);
+		add(addPupil, SOUTH);
+		add(disPup, SOUTH);
+		add(disTeach, SOUTH);
 		addActionListeners();
-		
+
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == addTeach) {
+			school.addTeacher(field1.getText());
+			field1.setText("");
+		}
+		if(e.getSource()== addSubj) {
+			school.addSubject(field1.getText(), field2.getText());
+		}
+		if(e.getSource()==addPupil) {
+			school.addPupil(field3.getText(), field2.getText());
+		}
+		if(e.getSource()==disPup) {
+			removeAll();
+			Iterator pupils=(Iterator) school.getPupils(field1.getText());
+			while(pupils.hasNext()) {
+				println(pupils.next());
+			}
+			
+		}
+		if(e.getSource()==disTeach) {
+			Iterator teachers=(Iterator) school.getPupils(field3.getText());
+			while(teachers.hasNext()) {
+				println(teachers.next());
+			}
+			
+		}
 	}
 
 }
