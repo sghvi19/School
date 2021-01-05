@@ -40,13 +40,13 @@ public class BlankClass extends GraphicsProgram{
 
 	public void run() {
 		JLabel teach=new JLabel("Teach:");
-		JTextField field1=new JTextField();
+		JTextField field1=new JTextField(5);
 		field1.addActionListener(this);
 		JLabel subj=new JLabel("subj:");
-		JTextField field2=new JTextField();
+		JTextField field2=new JTextField(5);
 		field2.addActionListener(this);
 		JLabel pupil=new JLabel("Pupil:");
-		JTextField field3=new JTextField();
+		JTextField field3=new JTextField(5);
 		field3.addActionListener(this);
 		JButton addTeach=new JButton("Add Teach");
 		JButton addSubj=new JButton("Add Subj");
