@@ -40,13 +40,13 @@ public class BlankClass extends ConsoleProgram{
 
 	public void run() {
 		JLabel teach=new JLabel("Teach:");
-		JTextField field1=new JTextField("field1");
+		JTextField field1=new JTextField();
 		field1.addActionListener(this);
 		JLabel subj=new JLabel("subj:");
-		JTextField field2=new JTextField("field2");
+		JTextField field2=new JTextField();
 		field2.addActionListener(this);
 		JLabel pupil=new JLabel("Pupil:");
-		JTextField field3=new JTextField("field3");
+		JTextField field3=new JTextField();
 		field3.addActionListener(this);
 		JButton addTeach=new JButton("Add Teach");
 		JButton addSubj=new JButton("Add Subj");
