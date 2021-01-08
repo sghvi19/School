@@ -76,35 +76,28 @@ public class BlankClass extends ConsoleProgram {
 //		add(disPup, SOUTH);
 //		add(disTeach, SOUTH);
 //		addActionListeners();
-		String[] arr=new String[3];
-		for(int i=0; i<arr.length; i++) {
-			arr[i]=readLine("enter: ");
-		}
-		println(bla(arr));
+		String s;
+		s=readLine();
+		println(bla(s));
 	}
 
-	private int bla(String[] arr) {
-		int number=0;
-        int result=0;
-        ArrayList<String> list=new ArrayList<String>();
-        String n=arr[0];
-        for(int i=0; i<n.length();i++){
-            String s=Character.toString(arr[0].charAt(i));
-            println(s);
-            for(int j=0; j<arr.length; j++){
-                if(arr[j].contains(s)){
+	private String bla(String s) {
+		
+		int[] arr=new int[26];
+        for(int i=0; i<s.length(); i++){
+            arr[(s.charAt(i)-'a'+1)]++;
+        }
+        int number=0;
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]>=1){
                 number++;
             }
-            }
-            
-            if(number==arr.length&&!list.contains(s)){
-                result++;
-                list.add(s);
-            }
-            number=0;
         }
-        return result;
-
+        if(number==26){
+            return "pangram";
+        }else{
+            return "not pangram";
+        }
 	}
 
 	public void actionPerformed(ActionEvent e) {
