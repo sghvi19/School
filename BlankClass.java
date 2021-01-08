@@ -85,7 +85,7 @@ public class BlankClass extends ConsoleProgram {
 		
 		int[] arr=new int[26];
         for(int i=0; i<s.length(); i++){
-            arr[(s.charAt(i)-'a'-1)]++;
+            arr[(s.charAt(i)-'a')]++;
             println(arr[i]);
         }
         int number=0;
