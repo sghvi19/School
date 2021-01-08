@@ -36,7 +36,7 @@ import acmx.export.java.util.Iterator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends ConsoleProgram {
 	private JTextField field1;
 	private JTextField field2;
 	private JTextField field3;
@@ -48,34 +48,61 @@ public class BlankClass extends GraphicsProgram {
 	private School school;
 
 	public void run() {
-		school = new School();
-		JLabel teach = new JLabel("Teach:");
-		field1 = new JTextField(5);
-		// field1.addActionListener(this);
-		JLabel subj = new JLabel("subj:");
-		field2 = new JTextField(5);
-		// field2.addActionListener(this);
-		JLabel pupil = new JLabel("Pupil:");
-		field3 = new JTextField(5);
-		// field3.addActionListener(this);
-		addTeach = new JButton("Add Teach");
-		addSubj = new JButton("Add Subj");
-		addPupil = new JButton("Add Pupil");
-		disPup = new JButton("Display Pupils");
-		disTeach = new JButton("Display Teachers");
+//		school = new School();
+//		JLabel teach = new JLabel("Teach:");
+//		field1 = new JTextField(5);
+//		// field1.addActionListener(this);
+//		JLabel subj = new JLabel("subj:");
+//		field2 = new JTextField(5);
+//		// field2.addActionListener(this);
+//		JLabel pupil = new JLabel("Pupil:");
+//		field3 = new JTextField(5);
+//		// field3.addActionListener(this);
+//		addTeach = new JButton("Add Teach");
+//		addSubj = new JButton("Add Subj");
+//		addPupil = new JButton("Add Pupil");
+//		disPup = new JButton("Display Pupils");
+//		disTeach = new JButton("Display Teachers");
+//
+//		add(teach, SOUTH);
+//		add(field1, SOUTH);
+//		add(subj, SOUTH);
+//		add(field2, SOUTH);
+//		add(pupil, SOUTH);
+//		add(field3, SOUTH);
+//		add(addTeach, SOUTH);
+//		add(addSubj, SOUTH);
+//		add(addPupil, SOUTH);
+//		add(disPup, SOUTH);
+//		add(disTeach, SOUTH);
+//		addActionListeners();
+		String[] arr=new String[5];
+		for(int i=0; i<arr.length; i++) {
+			arr[i]=readLine("enter: ");
+		}
+		println(bla(arr));
+	}
 
-		add(teach, SOUTH);
-		add(field1, SOUTH);
-		add(subj, SOUTH);
-		add(field2, SOUTH);
-		add(pupil, SOUTH);
-		add(field3, SOUTH);
-		add(addTeach, SOUTH);
-		add(addSubj, SOUTH);
-		add(addPupil, SOUTH);
-		add(disPup, SOUTH);
-		add(disTeach, SOUTH);
-		addActionListeners();
+	private int bla(String[] arr) {
+		int number=0;
+        int result=0;
+        ArrayList<String> list=new ArrayList<String>();
+        String n=arr[0];
+        for(int i=0; i<n.length();i++){
+            String s=Character.toString(arr[i].charAt(i));
+            for(int j=0; j<arr.length; j++){
+                if(arr[j].contains(s)){
+                number++;
+            }
+            }
+            
+            if(number==arr.length&&!list.contains(s)){
+                result++;
+                list.add(s);
+            }
+            number=0;
+        }
+        return result;
 
 	}
 
@@ -84,26 +111,26 @@ public class BlankClass extends GraphicsProgram {
 			school.addTeacher(field1.getText());
 			field1.setText("");
 		}
-		if(e.getSource()== addSubj) {
+		if (e.getSource() == addSubj) {
 			school.addSubject(field1.getText(), field2.getText());
 		}
-		if(e.getSource()==addPupil) {
+		if (e.getSource() == addPupil) {
 			school.addPupil(field3.getText(), field2.getText());
 		}
-		if(e.getSource()==disPup) {
+		if (e.getSource() == disPup) {
 			removeAll();
-			Iterator pupils=(Iterator) school.getPupils(field1.getText());
-			while(pupils.hasNext()) {
+			Iterator pupils = (Iterator) school.getPupils(field1.getText());
+			while (pupils.hasNext()) {
 				println(pupils.next());
 			}
-			
+
 		}
-		if(e.getSource()==disTeach) {
-			Iterator teachers=(Iterator) school.getPupils(field3.getText());
-			while(teachers.hasNext()) {
+		if (e.getSource() == disTeach) {
+			Iterator teachers = (Iterator) school.getPupils(field3.getText());
+			while (teachers.hasNext()) {
 				println(teachers.next());
 			}
-			
+
 		}
 	}
 
