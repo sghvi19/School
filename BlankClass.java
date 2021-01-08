@@ -89,7 +89,7 @@ public class BlankClass extends ConsoleProgram {
         ArrayList<String> list=new ArrayList<String>();
         String n=arr[0];
         for(int i=0; i<n.length();i++){
-            String s=Character.toString(arr[i].charAt(i));
+            String s=Character.toString(arr[0].charAt(i));
             println(s);
             for(int j=0; j<arr.length; j++){
                 if(arr[j].contains(s)){
