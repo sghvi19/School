@@ -76,7 +76,7 @@ public class BlankClass extends ConsoleProgram {
 //		add(disPup, SOUTH);
 //		add(disTeach, SOUTH);
 //		addActionListeners();
-		String[] arr=new String[5];
+		String[] arr=new String[3];
 		for(int i=0; i<arr.length; i++) {
 			arr[i]=readLine("enter: ");
 		}
