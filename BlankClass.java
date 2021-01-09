@@ -76,43 +76,55 @@ public class BlankClass extends ConsoleProgram {
 //		add(disPup, SOUTH);
 //		add(disTeach, SOUTH);
 //		addActionListeners();
-		String s;
 		
-		while(true) {
-		s=readLine();
-		println(s.substring(0,0));
-		println(bla(s));
-		}
+		
+		
+		kaprekarNumbers(1,100);
+		
 		
 	}
-private String bla(String s) {
-	 while(doubled(s)){
-         for(int i=0; i<s.length(); i++){
-             if(s.length()!=2){
-                 if(s.charAt(i)==s.charAt(i+1)){
-                     s=s.substring(0,i)+s.substring(i+2);
-                 }
-             }else{
-                 return "Empty String";
-             }
-         }
-     }
-     return s;
-
- }
- static boolean doubled(String s1){
-     if(s1.length()!=1){
-     for(int i=0; i<s1.length()-1; i++){
-         if(s1.charAt(i)==s1.charAt(i+1)){
-             return true;
-         }
-         
-     }
-     }
-     return false;
- }
 
 
+	private void kaprekarNumbers(int p, int q) {
+        int n;
+        int m;
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for(int i=p; i<=q; i++){
+            n=i*i;
+            m=num(n);
+            if(kaprekar(i,n,m)){
+                list.add(i);
+            }
+        }
+        
+        for(int i: list){
+            System.out.println(i);
+        }
+   
+    }
+    
+    private int num(int n){
+        int result=0;
+        while(n!=0){
+            result++;
+            n/=10;
+        }
+        return result;
+    }
+    
+    private  boolean kaprekar(int i, int n, int m){
+        int result=0;
+        int x=1;
+        for(int k=0; k<m/2; k++){
+            x*=10;
+        }
+        while(n!=0){
+            result+=n%x;
+            n/=x;
+        }
+        if(result==i)return true;
+        return false;
+    }
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == addTeach) {
 			school.addTeacher(field1.getText());
