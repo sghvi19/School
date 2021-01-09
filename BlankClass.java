@@ -81,24 +81,34 @@ public class BlankClass extends ConsoleProgram {
 		s=readLine();
 		println(bla(s));
 		}
+		
 	}
+private String bla(String s) {
+	 while(doubled(s)){
+         for(int i=0; i<s.length(); i++){
+             if(s.length()!=2){
+                 if(s.charAt(i)==s.charAt(i+1)){
+                     s=s.substring(0,i)+s.substring(i+2);
+                 }
+             }else{
+                 return "Empty String";
+             }
+         }
+     }
+     return s;
 
-	private String bla(String s) {
-		ArrayList<Integer> list=new ArrayList<Integer>();
-        ArrayList<Integer> lis=new ArrayList<Integer>();
-      
-        for(int i=0; i<s.length()-1; i++){
-            list.add(s.charAt(i)-s.charAt(i+1));
-            lis.add(0,list.get(i));
-        }
-       
-        for(int i=0; i<s.length()-1; i++){
-            if(list.get(i)!=lis.get(i)){
-                 return "Not Funny";
-            }
-        }
-        return "Funny";
-        }
+ }
+ static boolean doubled(String s1){
+     if(s1.length()!=1){
+     for(int i=0; i<s1.length()-1; i++){
+         if(s1.charAt(i)==s1.charAt(i+1)){
+             return true;
+         }
+         
+     }
+     }
+     return false;
+ }
 
 
 	public void actionPerformed(ActionEvent e) {
