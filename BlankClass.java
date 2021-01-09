@@ -82,26 +82,40 @@ public class BlankClass extends ConsoleProgram {
 	}
 
 	private String bla(String s) {
-		
-		int[] arr=new int[26];
-        for(int i=0; i<s.length(); i++){
-            Character c=s.charAt(i);
-            if(!c.equals(' ')){
-            arr[(s.charAt(i)-'a')]++;
+		ArrayList<Integer> list=new ArrayList<Integer>();
+        ArrayList<Integer> lis=new ArrayList<Integer>();
+      
+        for(int i=0; i<s.length()-1; i++){
+            list.add(s.charAt(i)-s.charAt(i+1));
+            lis.add(0,list.get(i));
+        }
+       
+        for(int i=0; i<s.length()-1; i++){
+            if(list.get(i)!=lis.get(i)){
+                 return "Not Funny";
             }
         }
-        int number=0;
-        for(int i=0; i<arr.length;i++){
-            if(arr[i]>=1){
-                number++;
-            }
+        return "Funny";
         }
-        if(number==26){
-            return "pangram";
-        }else{
-            return "not pangram";
-        }
-	}
+//		int[] arr=new int[26];
+//        for(int i=0; i<s.length(); i++){
+//            Character c=s.charAt(i);
+//            if(!c.equals(' ')){
+//            arr[(s.charAt(i)-'a')]++;
+//            }
+//        }
+//        int number=0;
+//        for(int i=0; i<arr.length;i++){
+//            if(arr[i]>=1){
+//                number++;
+//            }
+//        }
+//        if(number==26){
+//            return "pangram";
+//        }else{
+//            return "not pangram";
+//        
+		}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == addTeach) {
