@@ -125,34 +125,34 @@ public class BlankClass extends ConsoleProgram {
         if(result==i)return true;
         return false;
     }
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == addTeach) {
-			school.addTeacher(field1.getText());
-			field1.setText("");
-		}
-		if (e.getSource() == addSubj) {
-			school.addSubject(field1.getText(), field2.getText());
-		}
-		if (e.getSource() == addPupil) {
-			school.addPupil(field3.getText(), field2.getText());
-		}
-		if (e.getSource() == disPup) {
-			removeAll();
-			Iterator pupils = (Iterator) school.getPupils(field1.getText());
-			while (pupils.hasNext()) {
-				println(pupils.next());
-			}
-
-		}
-		if (e.getSource() == disTeach) {
-			Iterator teachers = (Iterator) school.getPupils(field3.getText());
-			while (teachers.hasNext()) {
-				println(teachers.next());
-			}
-
-		}
-	}
-
+//	public void actionPerformed(ActionEvent e) {
+//		if (e.getSource() == addTeach) {
+//			school.addTeacher(field1.getText());
+//			field1.setText("");
+//		}
+//		if (e.getSource() == addSubj) {
+//			school.addSubject(field1.getText(), field2.getText());
+//		}
+//		if (e.getSource() == addPupil) {
+//			school.addPupil(field3.getText(), field2.getText());
+//		}
+//		if (e.getSource() == disPup) {
+//			removeAll();
+//			Iterator pupils = (Iterator) school.getPupils(field1.getText());
+//			while (pupils.hasNext()) {
+//				println(pupils.next());
+//			}
+//
+//		}
+//		if (e.getSource() == disTeach) {
+//			Iterator teachers = (Iterator) school.getPupils(field3.getText());
+//			while (teachers.hasNext()) {
+//				println(teachers.next());
+//			}
+//
+//		}
+//	}
+//
 }
 
 //mexute varianti 4 amocana 5
