@@ -97,25 +97,7 @@ public class BlankClass extends ConsoleProgram {
         }
         return "Funny";
         }
-//		int[] arr=new int[26];
-//        for(int i=0; i<s.length(); i++){
-//            Character c=s.charAt(i);
-//            if(!c.equals(' ')){
-//            arr[(s.charAt(i)-'a')]++;
-//            }
-//        }
-//        int number=0;
-//        for(int i=0; i<arr.length;i++){
-//            if(arr[i]>=1){
-//                number++;
-//            }
-//        }
-//        if(number==26){
-//            return "pangram";
-//        }else{
-//            return "not pangram";
-//        
-		}
+
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == addTeach) {
