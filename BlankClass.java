@@ -77,8 +77,10 @@ public class BlankClass extends ConsoleProgram {
 //		add(disTeach, SOUTH);
 //		addActionListeners();
 		String s;
+		while(true) {
 		s=readLine();
 		println(bla(s));
+		}
 	}
 
 	private String bla(String s) {
