@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
@@ -32,7 +33,6 @@ import acm.graphics.GRect;
 import acm.program.*;
 import acm.util.ErrorException;
 import acm.util.RandomGenerator;
-import acmx.export.java.util.Iterator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
@@ -48,111 +48,64 @@ public class BlankClass extends ConsoleProgram {
 	private School school;
 
 	public void run() {
-//		school = new School();
-//		JLabel teach = new JLabel("Teach:");
-//		field1 = new JTextField(5);
-//		// field1.addActionListener(this);
-//		JLabel subj = new JLabel("subj:");
-//		field2 = new JTextField(5);
-//		// field2.addActionListener(this);
-//		JLabel pupil = new JLabel("Pupil:");
-//		field3 = new JTextField(5);
-//		// field3.addActionListener(this);
-//		addTeach = new JButton("Add Teach");
-//		addSubj = new JButton("Add Subj");
-//		addPupil = new JButton("Add Pupil");
-//		disPup = new JButton("Display Pupils");
-//		disTeach = new JButton("Display Teachers");
-//
-//		add(teach, SOUTH);
-//		add(field1, SOUTH);
-//		add(subj, SOUTH);
-//		add(field2, SOUTH);
-//		add(pupil, SOUTH);
-//		add(field3, SOUTH);
-//		add(addTeach, SOUTH);
-//		add(addSubj, SOUTH);
-//		add(addPupil, SOUTH);
-//		add(disPup, SOUTH);
-//		add(disTeach, SOUTH);
-//		addActionListeners();
-		
-		
-		
-		kaprekarNumbers(1,100);
-		
-		
+		school = new School();
+		JLabel teach = new JLabel("Teach:");
+		field1 = new JTextField(5);
+		// field1.addActionListener(this);
+		JLabel subj = new JLabel("subj:");
+		field2 = new JTextField(5);
+		// field2.addActionListener(this);
+		JLabel pupil = new JLabel("Pupil:");
+		field3 = new JTextField(5);
+		// field3.addActionListener(this);
+		addTeach = new JButton("Add Teach");
+		addSubj = new JButton("Add Subj");
+		addPupil = new JButton("Add Pupil");
+		disPup = new JButton("Display Pupils");
+		disTeach = new JButton("Display Teachers");
+
+		add(teach, SOUTH);
+		add(field1, SOUTH);
+		add(subj, SOUTH);
+		add(field2, SOUTH);
+		add(pupil, SOUTH);
+		add(field3, SOUTH);
+		add(addTeach, SOUTH);
+		add(addSubj, SOUTH);
+		add(addPupil, SOUTH);
+		add(disPup, SOUTH);
+		add(disTeach, SOUTH);
+		addActionListeners();
 	}
 
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == addTeach) {
+			school.addTeacher(field1.getText());
+			field1.setText("");
+		}
+		if (e.getSource() == addSubj) {
+			school.addSubject(field1.getText(), field2.getText());
+		}
+		if (e.getSource() == addPupil) {
+			school.addPupil(field3.getText(), field2.getText());
+		}
+		if (e.getSource() == disPup) {
+			removeAll();
+			Iterator<String> pupils =  school.getPupils(field1.getText());
+			while (pupils.hasNext()) {
+				println(pupils.next());
+			}
 
-	private void kaprekarNumbers(int p, int q) {
-        int n;
-        int m;
-        ArrayList<Integer> list=new ArrayList<Integer>();
-        for(int i=p; i<=q; i++){
-            n=i*i;
-            m=num(n);
-            if(kaprekar(i,n,m)){
-                list.add(i);
-            }
-        }
-        
-        for(int i: list){
-            System.out.println(i);
-        }
-   
-    }
-    
-    private int num(int n){
-        int result=0;
-        while(n!=0){
-            result++;
-            n/=10;
-        }
-        return result;
-    }
-    
-    private  boolean kaprekar(int i, int n, int m){
-        int result=0;
-        int x=1;
-        for(int k=0; k<m/2; k++){
-            x*=10;
-        }
-        while(n!=0){
-            result+=n%x;
-            n/=x;
-        }
-        if(result==i)return true;
-        return false;
-    }
-//	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource() == addTeach) {
-//			school.addTeacher(field1.getText());
-//			field1.setText("");
-//		}
-//		if (e.getSource() == addSubj) {
-//			school.addSubject(field1.getText(), field2.getText());
-//		}
-//		if (e.getSource() == addPupil) {
-//			school.addPupil(field3.getText(), field2.getText());
-//		}
-//		if (e.getSource() == disPup) {
-//			removeAll();
-//			Iterator pupils = (Iterator) school.getPupils(field1.getText());
-//			while (pupils.hasNext()) {
-//				println(pupils.next());
-//			}
-//
-//		}
-//		if (e.getSource() == disTeach) {
-//			Iterator teachers = (Iterator) school.getPupils(field3.getText());
-//			while (teachers.hasNext()) {
-//				println(teachers.next());
-//			}
-//
-//		}
-//	}
-//
+		}
+		if (e.getSource() == disTeach) {
+			Iterator<String> teachers = school.getTeachers(field3.getText());
+			while (teachers.hasNext()) {
+				println(teachers.next());
+			}
+
+		}
+	}
+
 }
 
 //mexute varianti 4 amocana 5
