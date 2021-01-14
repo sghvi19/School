@@ -75,6 +75,7 @@ public class BlankClass extends ConsoleProgram {
     private boolean palindrome(String s, int start, int end){
         String result="";
         for(int i=start; i<end;i++){
+        	println("cobra");
             result=Character.toString(s.charAt(i))+result;
         }
             if(s.substring(start,end+1).equals(result))return true;
