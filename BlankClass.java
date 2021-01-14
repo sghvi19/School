@@ -47,66 +47,103 @@ public class BlankClass extends ConsoleProgram {
 	private JButton disTeach;
 	private School school;
 
+	
+	
+	
+	
 	public void run() {
-		school = new School();
-		JLabel teach = new JLabel("Teach:");
-		field1 = new JTextField(5);
-		// field1.addActionListener(this);
-		JLabel subj = new JLabel("subj:");
-		field2 = new JTextField(5);
-		// field2.addActionListener(this);
-		JLabel pupil = new JLabel("Pupil:");
-		field3 = new JTextField(5);
-		// field3.addActionListener(this);
-		addTeach = new JButton("Add Teach");
-		addSubj = new JButton("Add Subj");
-		addPupil = new JButton("Add Pupil");
-		disPup = new JButton("Display Pupils");
-		disTeach = new JButton("Display Teachers");
-
-		add(teach, SOUTH);
-		add(field1, SOUTH);
-		add(subj, SOUTH);
-		add(field2, SOUTH);
-		add(pupil, SOUTH);
-		add(field3, SOUTH);
-		add(addTeach, SOUTH);
-		add(addSubj, SOUTH);
-		add(addPupil, SOUTH);
-		add(disPup, SOUTH);
-		add(disTeach, SOUTH);
-		addActionListeners();
+		String s=readLine();
+		println(longestPalindrome(s));
 	}
-
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == addTeach) {
-			school.addTeacher(field1.getText());
-			field1.setText("");
-		}
-		if (e.getSource() == addSubj) {
-			school.addSubject(field1.getText(), field2.getText());
-		}
-		if (e.getSource() == addPupil) {
-			school.addPupil(field3.getText(), field2.getText());
-		}
-		if (e.getSource() == disPup) {
-			removeAll();
-			Iterator<String> pupils =  school.getPupils(field1.getText());
-			while (pupils.hasNext()) {
-				println(pupils.next());
-			}
-
-		}
-		if (e.getSource() == disTeach) {
-			Iterator<String> teachers = school.getTeachers(field3.getText());
-			while (teachers.hasNext()) {
-				println(teachers.next());
-			}
-
-		}
-	}
-
+	
+	private String longestPalindrome(String s) {
+        int result=0;
+        String res="";
+        for(int i=0; i<s.length();i++){
+            for(int j=i; j<s.length(); j++){
+                if(palindrome(s,i,j)&& j-i>result){
+                    result=j-i;
+                    res=s.substring(i,j+1);
+                }
+            }
+        }
+        return res;
+    }
+    
+    
+    private boolean palindrome(String s, int start, int end){
+        String result="";
+        for(int i=end-1; i>=start;i--){
+            result+=Character.toString(s.charAt(i));
+        }
+            if(s.substring(start,end+1).equals(result))return true;
+                                       return false;
+    }
+    
 }
+//		school = new School();
+//		JLabel teach = new JLabel("Teach:");
+//		field1 = new JTextField(5);
+//		// field1.addActionListener(this);
+//		JLabel subj = new JLabel("subj:");
+//		field2 = new JTextField(5);
+//		// field2.addActionListener(this);
+//		JLabel pupil = new JLabel("Pupil:");
+//		field3 = new JTextField(5);
+//		// field3.addActionListener(this);
+//		addTeach = new JButton("Add Teach");
+//		addSubj = new JButton("Add Subj");
+//		addPupil = new JButton("Add Pupil");
+//		disPup = new JButton("Display Pupils");
+//		disTeach = new JButton("Display Teachers");
+//
+//		add(teach, SOUTH);
+//		add(field1, SOUTH);
+//		add(subj, SOUTH);
+//		add(field2, SOUTH);
+//		add(pupil, SOUTH);
+//		add(field3, SOUTH);
+//		add(addTeach, SOUTH);
+//		add(addSubj, SOUTH);
+//		add(addPupil, SOUTH);
+//		add(disPup, SOUTH);
+//		add(disTeach, SOUTH);
+//		addActionListeners();
+	//}
+
+//	public void actionPerformed(ActionEvent e) {
+//		if (e.getSource() == addTeach) {
+//			school.addTeacher(field1.getText());
+//			field1.setText("");
+//		}
+//		if (e.getSource() == addSubj) {
+//			school.addSubject(field1.getText(), field2.getText());
+//			field1.setText("");
+//			field2.setText("");
+//		}
+//		if (e.getSource() == addPupil) {
+//			school.addPupil(field3.getText(), field2.getText());
+//			field2.setText("");
+//			field3.setText("");
+//		}
+//		if (e.getSource() == disPup) {
+//			removeAll();
+//			Iterator<String> pupils =  school.getPupils(field1.getText());
+//			while (pupils.hasNext()) {
+//				println(pupils.next());
+//			}
+//
+//		}
+//		if (e.getSource() == disTeach) {
+//			Iterator<String> teachers = school.getTeachers(field3.getText());
+//			while (teachers.hasNext()) {
+//				println(teachers.next());
+//			}
+//
+//		}
+//	}
+//
+//}
 
 //mexute varianti 4 amocana 5
 //	private final static int CIRCLE_D = 40;
