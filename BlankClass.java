@@ -79,6 +79,7 @@ public class BlankClass extends ConsoleProgram {
             result=Character.toString(s.charAt(i))+result;
         }
         println(result);
+       println( s.substring(start,end+1));
             if(s.substring(start,end+1).equals(result))return true;
                                        return false;
     }
