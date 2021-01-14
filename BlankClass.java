@@ -62,6 +62,7 @@ public class BlankClass extends ConsoleProgram {
         for(int i=0; i<s.length();i++){
             for(int j=i; j<s.length(); j++){
                 if(palindrome(s,i,j)&& j-i>result){
+                	println("zsdaas");
                     result=j-i;
                     res=s.substring(i,j+1);
                 }
