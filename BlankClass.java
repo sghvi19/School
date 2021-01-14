@@ -57,6 +57,7 @@ public class BlankClass extends ConsoleProgram {
 	}
 	
 	private String longestPalindrome(String s) {
+		if(s.length()==1)return s;
         int result=0;
         String res="";
         for(int i=0; i<s.length();i++){
