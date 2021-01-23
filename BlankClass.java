@@ -105,7 +105,7 @@ public class BlankClass extends GraphicsProgram {
 	
 	
 	private boolean possible() {
-		if(currentX-size<=0 || currentX+size>=8*size ||currentY-size<=0 ||currentY+size>=8*size) return false;
+		if(currentX-size<0 || currentX+size>8*size ||currentY-size<0 ||currentY+size>8*size) return false;
 		return true;
 	}
 
