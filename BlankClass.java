@@ -42,8 +42,8 @@ public class BlankClass extends GraphicsProgram {
 	private JButton upp;
 	private JButton down;
 	private GOval ball;
-	private int currentX;
-	private int currentY;
+	private double currentX;
+	private double currentY;
 	private static final int size = 40;
 
 	public void run() {
@@ -78,8 +78,8 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void actionPerformd(ActionEvent e) {
-		currentX=(int) ball.getX();
-		currentY=(int) ball.getY();
+		currentX=ball.getX();
+		currentY=ball.getY();
 		if (e.getSource() == left) {
 			if(possible()) {
 				println("bla");
