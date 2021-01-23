@@ -81,22 +81,22 @@ public class BlankClass extends GraphicsProgram {
 		currentX=(int) ball.getX();
 		currentY=(int) ball.getY();
 		if (e.getSource() == left) {
-			if(possible(currentX,currentY)) {
+			if(possible()) {
 				ball.setLocation(currentX-size, currentY);
 			}
 		}
 		if (e.getSource() == right) {
-			if(possible(currentX,currentY)) {
+			if(possible()) {
 				ball.setLocation(currentX+size, currentY);
 			}
 		}
 		if (e.getSource() == upp) {
-			if(possible(currentX,currentY)) {
+			if(possible()) {
 				ball.setLocation(currentX, currentY-size);
 			}
 		}
 		if (e.getSource() == down) {
-			if(possible(currentX,currentY)) {
+			if(possible()) {
 				ball.setLocation(currentX, currentY+size);
 			}
 		}
@@ -104,7 +104,7 @@ public class BlankClass extends GraphicsProgram {
 	}
 	
 	
-	private boolean possible(int x,int y) {
+	private boolean possible() {
 		if(currentX-size<=0 || currentX+size>=8*size||currentY-size<=0||currentY+size>=8*size)return false;
 		return true;
 	}
