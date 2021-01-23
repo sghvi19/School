@@ -61,7 +61,7 @@ public class BlankClass extends GraphicsProgram {
 	
 	private void draw() {
 		GLine line;
-		for(int i=0; i<8; i++) {
+		for(int i=0; i<9; i++) {
 			line=new GLine(i*size,0,i*size,8*size);
 			add(line);
 			line=new GLine(0,i*size,8*size,i*size);
