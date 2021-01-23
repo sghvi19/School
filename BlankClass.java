@@ -69,7 +69,9 @@ public class BlankClass extends GraphicsProgram {
 			add(line);
 		}
 		
-		ball=new GOval(5*size,6*size,2*size,2*size);
+		ball=new GOval(5*size,6*size,size,size);
+		ball.setFilled(true);
+		ball.setFillColor(Color.BLACK);
 		add(ball);
 		
 	}
