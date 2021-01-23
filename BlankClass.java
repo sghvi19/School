@@ -40,44 +40,73 @@ public class BlankClass extends GraphicsProgram {
 	private JButton left;
 	private JButton right;
 	private JButton upp;
-	private JButton	down;
+	private JButton down;
 	private GOval ball;
-	private static final int size=40;
+	private int currentX;
+	private int currentY;
+	private static final int size = 40;
+
 	public void run() {
 		draw();
-		left=new JButton("Left");
-		right=new JButton("Right");
-		upp=new JButton("Upp");
-		down=new JButton("Down");
-		
-		
-		add(left,SOUTH);
-		add(right,SOUTH);
-		add(upp,SOUTH);
-		add(down,SOUTH);
+		left = new JButton("Left");
+		right = new JButton("Right");
+		upp = new JButton("Upp");
+		down = new JButton("Down");
+
+		add(left, SOUTH);
+		add(right, SOUTH);
+		add(upp, SOUTH);
+		add(down, SOUTH);
 		addActionListeners();
-		
-		
+
 	}
-	
+
 	private void draw() {
 		GLine line;
-		for(int i=0; i<9; i++) {
-			line=new GLine(i*size,0,i*size,8*size);
+		for (int i = 0; i < 9; i++) {
+			line = new GLine(i * size, 0, i * size, 8 * size);
 			add(line);
-			line=new GLine(0,i*size,8*size,i*size);
+			line = new GLine(0, i * size, 8 * size, i * size);
 			add(line);
 		}
-		
-		ball=new GOval(4*size,4*size,size,size);
+
+		ball = new GOval(4 * size, 4 * size, size, size);
 		ball.setFilled(true);
 		ball.setFillColor(Color.BLACK);
 		add(ball);
-		
+
+	}
+
+	public void actionPerformd(ActionEvent e) {
+		currentX=(int) ball.getX();
+		currentY=(int) ball.getY();
+		if (e.getSource() == left) {
+			if(possible(currentX,currentY)) {
+				ball.setLocation(currentX-size, currentY);
+			}
+		}
+		if (e.getSource() == right) {
+			if(possible(currentX,currentY)) {
+				ball.setLocation(currentX+size, currentY);
+			}
+		}
+		if (e.getSource() == upp) {
+			if(possible(currentX,currentY)) {
+				ball.setLocation(currentX, currentY-size);
+			}
+		}
+		if (e.getSource() == down) {
+			if(possible(currentX,currentY)) {
+				ball.setLocation(currentX, currentY+size);
+			}
+		}
+
 	}
 	
-	public void actionPerformd(ActionEvent e) {
-		//if()
+	
+	private boolean possible(int x,int y) {
+		if(currentX-size<=0 || currentX+size>=8*size||currentY-size<=0||currentY+size>=8*size)return false;
+		return true;
 	}
 
 }
