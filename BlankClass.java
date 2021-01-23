@@ -77,7 +77,7 @@ public class BlankClass extends GraphicsProgram {
 
 	}
 
-	public void actionPerformd(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
 		currentX=ball.getX();
 		currentY=ball.getY();
 		if (e.getSource() == left) {
