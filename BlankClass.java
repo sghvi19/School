@@ -83,7 +83,9 @@ public class BlankClass extends GraphicsProgram {
 		if (e.getSource() == left) {
 			if (possible()) {
 				ball.setLocation(currentX - size, currentY);
-			} 
+			} else {
+				println("imposible");
+			}
 		}
 		if (e.getSource() == right) {
 			if (possible()) {
