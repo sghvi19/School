@@ -41,6 +41,7 @@ public class BlankClass extends GraphicsProgram {
 	private JButton right;
 	private JButton upp;
 	private JButton	down;
+	private GOval ball;
 	private static final int size=40;
 	public void run() {
 		draw();
@@ -67,6 +68,10 @@ public class BlankClass extends GraphicsProgram {
 			line=new GLine(0,i*size,8*size,i*size);
 			add(line);
 		}
+		
+		ball=new GOval(5*size,6*size,2*size,2*size);
+		add(ball);
+		
 	}
 	
 	public void actionPerformd(ActionEvent e) {
