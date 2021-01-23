@@ -36,38 +36,52 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends ConsoleProgram {
-	private JTextField field1;
-	private JTextField field2;
-	private JTextField field3;
-	private JButton addTeach;
-	private JButton addSubj;
-	private JButton addPupil;
-	private JButton disPup;
-	private JButton disTeach;
-	private School school;
-
-	
-	
-	
-	public void run(){
-		String []str = new String[2];
-		str[0]="gama";
-		str[1]="rjoba";
-		println(str[0]+str[1]);
-		changeStrings(str);
-		println(str[0]+str[1]);
+public class BlankClass extends GraphicsProgram {
+	private JButton left;
+	private JButton right;
+	private JButton upp;
+	private JButton	down;
+	private static final int size=40;
+	public void run() {
+		draw();
+		left=new JButton("Left");
+		right=new JButton("Right");
+		upp=new JButton("Upp");
+		down=new JButton("Down");
+		
+		
+		add(left,SOUTH);
+		add(right,SOUTH);
+		add(upp,SOUTH);
+		add(down,SOUTH);
+		addActionListeners();
+		
+		
 	}
-	private void changeStrings(String[] s) {
-		s[0] = "gagi";		
-		s[1] = "marjos";		
-		println(s[0] + s[1]);
+	
+	private void draw() {
+		GLine line;
+		for(int i=0; i<8; i++) {
+			line=new GLine(i*size,0,i*size,10*size);
+			add(line);
+		}
+	}
+	
+	public void actionPerformd(ActionEvent e) {
+		//if()
 	}
 
-    
- 
-    
 }
+
+//private JTextField field1;
+//private JTextField field2;
+//private JTextField field3;
+//private JButton addTeach;
+//private JButton addSubj;
+//private JButton addPupil;
+//private JButton disPup;
+//private JButton disTeach;
+//private School school;
 //		school = new School();
 //		JLabel teach = new JLabel("Teach:");
 //		field1 = new JTextField(5);
@@ -96,7 +110,7 @@ public class BlankClass extends ConsoleProgram {
 //		add(disPup, SOUTH);
 //		add(disTeach, SOUTH);
 //		addActionListeners();
-	//}
+// }
 
 //	public void actionPerformed(ActionEvent e) {
 //		if (e.getSource() == addTeach) {
