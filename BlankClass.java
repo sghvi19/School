@@ -50,40 +50,22 @@ public class BlankClass extends ConsoleProgram {
 	
 	
 	
-	
-	public void run() {
-		String s=readLine();
-		println(longestPalindrome(s));
+	public void run(){
+		String []str = new String[2];
+		str[0]="gama";
+		str[1]="rjoba";
+		println(str[0]+str[1]);
+		changeStrings(str);
+		println(str[0]+str[1]);
 	}
-	
-	private String longestPalindrome(String s) {
-		if(s.length()==1)return s;
-        int result=0;
-        String res="";
-        for(int i=0; i<s.length();i++){
-            for(int j=i; j<=s.length(); j++){
-                if(palindrome(s,i,j)&& j-i>result){
-                	println("zsdaas");
-                    result=j-i;
-                    res=s.substring(i,j);
-                }
-            }
-        }
-        return res;
-    }
+	private void changeStrings(String[] s) {
+		s[0] = "gagi";		
+		s[1] = "marjos";		
+		println(s[0] + s[1]);
+	}
+
     
-    
-    private boolean palindrome(String s, int start, int end){
-        String result="";
-        for(int i=start; i<end;i++){
-        	
-            result=Character.toString(s.charAt(i))+result;
-        }
-       // println(result);
-       //println( s.substring(start,end));
-            if(s.substring(start,end).equals(result))return true;
-                                       return false;
-    }
+ 
     
 }
 //		school = new School();
