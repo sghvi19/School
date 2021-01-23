@@ -82,7 +82,7 @@ public class BlankClass extends GraphicsProgram {
 		currentY=(int) ball.getY();
 		if (e.getSource() == left) {
 			if(possible()) {
-				ball.setLocation(currentX-size, currentY);
+				ball.move(size, 0);
 			}
 		}
 		if (e.getSource() == right) {
@@ -105,7 +105,7 @@ public class BlankClass extends GraphicsProgram {
 	
 	
 	private boolean possible() {
-		if(currentX-size<=0 || currentX+size>=8*size||currentY-size<=0||currentY+size>=8*size)return false;
+		if(currentX-size<=0 || currentX+size>=8*size||currentY-size<=0||currentY+size>=8*size) return false;
 		return true;
 	}
 
