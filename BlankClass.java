@@ -47,95 +47,148 @@ public class BlankClass extends ConsoleProgram {
 	private static final int size = 40;
 
 	public void run() {
-//		draw();
-//		left = new JButton("Left");
-//		right = new JButton("Right");
-//		upp = new JButton("Upp");
-//		down = new JButton("Down");
-//
-//		add(left, SOUTH);
-//		add(right, SOUTH);
-//		add(upp, SOUTH);
-//		add(down, SOUTH);
-//		addActionListeners();
-		String str1 = readLine("bla: ");
-		String str2 = readLine("blu: ");
-		if (isAnagram(str1, str2)) {
-			println("qo sikoch");
+		int arr[][] = new int[3][3];
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[0].length; j++) {
+				arr[i][j] = readInt("Enter: ");
+			}
+		}
+		println(miniMax(arr));
+	}
+
+	private int miniMax(int[][] arr) {
+		ArrayList<Integer> mins = new ArrayList<Integer>();
+		ArrayList<Integer> maxs = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			int[] ar = arr[i];
+			mins.add(findMin(ar));
+			maxs.add(findMax(ar));
+		}
+			int minMax=mins.get(0);
+			int maxMin=maxs.get(0);
+		for (int i = 0; i < mins.size()-1; i++) {
+			minMax=Math.max(minMax, mins.get(i+1));
+		}
+		for (int i = 0; i < maxs.size()-1; i++) {
+			maxMin=Math.min(maxMin, maxs.get(i+1));
+		}
+		
+		if(minMax<maxMin) {
+			return -1;
+		}
+		if(minMax>maxMin) {
+			return 1;
 		}else {
-			println("var sikoch");
+			return 0;
 		}
-
 	}
 
-	private boolean isAnagram(String s1, String s2) {
-		int[] arr1 = new int[26];
-		int[] arr2 = new int[26];
-		for (int i = 0; i < s1.length(); i++) {
-			arr1[s1.charAt(i)-'a']++;
+	private int findMin(int[] ar) {
+		int result = ar[0];
+		for (int i = 0; i < ar.length - 1; i++) {
+			result = Math.min(result, ar[i + 1]);
 		}
-		for (int i = 0; i < s2.length(); i++) {
-			arr2[s2.charAt(i)-'a']++;
-		}
-		for (int i = 0; i < s2.length(); i++) {
-			if(arr1[i]!=arr2[i])return false;
-		}
-		return true;
-
+		return result;
 	}
 
-	private void draw() {
-		GLine line;
-		for (int i = 0; i < 9; i++) {
-			line = new GLine(i * size, 0, i * size, 8 * size);
-			add(line);
-			line = new GLine(0, i * size, 8 * size, i * size);
-			add(line);
+	private int findMax(int[] ar) {
+		int result = ar[0];
+		for (int i = 0; i < ar.length - 1; i++) {
+			result = Math.max(result, ar[i + 1]);
 		}
-
-		ball = new GOval(4 * size, 4 * size, size, size);
-		ball.setFilled(true);
-		ball.setFillColor(Color.BLACK);
-		add(ball);
-
-	}
-
-	public void actionPerformed(ActionEvent e) {
-		currentX = ball.getX();
-		currentY = ball.getY();
-		if (e.getSource() == left) {
-			if (possible()) {
-				ball.setLocation(currentX - size, currentY);
-			} else {
-				println("imposible");
-			}
-		}
-		if (e.getSource() == right) {
-			if (possible()) {
-				ball.setLocation(currentX + size, currentY);
-			}
-		}
-		if (e.getSource() == upp) {
-			if (possible()) {
-				ball.setLocation(currentX, currentY - size);
-			}
-		}
-		if (e.getSource() == down) {
-			if (possible()) {
-				ball.setLocation(currentX, currentY + size);
-			}
-		}
-
-	}
-
-	private boolean possible() {
-		if (currentX - size < 0 || currentX + size > 7 * size || currentY - size < 0 || currentY + size > 7 * size)
-			return false;
-		return true;
+		return result;
 	}
 
 }
+//	private boolean isAnagram(String s1, String s2) {
+//		int[] arr1 = new int[26];
+//		int[] arr2 = new int[26];
+//		for (int i = 0; i < s1.length(); i++) {
+//			arr1[s1.charAt(i)-'a']++;
+//		}
+//		for (int i = 0; i < s2.length(); i++) {
+//			arr2[s2.charAt(i)-'a']++;
+//		}
+//		for (int i = 0; i < s2.length(); i++) {
+//			if(arr1[i]!=arr2[i])return false;
+//		}
+//		return true;
+//
+//	}
 
+/*
+ * ball moving left,right,up,down
+ */
+
+//run(){
+//draw();
+//left = new JButton("Left");
+//right = new JButton("Right");
+//upp = new JButton("Upp");
+//down = new JButton("Down");
+//
+//add(left, SOUTH);
+//add(right, SOUTH);
+//add(upp, SOUTH);
+//add(down, SOUTH);
+//addActionListeners();
+//
+//}
+//	private void draw() {
+//		GLine line;
+//		for (int i = 0; i < 9; i++) {
+//			line = new GLine(i * size, 0, i * size, 8 * size);
+//			add(line);
+//			line = new GLine(0, i * size, 8 * size, i * size);
+//			add(line);
+//		}
+//
+//		ball = new GOval(4 * size, 4 * size, size, size);
+//		ball.setFilled(true);
+//		ball.setFillColor(Color.BLACK);
+//		add(ball);
+//
+//	}
+//
+//	public void actionPerformed(ActionEvent e) {
+//		currentX = ball.getX();
+//		currentY = ball.getY();
+//		if (e.getSource() == left) {
+//			if (possible()) {
+//				ball.setLocation(currentX - size, currentY);
+//			} else {
+//				println("imposible");
+//			}
+//		}
+//		if (e.getSource() == right) {
+//			if (possible()) {
+//				ball.setLocation(currentX + size, currentY);
+//			}
+//		}
+//		if (e.getSource() == upp) {
+//			if (possible()) {
+//				ball.setLocation(currentX, currentY - size);
+//			}
+//		}
+//		if (e.getSource() == down) {
+//			if (possible()) {
+//				ball.setLocation(currentX, currentY + size);
+//			}
+//		}
+//
+//	}
+//
+//	private boolean possible() {
+//		if (currentX - size < 0 || currentX + size > 7 * size || currentY - size < 0 || currentY + size > 7 * size)
+//			return false;
+//		return true;
+//	}
+//
+//}
+/*
+ * school interactors
+ */
 //private JTextField field1;
 //private JTextField field2;
 //private JTextField field3;
