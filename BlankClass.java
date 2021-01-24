@@ -36,7 +36,7 @@ import acm.util.RandomGenerator;
 import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends ConsoleProgram {
 	private JButton left;
 	private JButton right;
 	private JButton upp;
