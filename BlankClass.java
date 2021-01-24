@@ -47,17 +47,40 @@ public class BlankClass extends GraphicsProgram {
 	private static final int size = 40;
 
 	public void run() {
-		draw();
-		left = new JButton("Left");
-		right = new JButton("Right");
-		upp = new JButton("Upp");
-		down = new JButton("Down");
+//		draw();
+//		left = new JButton("Left");
+//		right = new JButton("Right");
+//		upp = new JButton("Upp");
+//		down = new JButton("Down");
+//
+//		add(left, SOUTH);
+//		add(right, SOUTH);
+//		add(upp, SOUTH);
+//		add(down, SOUTH);
+//		addActionListeners();
+		String str1 = readLine("bla: ");
+		String str2 = readLine("blu: ");
+		if (isAnagram(str1, str2)) {
+			println("qo sikoch");
+		}else {
+			println("var sikoch");
+		}
 
-		add(left, SOUTH);
-		add(right, SOUTH);
-		add(upp, SOUTH);
-		add(down, SOUTH);
-		addActionListeners();
+	}
+
+	private boolean isAnagram(String s1, String s2) {
+		int[] arr1 = new int[26];
+		int[] arr2 = new int[26];
+		for (int i = 0; i < s1.length(); i++) {
+			arr1[s1.charAt(i)-'a']++;
+		}
+		for (int i = 0; i < s2.length(); i++) {
+			arr2[s2.charAt(i)-'a']++;
+		}
+		for (int i = 0; i < s2.length(); i++) {
+			if(arr1[i]!=arr2[i])return false;
+		}
+		return true;
 
 	}
 
