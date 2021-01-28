@@ -50,6 +50,11 @@ public class BlankClass extends ConsoleProgram {
 				map.put(s, 1);
 			}
 		}
+		
+		
+		for(String st: map.keySet()) {
+			println(st+":"+map.get(st));
+		}
 	}
 
 }
