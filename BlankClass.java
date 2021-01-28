@@ -37,70 +37,89 @@ import acm.graphics.*;
 import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
-	private JButton left;
-	private JButton right;
-	private JButton upp;
-	private JButton down;
-	private GOval ball;
-	private double currentX;
-	private double currentY;
-	private static final int size = 40;
-
 	public void run() {
-		int arr[][] = new int[3][3];
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[0].length; j++) {
-				arr[i][j] = readInt("Enter: ");
+		String str = readLine("Enter bitch: ");
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		StringTokenizer tok = new StringTokenizer(str);
+		while(tok.hasMoreTokens()) {
+			String s=tok.nextToken();
+			if(map.containsKey(s)) {
+				int num=map.get(s)+1;
+				map.put(s, num);
+			}else {
+				map.put(s, 1);
 			}
 		}
-		println(miniMax(arr));
-	}
-
-	private int miniMax(int[][] arr) {
-		ArrayList<Integer> mins = new ArrayList<Integer>();
-		ArrayList<Integer> maxs = new ArrayList<Integer>();
-		for (int i = 0; i < arr.length; i++) {
-			int[] ar = arr[i];
-			mins.add(findMin(ar));
-			maxs.add(findMax(ar));
-		}
-			int minMax=mins.get(0);
-			int maxMin=maxs.get(0);
-		for (int i = 0; i < mins.size()-1; i++) {
-			minMax=Math.max(minMax, mins.get(i+1));
-		}
-		for (int i = 0; i < maxs.size()-1; i++) {
-			maxMin=Math.min(maxMin, maxs.get(i+1));
-		}
-		
-		if(minMax<maxMin) {
-			return -1;
-		}
-		if(minMax>maxMin) {
-			return 1;
-		}else {
-			return 0;
-		}
-	}
-
-	private int findMin(int[] ar) {
-		int result = ar[0];
-		for (int i = 0; i < ar.length - 1; i++) {
-			result = Math.min(result, ar[i + 1]);
-		}
-		return result;
-	}
-
-	private int findMax(int[] ar) {
-		int result = ar[0];
-		for (int i = 0; i < ar.length - 1; i++) {
-			result = Math.max(result, ar[i + 1]);
-		}
-		return result;
 	}
 
 }
+
+//minMax maxMin
+//	private JButton left;
+//	private JButton right;
+//	private JButton upp;
+//	private JButton down;
+//	private GOval ball;
+//	private double currentX;
+//	private double currentY;
+//	private static final int size = 40;
+//
+//	public void run() {
+//		int arr[][] = new int[3][3];
+//
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[0].length; j++) {
+//				arr[i][j] = readInt("Enter: ");
+//			}
+//		}
+//		println(miniMax(arr));
+//	}
+//
+//	private int miniMax(int[][] arr) {
+//		ArrayList<Integer> mins = new ArrayList<Integer>();
+//		ArrayList<Integer> maxs = new ArrayList<Integer>();
+//		for (int i = 0; i < arr.length; i++) {
+//			int[] ar = arr[i];
+//			mins.add(findMin(ar));
+//			maxs.add(findMax(ar));
+//		}
+//			int minMax=mins.get(0);
+//			int maxMin=maxs.get(0);
+//		for (int i = 0; i < mins.size()-1; i++) {
+//			minMax=Math.max(minMax, mins.get(i+1));
+//		}
+//		for (int i = 0; i < maxs.size()-1; i++) {
+//			maxMin=Math.min(maxMin, maxs.get(i+1));
+//		}
+//		
+//		if(minMax<maxMin) {
+//			return -1;
+//		}
+//		if(minMax>maxMin) {
+//			return 1;
+//		}else {
+//			return 0;
+//		}
+//	}
+//
+//	private int findMin(int[] ar) {
+//		int result = ar[0];
+//		for (int i = 0; i < ar.length - 1; i++) {
+//			result = Math.min(result, ar[i + 1]);
+//		}
+//		return result;
+//	}
+//
+//	private int findMax(int[] ar) {
+//		int result = ar[0];
+//		for (int i = 0; i < ar.length - 1; i++) {
+//			result = Math.max(result, ar[i + 1]);
+//		}
+//		return result;
+//	}
+//
+//}
+
 //	private boolean isAnagram(String s1, String s2) {
 //		int[] arr1 = new int[26];
 //		int[] arr2 = new int[26];
