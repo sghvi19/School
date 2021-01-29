@@ -41,9 +41,36 @@ public class BlankClass extends ConsoleProgram {
 
 		HashMap<String, Integer> map1 = new HashMap<String, Integer>();
 		HashMap<String, Integer> map2 = new HashMap<String, Integer>();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-		for (int i = 0; i < map1.size(); i++) {
-			
+		map1.put(a,3);
+		map1.put(b,4);
+		map1.put(c,5);
+		map2.put(a,2);
+		map2.put(d,3);
+		
+		
+		for (String str: map1.keySet()) {
+			if(map2.containsKey(str)){
+				int num=map2.get(str)+map1.get(str);
+				map.put(str,num);
+			}else {
+				map.put(str, map1.get(str));
+			}
+		}
+		
+		
+		for (String str: map2.keySet()) {
+			if(map1.containsKey(str)){
+				int num=map2.get(str)+map1.get(str);
+				map.put(str,num);
+			}else {
+				map.put(str, map2.get(str));
+			}
+		}
+		
+		for (String str: map.keySet()) {
+			println(str+" "+map.get(str));
 		}
 
 	}
