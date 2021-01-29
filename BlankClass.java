@@ -38,23 +38,14 @@ import acm.program.ConsoleProgram;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		String str = readLine("Enter bitch: ");
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		StringTokenizer tok = new StringTokenizer(str);
-		while(tok.hasMoreTokens()) {
-			String s=tok.nextToken();
-			if(map.containsKey(s)) {
-				int num=map.get(s)+1;
-				map.put(s, num);
-			}else {
-				map.put(s, 1);
-			}
+
+		HashMap<String, Integer> map1 = new HashMap<String, Integer>();
+		HashMap<String, Integer> map2 = new HashMap<String, Integer>();
+
+		for (int i = 0; i < map1.size(); i++) {
+			
 		}
-		
-		
-		for(String st: map.keySet()) {
-			println(st+":"+map.get(st));
-		}
+
 	}
 
 }
