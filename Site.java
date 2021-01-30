@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
-public class Fx {
+public class Site {
 	private String url;
 	private String contest;
 	private ArrayList<String> list;
 	private String keys;
-	public Fx(String line) {
+	
+	public Site(String line) {
 		StringTokenizer tok = new StringTokenizer(line, " []");
 		list=new ArrayList<String>();
 		url=tok.nextToken();
