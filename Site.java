@@ -31,7 +31,7 @@ public class Site {
 		return contest;
 	}
 
-	public Iterator<String> getKeywords(){
-		return list.iterator();
+	public ArrayList<String> getKeywords(){
+		return list;
 	}
 }
