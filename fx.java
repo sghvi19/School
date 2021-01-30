@@ -15,7 +15,7 @@ public class fx extends ConsoleProgram {
 	private int getMaxDescent(int[][] mountains) {
 		int ar[];
 		int result = 0;
-		;
+
 		for (int i = 0; i < mountains.length; i++) {
 			ar = mountains[i];
 
@@ -27,9 +27,9 @@ public class fx extends ConsoleProgram {
 	private int number(int[] ar) {
 		if (ar.length == 2)
 			return 1;
-		int result=0;
-		for (int i = 0; i < ar.length-1; i++) {
-			result=Math.max(result, ar[i]-ar[i+1]);	
+		int result = 0;
+		for (int i = 0; i < ar.length - 1; i++) {
+			result = Math.max(result, ar[i] - ar[i + 1]);
 		}
 		return result;
 	}
