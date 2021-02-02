@@ -57,9 +57,9 @@ public class workout extends ConsoleProgram {
 		findEnemy(s);
 		findEnemyOfEnemy();
 		if (list2.size() == map.get(s).size() && containsAll(s)) {
-			println("bla");
+			println(true);
 		} else {
-			println("blu");
+			println(false);
 		}
 	}
 
