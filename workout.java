@@ -12,10 +12,10 @@ public class workout extends ConsoleProgram{
 		list1.add("bla");
 		list1.add("blu");
 		
-		
-		list2.add("blu");
 		list2.add("bla");
-		
+
+		list2.add("blu");
+				
 		if(list1.equals(list2)) {
 			println("vasha");
 		}
