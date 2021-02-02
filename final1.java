@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 import acm.program.ConsoleProgram;
 import acm.util.ErrorException;
 
-public class workout extends ConsoleProgram {
+public class final1 extends ConsoleProgram {
 	private HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
 	private ArrayList<String> list1;
 	private ArrayList<String> list2;
