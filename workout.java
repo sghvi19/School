@@ -1,23 +1,25 @@
+import java.util.ArrayList;
+
 import acm.program.ConsoleProgram;
 
 public class workout extends ConsoleProgram{
 
 
 	public void run() {
-		int arr[] = new int[100];
+		ArrayList<String> list1=new ArrayList<String>();
+		ArrayList<String> list2=new ArrayList<String>();
 		
-		for (int i=0; i<10; ) {
-			for (int j=0; j<8; j++) {
-				j++;
-				arr[i+j] = i+2*j;
-				i++;
-			}
+		list1.add("bla");
+		list1.add("blu");
+		
+		
+		list2.add("blu");
+		list2.add("bla");
+		
+		if(list1.equals(list2)) {
+			println("vasha");
 		}
-
-		for (int i=0; i<10; i++) {
-			print(arr[i] + " ");
-		}
+		
 	}
-
 		
 }
