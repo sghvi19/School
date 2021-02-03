@@ -22,7 +22,7 @@ public class final1 extends ConsoleProgram {
 			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
 			String line = file.readLine();
 			while (true) {
-				println("cikl");
+				
 				if (line == null)
 					break;
 
@@ -48,6 +48,7 @@ public class final1 extends ConsoleProgram {
 					map.put(friend2, list);
 
 				}
+				println(line);
 				line = file.readLine();
 			}
 			file.close();
