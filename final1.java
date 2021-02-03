@@ -30,7 +30,7 @@ public class final1 extends ConsoleProgram {
 
 				friend1 = tok.nextToken();
 				friend2 = tok.nextToken();
-
+				println(friend1+friend2);
 				if (map.containsKey(friend1)) {
 					map.get(friend1).add(friend2);
 				} else {
@@ -48,8 +48,6 @@ public class final1 extends ConsoleProgram {
 					map.put(friend2, list);
 
 				}
-
-				
 			}
 		
 			file.close();
