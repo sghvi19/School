@@ -19,7 +19,7 @@ public class final1 extends ConsoleProgram {
 		String s = "a";
 
 		try {
-			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
+			BufferedReader file = new BufferedReader(new FileReader("fx.java"));
 			
 			while (true) {
 				String line = file.readLine();
