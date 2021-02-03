@@ -26,7 +26,7 @@ public class final1 extends ConsoleProgram {
 				if (line == null) {
 					break;
 				}
-				StringTokenizer tok = new StringTokenizer(line);
+				StringTokenizer tok = new StringTokenizer(line," ");
 
 				friend1 = tok.nextToken();
 				friend2 = tok.nextToken();
