@@ -19,7 +19,7 @@ public class final1 extends ConsoleProgram {
 		String s = "a";
 
 		try {
-			BufferedReader file = new BufferedReader(new FileReader("fx.java"));
+			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
 			
 			while (true) {
 				String line = file.readLine();
@@ -55,7 +55,7 @@ public class final1 extends ConsoleProgram {
 			}
 		
 			file.close();
-		} catch (IOException ex) {
+		}catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
 		println("broke");
