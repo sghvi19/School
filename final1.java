@@ -11,7 +11,7 @@ import acm.util.ErrorException;
 public class final1 extends ConsoleProgram {
 	private HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
 	private ArrayList<String> list1;
-	private ArrayList<String> list2;
+	private ArrayList<String> list2 = new ArrayList<String>();
 
 	public void run() {
 		String friend1;
@@ -53,7 +53,7 @@ public class final1 extends ConsoleProgram {
 		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
-
+		println("bro");
 		findEnemy(s);
 		findEnemyOfEnemy();
 		if (list2.size() == map.get(s).size() && containsAll(s)) {
@@ -81,7 +81,7 @@ public class final1 extends ConsoleProgram {
 	}
 
 	private void findEnemyOfEnemy() {
-		list2 = new ArrayList<String>();
+		
 		for (String s : list1) {
 			for (String str : map.keySet()) {
 				if (!map.get(s).contains(str)) {
