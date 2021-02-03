@@ -22,10 +22,9 @@ public class final1 extends ConsoleProgram {
 			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
 			String line = file.readLine();
 			while (true) {
-				
-				if (line == null)
+				if (line == null) {
 					break;
-
+				}
 				StringTokenizer tok = new StringTokenizer(line);
 
 				friend1 = tok.nextToken();
@@ -48,14 +47,15 @@ public class final1 extends ConsoleProgram {
 					map.put(friend2, list);
 
 				}
-				
+
 				line = file.readLine();
 			}
+			println("broke");
 			file.close();
-		}catch (IOException ex) {
+		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
-		println("ok");
+
 		findEnemy(s);
 		findEnemyOfEnemy();
 		if (list2.size() == map.get(s).size() && containsAll(s)) {
@@ -83,7 +83,7 @@ public class final1 extends ConsoleProgram {
 	}
 
 	private void findEnemyOfEnemy() {
-		
+
 		for (String s : list1) {
 			for (String str : map.keySet()) {
 				if (!map.get(s).contains(str)) {
