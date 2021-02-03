@@ -51,11 +51,12 @@ public class final1 extends ConsoleProgram {
 
 				
 			}
-			println("broke");
+		
 			file.close();
 		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
+		println("broke");
 
 		findEnemy(s);
 		findEnemyOfEnemy();
