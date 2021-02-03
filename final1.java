@@ -53,7 +53,6 @@ public class final1 extends ConsoleProgram {
 
 				}
 			}
-		
 			file.close();
 		}catch (IOException ex) {
 			throw new ErrorException(ex);
