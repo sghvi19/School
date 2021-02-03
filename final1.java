@@ -48,10 +48,11 @@ public class final1 extends ConsoleProgram {
 					map.put(friend2, list);
 
 				}
-				println(line);
+				
 				line = file.readLine();
 			}
 			file.close();
+			println("ok");
 		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
