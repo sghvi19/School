@@ -20,8 +20,9 @@ public class final1 extends ConsoleProgram {
 
 		try {
 			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
-			String line = file.readLine();
+			
 			while (true) {
+				String line = file.readLine();
 				if (line == null) {
 					break;
 				}
@@ -48,7 +49,7 @@ public class final1 extends ConsoleProgram {
 
 				}
 
-				line = file.readLine();
+				
 			}
 			println("broke");
 			file.close();
