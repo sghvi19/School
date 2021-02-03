@@ -52,11 +52,10 @@ public class final1 extends ConsoleProgram {
 				line = file.readLine();
 			}
 			file.close();
-			println("ok");
-		} catch (IOException ex) {
+		}catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
-		println("bro");
+		println("ok");
 		findEnemy(s);
 		findEnemyOfEnemy();
 		if (list2.size() == map.get(s).size() && containsAll(s)) {
