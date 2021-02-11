@@ -11,7 +11,7 @@ public class dominoSimulator extends ConsoleProgram {
 	private ArrayList<Integer> list2 = new ArrayList<Integer>();
 
 	public void run() {
-		int n = 10;
+		int n = 1000000000;
 		int res = 0;
 		for (int i = 0; i < n; i++) {
 			simulate();
