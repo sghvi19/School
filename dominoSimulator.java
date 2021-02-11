@@ -21,7 +21,7 @@ public class dominoSimulator extends ConsoleProgram {
 			res += i;
 		}
 		res = res / n;
-
+		println(res);
 	}
 
 	private void simulate() {
