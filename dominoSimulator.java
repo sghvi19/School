@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import acm.program.ConsoleProgram;
 import acm.util.RandomGenerator;
 
-public class tries extends ConsoleProgram {
+public class dominoSimulator extends ConsoleProgram {
 
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private ArrayList<Integer> list = new ArrayList<Integer>();
