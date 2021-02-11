@@ -15,6 +15,8 @@ public class dominoSimulator extends ConsoleProgram {
 		int res = 0;
 		for (int i = 0; i < n; i++) {
 			simulate();
+			list1.clear();
+			list2.clear();
 		}
 
 		for (int i : list) {
@@ -39,6 +41,7 @@ public class dominoSimulator extends ConsoleProgram {
 			list1.clear();
 			list2.clear();
 		}
+		
 	}
 
 	private void cards() {
