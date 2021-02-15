@@ -1,7 +1,10 @@
+
+
 import java.util.ArrayList;
 
 import acm.program.ConsoleProgram;
-import acmx.export.java.util.Arrays;
+
+
 
 public class solveSudoku extends ConsoleProgram {
 
@@ -94,7 +97,7 @@ public class solveSudoku extends ConsoleProgram {
 	}
 
 	private void checkVertical(int[][] sud, int i, int j) {
-		for (int m = 0; m < sud.length; m++) {
+		for (int m = 0; m < sud[0].length; m++) {
 			if (list.contains(sud[i][m])) {
 				list.remove(sud[i][m]);
 			}
