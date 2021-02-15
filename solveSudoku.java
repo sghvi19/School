@@ -21,22 +21,22 @@ public class solveSudoku extends ConsoleProgram {
 				{ 3, 0, 0, 0, 9, 5, 1, 2, 0 }, 
 				{ 0, 0, 9, 0, 0, 7, 0, 8, 0 } };
 
-		solveSudoku(matrix);
+		solvesudoku(matrix);
 
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix.length; j++) {
 				if (i == 8) {
-					print(" " + matrix[i][j]);
+					print(matrix[i][j]+" ");
 					println();
 				} else {
-					print(" " + matrix[i][j]);
+					print(matrix[i][j]+" ");
 				}
 			}
 		}
 
 	}
 
-	private void solveSudoku(int[][] sud) {
+	private void solvesudoku(int[][] sud) {
 		while (notFilled(sud)) {
 			for (int i = 0; i < sud.length; i++) {
 				for (int j = 0; j < sud[0].length; j++) {
