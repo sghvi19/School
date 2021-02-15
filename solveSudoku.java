@@ -38,7 +38,6 @@ public class solveSudoku extends ConsoleProgram {
 					}
 				}
 			}
-
 		}
 	}
 
