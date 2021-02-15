@@ -31,11 +31,11 @@ public class solveSudoku extends ConsoleProgram {
 		while (notFilled(sud)) {
 			for (int i = 0; i < sud.length; i++) {
 				for (int j = 0; j < sud[0].length; j++) {
-					fillArray();
 					if (sud[i][j] == 0) {
+						fillArray();
 						writeNumber(sud, i, j);
+						list.clear();
 					}
-					list.clear();
 				}
 			}
 
