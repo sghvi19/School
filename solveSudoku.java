@@ -8,9 +8,15 @@ public class solveSudoku extends ConsoleProgram {
 	private ArrayList<Integer> list = new ArrayList<Integer>();
 
 	public void run() {
-		int[][] matrix = { { 0, 0, 0, 0, 0, 8, 3, 5, 4 }, { 7, 0, 0, 6, 0, 2, 8, 1, 0 }, { 0, 0, 0, 9, 0, 0, 7, 0, 2 },
-				{ 0, 5, 8, 7, 0, 4, 0, 0, 0 }, { 4, 3, 2, 5, 1, 0, 6, 7, 8 }, { 0, 1, 0, 0, 0, 6, 0, 0, 5 },
-				{ 8, 6, 0, 0, 3, 0, 0, 0, 0 }, { 3, 0, 0, 0, 9, 5, 1, 2, 0 }, { 0, 0, 9, 0, 0, 7, 0, 8, 0 } };
+		int[][] matrix = { { 0, 0, 0, 0, 0, 8, 3, 5, 4 }, 
+				{ 7, 0, 0, 6, 0, 2, 8, 1, 0 }, 
+				{ 0, 0, 0, 9, 0, 0, 7, 0, 2 },
+				{ 0, 5, 8, 7, 0, 4, 0, 0, 0 }, 
+				{ 4, 3, 2, 5, 1, 0, 6, 7, 8 }, 
+				{ 0, 1, 0, 0, 0, 6, 0, 0, 5 },
+				{ 8, 6, 0, 0, 3, 0, 0, 0, 0 }, 
+				{ 3, 0, 0, 0, 9, 5, 1, 2, 0 }, 
+				{ 0, 0, 9, 0, 0, 7, 0, 8, 0 } };
 
 		solveSudoku(matrix);
 
@@ -71,8 +77,8 @@ public class solveSudoku extends ConsoleProgram {
 		j = j - j % 3;
 		for (int m = i; m < i + 3; m++) {
 			for (int n = j; n < j + 3; n++) {
-				if (list.contains(sud[i][j])) {
-					list.remove(sud[i][j]);
+				if (list.contains(sud[m][n])) {
+					list.remove(sud[m][n]);
 				}
 			}
 		}
