@@ -20,7 +20,7 @@ public class solveSudoku extends ConsoleProgram {
 					print(" " + matrix[i][j]);
 					println();
 				} else {
-					print(" "+matrix[i][j]);
+					print(" " + matrix[i][j]);
 				}
 			}
 		}
@@ -32,7 +32,9 @@ public class solveSudoku extends ConsoleProgram {
 			for (int i = 0; i < sud.length; i++) {
 				for (int j = 0; j < sud[0].length; j++) {
 					fillArray();
-					writeNumber(sud, i, j);
+					if (sud[i][j] == 0) {
+						writeNumber(sud, i, j);
+					}
 					list.clear();
 				}
 			}
