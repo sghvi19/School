@@ -76,6 +76,8 @@ public class slideGallery extends GraphicsProgram {
 				}
 
 			}
+			list.add((GRect) getElementAt(getWidth() / 2, getHeight() / 2));
+			list.add((GRect) getElementAt(getWidth() / 2 - DISTANCE - SIZE / 2 - 1, getHeight() / 2));
 		} else {
 			for (int i = 0; i < list.size() - 1; i++) {
 
