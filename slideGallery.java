@@ -67,9 +67,11 @@ public class slideGallery extends GraphicsProgram {
 
 				
 				if (list.get(i).getWidth() == SIZE) {
+					list.get(i).setSize(SIZE / 3, SIZE / 3);
 					list.get(i + 1).setSize(SIZE, SIZE);
+					
 				}
-				//list.get(i).setSize(SIZE / 3, SIZE / 3);
+				
 
 			}
 		} else {
