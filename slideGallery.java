@@ -11,7 +11,7 @@ import acm.util.RandomGenerator;
 public class slideGallery extends GraphicsProgram {
 	private ArrayList<GRect> list;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private static final int SIZE = 200;
+	private static final int SIZE = 500;
 	private static final int DISTANCE = 30;
 	private JButton right;
 	private JButton left;
