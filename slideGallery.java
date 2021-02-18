@@ -61,7 +61,6 @@ public class slideGallery extends GraphicsProgram {
 	private void reNew(int n) {
 		if (n == -1) {
 			for (int i = 0; i < list.size() - 1; i++) {
-				
 
 				list.get(i).setLocation(list.get(i).getX() - DISTANCE - list.get(i).getWidth(),
 						getHeight() / 2 - list.get(i).getHeight() / 2);
@@ -71,6 +70,12 @@ public class slideGallery extends GraphicsProgram {
 //
 //				}
 
+			}
+		} else {
+			for (int i = 0; i < list.size() - 1; i++) {
+
+				list.get(i).setLocation(list.get(i).getX() + DISTANCE + list.get(i).getWidth(),
+						getHeight() / 2 - list.get(i).getHeight() / 2);
 			}
 		}
 	}
