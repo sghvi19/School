@@ -65,10 +65,11 @@ public class slideGallery extends GraphicsProgram {
 				list.get(i).setLocation(list.get(i).getX() - DISTANCE - list.get(i).getWidth(),
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 
-				list.get(i).setSize(SIZE / 3, SIZE / 3);
+				
 				if (list.get(i).getWidth() == SIZE) {
 					list.get(i + 1).setSize(SIZE, SIZE);
 				}
+				list.get(i).setSize(SIZE / 3, SIZE / 3);
 
 			}
 		} else {
