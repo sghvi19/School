@@ -27,7 +27,7 @@ public class slideGallery extends GraphicsProgram {
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			} else {
 				list.get(i).setSize(SIZE/3, SIZE/3);
-				add(list.get(i), list.get(i - 1).getX() + SIZE + DISTANCE,
+				add(list.get(i), list.get(i - 1).getX() + list.get(i-1).getWidth() + DISTANCE,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			}
 		}
