@@ -10,8 +10,8 @@ import acm.util.RandomGenerator;
 public class slideGallery extends GraphicsProgram {
 	private ArrayList<GRect> list;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private static final int SIZE = 50;
-	private static final int DISTANCE = 10;
+	private static final int SIZE = 100;
+	private static final int DISTANCE = 30;
 
 	public void run() {
 		list = new ArrayList<GRect>();
