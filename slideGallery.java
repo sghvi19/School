@@ -10,7 +10,7 @@ import acm.util.RandomGenerator;
 public class slideGallery extends GraphicsProgram {
 	private ArrayList<GRect> list;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private static final int SIZE = 100;
+	private static final int SIZE = 200;
 	private static final int DISTANCE = 30;
 
 	public void run() {
@@ -26,6 +26,7 @@ public class slideGallery extends GraphicsProgram {
 				add(list.get(i), getWidth() / 2 - list.get(i).getWidth() / 2,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			} else {
+				list.get(i).setSize(SIZE/3, SIZE/3);
 				add(list.get(i), list.get(i - 1).getX() + list.get(i).getWidth() + DISTANCE,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			}
