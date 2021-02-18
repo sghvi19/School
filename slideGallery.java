@@ -1,6 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import acm.graphics.GRect;
@@ -12,14 +13,14 @@ public class slideGallery extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private static final int SIZE = 200;
 	private static final int DISTANCE = 30;
-	private JLabel right;
-	private JLabel left;
+	private JButton right;
+	private JButton left;
 
 	public void run() {
 		list = new ArrayList<GRect>();
 		fillList();
-		left = new JLabel("Left");
-		right = new JLabel("Right");
+		left = new JButton("Left");
+		right = new JButton("Right");
 
 		for (int i = 0; i < list.size(); i++) {
 			if (i == 0) {
@@ -49,16 +50,28 @@ public class slideGallery extends GraphicsProgram {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == left) {
+		if (e.getSource() == right) {
 			reNew(-1);
 		} else {
 			reNew(1);
-			
+
 		}
 	}
 
 	private void reNew(int n) {
+		if (n == -1) {
+			for (int i = 0; i < list.size() - 1; i++) {
+				if (list.get(i).getWidth() == SIZE) {
+					list.get(i).setSize(SIZE / 3, SIZE / 3);
+					list.get(i + 1).setSize(SIZE, SIZE);
 
+				}
+
+				list.get(i).setLocation(list.get(i).getX() - DISTANCE - list.get(i + 1).getWidth(),
+						getHeight() / 2 - list.get(i).getHeight() / 2);
+
+			}
+		}
 	}
 
 }
