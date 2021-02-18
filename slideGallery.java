@@ -12,13 +12,14 @@ public class slideGallery extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private static final int SIZE = 200;
 	private static final int DISTANCE = 30;
+	private JLabel right;
+	private JLabel left;
 
 	public void run() {
 		list = new ArrayList<GRect>();
 		fillList();
-//		JLabel left = new JLabel("Left");
-//		JLabel right = new JLabel("Right");
-	
+		left = new JLabel("Left");
+		right = new JLabel("Right");
 
 		for (int i = 0; i < list.size(); i++) {
 			if (i == 0) {
@@ -26,15 +27,15 @@ public class slideGallery extends GraphicsProgram {
 				add(list.get(i), getWidth() / 2 - list.get(i).getWidth() / 2,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			} else {
-				list.get(i).setSize(SIZE/3, SIZE/3);
-				add(list.get(i), list.get(i - 1).getX() + list.get(i-1).getWidth() + DISTANCE,
+				list.get(i).setSize(SIZE / 3, SIZE / 3);
+				add(list.get(i), list.get(i - 1).getX() + list.get(i - 1).getWidth() + DISTANCE,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			}
 		}
 
-//		add(left, SOUTH);
-//		add(right, SOUTH);
-//		addActionListeners();
+		add(left, SOUTH);
+		add(right, SOUTH);
+		addActionListeners();
 	}
 
 	private void fillList() {
@@ -46,9 +47,18 @@ public class slideGallery extends GraphicsProgram {
 			list.add(rect);
 		}
 	}
-//
-//	public void actionPerformed(ActionEvent e) {
-//
-//	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == left) {
+			reNew(-1);
+		} else {
+			reNew(1);
+			
+		}
+	}
+
+	private void reNew(int n) {
+
+	}
 
 }
