@@ -16,9 +16,9 @@ public class slideGallery extends GraphicsProgram {
 	public void run() {
 		list = new ArrayList<GRect>();
 		fillList();
-		JLabel left = new JLabel("Left");
-		JLabel right = new JLabel("Right");
-		int x = 0;
+//		JLabel left = new JLabel("Left");
+//		JLabel right = new JLabel("Right");
+	
 
 		for (int i = 0; i < list.size(); i++) {
 			if (i == 0) {
@@ -31,9 +31,9 @@ public class slideGallery extends GraphicsProgram {
 			}
 		}
 
-		add(left, SOUTH);
-		add(right, SOUTH);
-		addActionListeners();
+//		add(left, SOUTH);
+//		add(right, SOUTH);
+//		addActionListeners();
 	}
 
 	private void fillList() {
@@ -45,9 +45,9 @@ public class slideGallery extends GraphicsProgram {
 			list.add(rect);
 		}
 	}
-
-	public void actionPerformed(ActionEvent e) {
-
-	}
+//
+//	public void actionPerformed(ActionEvent e) {
+//
+//	}
 
 }
