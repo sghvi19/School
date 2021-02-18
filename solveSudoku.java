@@ -11,7 +11,7 @@ public class solveSudoku extends ConsoleProgram {
 		int[][] matrix = {{ 1, 2, 3},
 				{ 4, 0, 6 },
 				{ 7, 8, 9 }} ;
-
+			
 		solvesudoku(matrix);
 
 		for (int i = 0; i < matrix.length; i++) {
