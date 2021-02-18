@@ -62,17 +62,17 @@ public class slideGallery extends GraphicsProgram {
 		if (n == -1) {
 			for (int i = 0; i < list.size() - 1; i++) {
 				if (list.get(i).getWidth() == SIZE) {
-					list.get(i).setSize(SIZE/3, SIZE/3);
-					list.get(i).setLocation(getWidth() / 2 - list.get(i + 1).getWidth() / 2-SIZE/3-DISTANCE,
-							getHeight() / 2 - list.get(i).getHeight() / 2);
+					list.get(i).setSize(SIZE / 3, SIZE / 3);
 					list.get(i + 1).setSize(SIZE, SIZE);
+					list.get(i).setLocation(getWidth() / 2 - list.get(i + 1).getWidth() / 2 - SIZE / 3 - DISTANCE,
+							getHeight() / 2 - list.get(i).getHeight() / 2);
+
 					list.get(i + 1).setLocation(getWidth() / 2 - list.get(i + 1).getWidth() / 2,
 							getHeight() / 2 - list.get(i + 1).getHeight() / 2);
-					list.remove(i+1);
+					list.remove(i + 1);
 					list.remove(i);
-				}else {
-					list.get(i).move(- DISTANCE - list.get(i).getWidth(),
-							0);
+				} else {
+					list.get(i).move(-DISTANCE - list.get(i).getWidth(), 0);
 				}
 
 			}
