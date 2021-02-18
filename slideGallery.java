@@ -71,6 +71,7 @@ public class slideGallery extends GraphicsProgram {
 							getHeight() / 2 - list.get(i + 1).getHeight() / 2);
 					list.remove(i + 1);
 					list.remove(i);
+					i--;
 				} else {
 					list.get(i).move(-DISTANCE - list.get(i).getWidth(), 0);
 				}
