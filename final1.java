@@ -16,25 +16,28 @@ public class final1 extends ConsoleProgram {
 	public void run() {
 		String friend1;
 		String friend2;
-		String s = "a";
+		String s = "";
 
 		try {
-			BufferedReader file = new BufferedReader(new FileReader("tries.java"));
-			
+			BufferedReader file = new BufferedReader(new FileReader("main.java"));
+
 			while (true) {
 				String line = file.readLine();
 				if (line == null) {
 					break;
 				}
-				StringTokenizer tok = new StringTokenizer(line," ");
+				StringTokenizer tok = new StringTokenizer(line, " ");
 
 				friend1 = tok.nextToken();
 				friend2 = tok.nextToken();
-			
+
 				if (map.containsKey(friend1)) {
-					ArrayList<String> list=map.get(friend1);
-					list.add(friend2);
+					ArrayList<String> list = map.get(friend1);
+					if (!list.contains(friend2)) {
+						list.add(friend2);
+					}
 					map.put(friend1, list);
+
 				} else {
 					ArrayList<String> list = new ArrayList<String>();
 					list.add(friend2);
@@ -43,8 +46,10 @@ public class final1 extends ConsoleProgram {
 				}
 
 				if (map.containsKey(friend2)) {
-					ArrayList<String> list=map.get(friend2);
+					ArrayList<String> list = map.get(friend2);
+					if (!list.contains(friend1)) {
 					list.add(friend1);
+					}
 					map.put(friend2, list);
 				} else {
 					ArrayList<String> list = new ArrayList<String>();
@@ -54,10 +59,10 @@ public class final1 extends ConsoleProgram {
 				}
 			}
 			file.close();
-		}catch (IOException ex) {
+		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
-		println("broke");
+	
 
 		findEnemy(s);
 		findEnemyOfEnemy();
