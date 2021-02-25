@@ -16,7 +16,7 @@ public class final1 extends ConsoleProgram {
 	public void run() {
 		String friend1;
 		String friend2;
-		String s = "";
+		String s = "a";
 
 		try {
 			BufferedReader file = new BufferedReader(new FileReader("main.java"));
