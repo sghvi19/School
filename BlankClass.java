@@ -264,7 +264,7 @@ import acm.program.ConsoleProgram;
 //}
 
 //mexute varianti 4 amocana 5
-	public class BlankClass extends GraphicsProgram{
+public class BlankClass extends GraphicsProgram {
 	private final static int CIRCLE_D = 40;
 	private final static int CIRCLE_NUM = 50;
 	private final static int DELAY = 2000;
@@ -300,7 +300,7 @@ import acm.program.ConsoleProgram;
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (click==0) {
+		if (click == 0) {
 			obj = (GOval) getElementAt(e.getX(), e.getY());
 		}
 		if (getElementAt(e.getX(), e.getY()) != null && getElementAt(e.getX(), e.getY()) == obj) {
@@ -317,6 +317,7 @@ import acm.program.ConsoleProgram;
 
 		obj = (GOval) getElementAt(e.getX(), e.getY());
 	}
+}
 
 //}
 //mexute varianti 4 amocana4 (almost done)
