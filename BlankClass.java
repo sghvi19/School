@@ -823,14 +823,15 @@ public class BlankClass extends GraphicsProgram {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		mouseX = e.getX();
-		mouseY = e.getY();
 		if (getElementAt(e.getX(), e.getY()) == oval) {
 			oval.setFillColor(getRandomColor());
 		}
 	}
 
-	
+	public void mousePressed(MouseEvent e) {
+		mouseX = e.getX();
+		mouseY = e.getY();
+	}
 
 	private Color getRandomColor() {
 		return rgen.nextColor();
