@@ -36,6 +36,9 @@ public class final1 extends ConsoleProgram {
 					if (!list.contains(friend2)) {
 						list.add(friend2);
 					}
+					if(!list.contains(friend1)) {
+						list.add(friend1);
+					}
 					map.put(friend1, list);
 
 				} else {
@@ -49,6 +52,9 @@ public class final1 extends ConsoleProgram {
 					ArrayList<String> list = map.get(friend2);
 					if (!list.contains(friend1)) {
 					list.add(friend1);
+					}
+					if(!list.contains(friend2)) {
+						list.add(friend2);
 					}
 					map.put(friend2, list);
 				} else {
