@@ -2,7 +2,7 @@ import acm.graphics.GLine;
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
-public class main extends GraphicsProgram {
+public class main extends ConsoleProgram {
 
 	public void run() {
 		int n = readInt("enter ");
@@ -12,7 +12,7 @@ public class main extends GraphicsProgram {
 	}
 
 	private int fibonachi(int n) {
-		if (n == 2 || n == 2) {
+		if (n == 1 || n == 2) {
 			return 1;
 		}
 		return fibonachi(n-1)+fibonachi(n-2);
