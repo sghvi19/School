@@ -1,5 +1,6 @@
 import acm.graphics.GLine;
 import acm.graphics.GRect;
+import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 
 public class main extends ConsoleProgram {
