@@ -22,7 +22,7 @@ public class main extends GraphicsProgram {
 				oval.move(1, y);
 				pause(10);
 				if (oval.getY() <= startY+startY/2  && y<0) {
-	
+					startY+=startY/2;
 					y = -y;
 				}
 				if (oval.getY() + 40 >= getHeight()) {
