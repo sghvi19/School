@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import acm.graphics.GLine;
 import acm.graphics.GObject;
@@ -8,17 +9,14 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends ConsoleProgram {
+public class main extends GraphicsProgram {
 
 	public void run() {
-		String str = readLine();
-		String s="";
-		for (int i = str.length()-1; i >= 0; i--) {
-			s+=str.charAt(i);
-		}
-		if(s.equals(str)) {
-			println("abara");
-		}
+		GOval oval=new GOval(getWidth()/2,getHeight()/2,30,30);
+		oval.setFilled(true);
+		oval.setColor(Color.red);
+		oval.setFillColor(Color.blue);
+		add(oval);
 	}
 
 }
