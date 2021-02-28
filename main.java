@@ -8,7 +8,7 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends GraphicsProgram {
+public class main extends ConsoleProgram {
 
 	public void run() {
 		String str = readLine();
