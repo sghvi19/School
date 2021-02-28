@@ -20,13 +20,14 @@ public class main extends GraphicsProgram {
 			if (!t) {
 				oval.move(0, y);
 				pause(10);
-				if (oval.getY() + 40 >= getHeight()) {
-					y = -y;
-				}
-				if (oval.getY() <= startY * 0.8 &&y<0) {
+				if (oval.getY() <= startY * 0.8 && y<0) {
 					startY = startY * 0.8;
 					y = -y;
 				}
+				if (oval.getY() + 40 >= getHeight()) {
+					y = -y;
+				}
+				
 			}
 		}
 	}
