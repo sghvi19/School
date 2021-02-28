@@ -9,7 +9,7 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-	private GOval oval=null;
+	private GOval oval;
 	private boolean t=true;
 
 	public void run() {
