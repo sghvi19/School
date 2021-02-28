@@ -9,10 +9,23 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-	private GOval oval;
+	private GOval oval=null;
 	private boolean t=true;
 
 	public void run() {
+		int y=3;
+			while(oval!=null) {
+				double startY= oval.getY();
+				oval.move(0, y);
+				pause(100);
+				if(oval.getY()+40>=getHeight()) {
+					y=-y;
+				}
+				if(oval.getY()<=startY*0.8) {
+					startY=startY*0.8;
+					y=-y;
+				}
+			}
 		addMouseListeners();
 	}
 
