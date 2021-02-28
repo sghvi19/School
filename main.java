@@ -20,7 +20,7 @@ public class main extends GraphicsProgram {
 			if (!t) {
 				double startY = oval.getY();
 				oval.move(0, y);
-				pause(100);
+				pause(10);
 				if (oval.getY() + 40 >= getHeight()) {
 					y = -y;
 				}
