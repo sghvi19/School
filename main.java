@@ -25,9 +25,11 @@ public class main extends GraphicsProgram {
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		remove(line);
-		line = new GLine(mouseX, mouseY, e.getX(),e.getY());
-		add(line);
+		if (line != null) {
+			remove(line);
+			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
+			add(line);
+		}
 	}
 
 }
