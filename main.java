@@ -15,19 +15,17 @@ public class main extends ConsoleProgram {
 	public void run() {
 		String str = readLine("Enter text: ");
 		String result = "";
-//		for (int i = 0; i < str.length(); i++) {
-//			if (Character.isDigit(str.charAt(i))) {
-//				int x = str.charAt(i) - '0';
-//				for (int j = 0; j < x; j++) {
-//					result+=str.charAt(i+1);
-//				}
-//				str=str.substring(i+2);
-//			}else {
-//				
-//			}
-//		}
-		str=str.substring(4);
-		println(str);
+		for (int i = 0; i < str.length(); i++) {
+			if (Character.isDigit(str.charAt(i))) {
+				int x = str.charAt(i) - '0';
+				for (int j = 0; j < x; j++) {
+					result+=str.charAt(i+1);
+				}
+				str=str.substring(i+2);
+			}else {
+				result+=str.charAt(i);
+			}
+		}
 
 	}
 
