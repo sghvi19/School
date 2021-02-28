@@ -21,7 +21,7 @@ public class main extends ConsoleProgram {
 				for (int j = 0; j < x; j++) {
 					result+=str.charAt(i+1);
 				}
-				str=str.substring(i+2);
+				i=i+1;
 			}else {
 				result+=str.charAt(i);
 			}
