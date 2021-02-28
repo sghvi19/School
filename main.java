@@ -11,21 +11,21 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-
+	private RandomGenerator rgen=RandomGenerator.getInstance();
+	
 	public void run() {
-		GPolygon diamond = createDiamond(100, 75);
-		diamond.setFilled(true);
-		diamond.setFillColor(Color.RED);
-		add(diamond, getWidth() / 2, getHeight() / 2);
-	}
-
-	private GPolygon createDiamond(double width, double height) {
-		GPolygon diamond = new GPolygon();
-		diamond.addVertex(-width / 2, 0);
-		diamond.addVertex(0, -height / 2);
-		diamond.addVertex(width / 2, 0);
-		diamond.addVertex(0, height / 2);
-		return diamond;
+		GOval oval;
+		for (int i = 0; i < 25; i++) {
+			Color color=rgen.nextColor();
+			for (int j = 0; j < 2; j++) {
+				int x=rgen.nextInt(0,getWidth()-40);
+				int y=rgen.nextInt(0,getHeight-40);
+				oval=new GOval(x,y,40,40);
+				oval.setFilled(true);
+				oval.setColor(color);
+				add(oval);
+			}
+		}
 	}
 
 }
