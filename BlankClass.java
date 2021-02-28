@@ -612,6 +612,11 @@ public class BlankClass extends ConsoleProgram{
 			}
 			y=next;
 		}
+		if(t) {
+			println("progression");
+		}else {
+			println("not a progression");
+		}
 
 	}
 }
