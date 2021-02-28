@@ -9,38 +9,17 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-	private int mouseX;
-	private int mouseY;
-	private GLine line;
-	private boolean t = true;
+	private GOval oval;
 
 	public void run() {
+		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
+		add(oval);
 		addMouseListeners();
 	}
 
-	public void mouseClicked(MouseEvent e) {
-		if (t) {
-			mouseX = e.getX();
-			mouseY = e.getY();
-			line = new GLine(mouseX, mouseY, mouseX, mouseY);
-			add(line);
-			t = false;
-		} else {
-			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
-			add(line);
-			t=true;
-			line=null;
-		}
-	}
-
-	
-
-	public void mouseMoved(MouseEvent e) {
-		if (line != null) {
-			remove(line);
-			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
-			add(line);
-
+	public void mouseDragged(MouseEvent e) {
+		if (getElementAt(e.getX(), e.getY()) != null) {
+			oval.setLocation(e.getX()-20,e.getY()-20);
 		}
 	}
 
