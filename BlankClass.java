@@ -447,7 +447,7 @@ public class BlankClass extends ConsoleProgram {
 					int n = (char) str.charAt(i) - '0';
 					for (int j = 0; j < n; j++) {
 						result += str.charAt(i + 1);
-						println(result);
+						//println(result);
 
 					}
 					str = str.substring(i + 2);
@@ -464,7 +464,7 @@ public class BlankClass extends ConsoleProgram {
 						str = null;
 						break;
 					}
-					// println(result);
+				
 				} else {
 					break;
 				}
