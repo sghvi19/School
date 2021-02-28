@@ -13,7 +13,7 @@ public class main extends ConsoleProgram {
 
 	public void run() {
 		String str="KDMFLKSD";
-		str.toLowerCase();
+		str=str.toLowerCase();
 		println(str);
 		
 	}
