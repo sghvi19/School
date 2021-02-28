@@ -10,24 +10,51 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends ConsoleProgram {
-
+public class main extends GraphicsProgram {
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private GOval oval;
+	private boolean t = false;
+	private GOval ovals;
 	public void run() {
-		String str = readLine("Enter text: ");
-		String result = "";
-		for (int i = 0; i < str.length(); i++) {
-			if (Character.isDigit(str.charAt(i))) {
-				int x = str.charAt(i) - '0';
-				for (int j = 0; j < x; j++) {
-					result+=str.charAt(i+1);
-				}
-				i=i+1;
-			}else {
-				result+=str.charAt(i);
+		addMouseListeners();
+		while (true) {
+			if (t && ovals.getColor() != Color.green) {
+				Color color=getRandomColor();
+				ovals.setColor(color);
 			}
-		}
-		println(result);
 
+		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		if (getElementAt(e.getX(), e.getY()) == null) {
+			oval = new GOval(e.getX() - 20, e.getY() - 20, 40, 40);
+			oval.setFilled(true);
+			oval.setColor(rgen.nextColor());
+			add(oval);
+		} else {
+			 ovals = (GOval) getElementAt(e.getX(), e.getY());
+
+		}
+
+	}
+
+	private Color getRandomColor() {
+		int x = rgen.nextInt(0, 4);
+		if (x == 0) {
+			return Color.BLUE;
+		}
+		if (x == 1) {
+			return Color.RED;
+		}
+		if (x == 2) {
+			return Color.CYAN;
+		}
+		if (x == 3) {
+			return Color.GRAY;
+		} else {
+			return Color.green;
+		}
 	}
 
 }
