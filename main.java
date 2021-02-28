@@ -12,9 +12,10 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run() {
-		String str="KDMFLKSD";
-		str=str.toLowerCase();
-		println(str);
+		String str1=readLine();
+		String str2=readLine();
+		
+		println(str1.compareTo(str2));
 		
 	}
 
