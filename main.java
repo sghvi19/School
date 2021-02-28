@@ -30,6 +30,7 @@ public class main extends GraphicsProgram {
 				add(oval);
 			}
 		}
+		addMouseListeners();
 
 		while (true) {
 			pause(2000);
@@ -49,7 +50,7 @@ public class main extends GraphicsProgram {
 		if (t1) {
 			currentOval = (GOval) getElementAt(e.getX(), e.getY());
 			t1 = false;
-			if(previous!=null && currentOval.getColor()==previous.getColor()) {
+			if(previous!=null&& currentOval.getColor()==previous.getColor()) {
 				remove(currentOval);
 				remove(previous);
 				t1=true;
