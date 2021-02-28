@@ -573,53 +573,56 @@ import acm.program.ConsoleProgram;
 //}
 //	
 // mesame varianti2 amocana 4
-//	public void run() {
-//	
-//			String str = readLine("Enter: ");
-//			while (doubledElements(str)) {
-//				for (int i = 0; i < str.length() - 1; i++) {
-//					if (str.charAt(i) == str.charAt(i + 1)) {
-//						str = str.substring(0, i) + str.substring(i + 2);
-//					}
-//				}
-//			}
-//			println(str);
-//	}
-//
-//	private boolean doubledElements(String str) {
-//		for (int i = 0; i < str.length() - 1; i++) {
-//			if (str.charAt(i) == str.charAt(i + 1)) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-//}
-// mesame varianti 2 amocana 3
+
 public class BlankClass extends ConsoleProgram{
 	public void run() {
-		boolean t=true;
-		int x=readInt("enter ");
-		int y=readInt("enter ");
-		int d=y-x;
-		while(true) {
-			int next=readInt("enter ");
-			if(next==-1) {
-				break;
+	
+			String str = readLine("Enter: ");
+			while (doubledElements(str)) {
+				for (int i = 0; i < str.length() - 1; i++) {
+					if (str.charAt(i) == str.charAt(i + 1)) {
+						str = str.substring(0, i) + str.substring(i + 2);
+					}
+				}
 			}
-			if(next-y!=d) {
-				t=false;
-			}
-			y=next;
-		}
-		if(t) {
-			println("progression");
-		}else {
-			println("not a progression");
-		}
+			println(str);
+	}
 
+	private boolean doubledElements(String str) {
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == str.charAt(i + 1)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
+
+// mesame varianti 2 amocana 3
+//public class BlankClass extends ConsoleProgram{
+//	public void run() {
+//		boolean t=true;
+//		int x=readInt("enter ");
+//		int y=readInt("enter ");
+//		int d=y-x;
+//		while(true) {
+//			int next=readInt("enter ");
+//			if(next==-1) {
+//				break;
+//			}
+//			if(next-y!=d) {
+//				t=false;
+//			}
+//			y=next;
+//		}
+//		if(t) {
+//			println("progression");
+//		}else {
+//			println("not a progression");
+//		}
+//
+//	}
+//}
 
 // meore varianti 1 amocana 4
 //	public void run() {
