@@ -601,7 +601,7 @@ public class BlankClass extends ConsoleProgram{
 		boolean t=true;
 		int x=readInt("enter ");
 		int y=readInt("enter ");
-		int d=x-y;
+		int d=y-x;
 		while(true) {
 			int next=readInt("enter ");
 			if(next==-1) {
