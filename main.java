@@ -32,9 +32,7 @@ public class main extends GraphicsProgram {
 		}
 	}
 
-	public void mouseReleased(MouseEvent e) {
-		t=true;
-	}
+	
 
 	public void mouseMoved(MouseEvent e) {
 		if (line != null && t) {
