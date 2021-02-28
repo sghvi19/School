@@ -599,25 +599,18 @@ import acm.program.ConsoleProgram;
 public class BlankClass extends ConsoleProgram{
 	public void run() {
 		boolean t=true;
-		int n = readInt("Enter: ");
-		int result = 0;
-		while (n != -1) {
-			int temp=n;
-			n = readInt("Enter: ");
-			int x=temp-n;
-			if(t) {
-			result+=x;
-			t=false;
+		int x=readInt("enter ");
+		int y=readInt("enter ");
+		int d=x-y;
+		while(true) {
+			int next=readInt("enter ");
+			if(next==-1) {
+				break;
 			}
-			if(!t) {
-				result-=x;
-				t=true;
+			if(next-y!=d) {
+				t=false;
 			}
-		}
-		if(result==0) {
-			println("progression");
-		}else {
-			println("not a progression");
+			y=next;
 		}
 
 	}
