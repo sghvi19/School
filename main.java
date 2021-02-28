@@ -20,6 +20,15 @@ public class main extends GraphicsProgram {
 			if(oval.getX()+2*RADIUS>=getWidth()) {
 				x=-x;
 			}
+			if(oval.getY()<=0) {
+				y=-y;
+			}
+			if(oval.getX()<=0) {
+				x=-x;
+			}
+			if(oval.getY()+2*RADIUS>=getHeight()) {
+				y=-y;
+			}
 		}
 	}
 
