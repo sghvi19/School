@@ -19,7 +19,7 @@ public class main extends GraphicsProgram {
 		addMouseListeners();
 		while (true) {
 			if (!t) {
-				oval.move(0, y);
+				oval.move(3, y);
 				pause(10);
 				if (oval.getY() <= startY+5  && y<0) {
 					startY+=10;
