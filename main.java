@@ -10,33 +10,35 @@ import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
 	private GOval oval;
-	private boolean t=true;
+	private boolean t = true;
 
 	public void run() {
-		int y=3;
-		
+		int y = 3;
+
 		addMouseListeners();
-		while(!t) {
-			double startY= oval.getY();
-			oval.move(0, y);
-			pause(100);
-			if(oval.getY()+40>=getHeight()) {
-				y=-y;
-			}
-			if(oval.getY()<=startY*0.8) {
-				startY=startY*0.8;
-				y=-y;
+		while (true) {
+			if (!t) {
+				double startY = oval.getY();
+				oval.move(0, y);
+				pause(100);
+				if (oval.getY() + 40 >= getHeight()) {
+					y = -y;
+				}
+				if (oval.getY() <= startY * 0.8) {
+					startY = startY * 0.8;
+					y = -y;
+				}
 			}
 		}
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if(t) {
-		oval = new GOval(e.getX()- 20, e.getY() - 20, 40, 40);
-		add(oval);
-		t=false;
-		}else {
-			oval.setLocation(e.getX()- 20, e.getY() - 20);
+		if (t) {
+			oval = new GOval(e.getX() - 20, e.getY() - 20, 40, 40);
+			add(oval);
+			t = false;
+		} else {
+			oval.setLocation(e.getX() - 20, e.getY() - 20);
 		}
 	}
 
