@@ -1,19 +1,21 @@
 import acm.graphics.GLine;
+import acm.graphics.GOval;
 import acm.graphics.GRect;
 import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
+import acm.util.RandomGenerator;
 
-public class main extends ConsoleProgram {
-
+public class main extends GraphicsProgram {
+	private RandomGenerator rgen=RandomGenerator.getInstance();
+	private static final int RADIUS=20;
 	public void run() {
-		int x = 0;
-		while (true) {
-			x += 6;
-			if (x%6 == 0 && x%8 == 0) {
-				println(x);
-				break;
-			}
-
+		GOval oval=new GOval(getWidth()/2-RADIUS,getHeight()/2-RADIUS, 2*RADIUS,2*RADIUS);
+		add(oval);
+		double x=rgen.nextDouble(1,3);
+		double y=1;
+		while(true) {
+			oval.move(x, y);
+			pause(100);
 		}
 	}
 
