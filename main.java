@@ -16,9 +16,10 @@ public class main extends GraphicsProgram {
 		int y = 3;
 
 		addMouseListeners();
+		double startY = oval.getY();
 		while (true) {
 			if (!t) {
-				double startY = oval.getY();
+				
 				oval.move(0, y);
 				pause(10);
 				if (oval.getY() + 40 >= getHeight()) {
