@@ -28,14 +28,15 @@ public class main extends GraphicsProgram {
 		} else {
 			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
 			add(line);
-
+			t=true;
+			line=null;
 		}
 	}
 
 	
 
 	public void mouseMoved(MouseEvent e) {
-		if (line != null && t) {
+		if (line != null) {
 			remove(line);
 			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
 			add(line);
