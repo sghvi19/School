@@ -49,7 +49,7 @@ public class main extends GraphicsProgram {
 		if (t1) {
 			currentOval = (GOval) getElementAt(e.getX(), e.getY());
 			t1 = false;
-			if(currentOval.getColor()==previous.getColor()) {
+			if(currentOval.getColor()==previous.getColor()&& previous!=null) {
 				remove(currentOval);
 				remove(previous);
 				t1=true;
