@@ -1,3 +1,4 @@
+import java.awt.event.MouseEvent;
 import acm.graphics.GLine;
 import acm.graphics.GOval;
 import acm.graphics.GRect;
@@ -6,30 +7,18 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-	private RandomGenerator rgen=RandomGenerator.getInstance();
-	private static final int RADIUS=20;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private static final int RADIUS = 20;
+
 	public void run() {
-		GOval oval=new GOval(getWidth()/2-RADIUS,getHeight()/2-RADIUS, 2*RADIUS,2*RADIUS);
-		oval.setFilled(true);
+
+		addMouseListeners();
+
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		GOval oval = new GOval(e.getX()-RADIUS, e.getY() - RADIUS, 2 * RADIUS, 2 * RADIUS);
 		add(oval);
-		double x=rgen.nextDouble(1,3);
-		double y=1;
-		while(true) {
-			oval.move(x, y);
-			pause(10);
-			if(oval.getX()+2*RADIUS>=getWidth()) {
-				x=-x;
-			}
-			if(oval.getY()<=0) {
-				y=-y;
-			}
-			if(oval.getX()<=0) {
-				x=-x;
-			}
-			if(oval.getY()+2*RADIUS>=getHeight()) {
-				y=-y;
-			}
-		}
 	}
 
 }
