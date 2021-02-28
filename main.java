@@ -16,7 +16,7 @@ public class main extends GraphicsProgram {
 		int y=3;
 		
 		addMouseListeners();
-		while(oval!=null) {
+		while(!t) {
 			double startY= oval.getY();
 			oval.move(0, y);
 			pause(100);
@@ -34,6 +34,7 @@ public class main extends GraphicsProgram {
 		if(t) {
 		oval = new GOval(e.getX()- 20, e.getY() - 20, 40, 40);
 		add(oval);
+		t=false;
 		}else {
 			oval.setLocation(e.getX()- 20, e.getY() - 20);
 		}
