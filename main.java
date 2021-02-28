@@ -9,14 +9,13 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends GraphicsProgram {
+public class main extends ConsoleProgram {
 
 	public void run() {
-		GOval oval=new GOval(getWidth()/2,getHeight()/2,30,30);
-		oval.setFilled(true);
-		oval.setColor(Color.red);
-		oval.setFillColor(Color.blue);
-		add(oval);
+		String str="KDMFLKSD";
+		str.toLowerCase();
+		println(str);
+		
 	}
 
 }
