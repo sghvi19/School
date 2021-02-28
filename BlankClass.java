@@ -555,7 +555,7 @@ public class BlankClass extends GraphicsProgram {
 				}
 			}
 
-		} else if (result % 2 != 0) {
+		} else  {
 			oval2 = (GOval) getElementAt(e.getX(), e.getY());
 			result++;
 			if (oval1 != oval2 && oval1 != null && oval2 != null) {
