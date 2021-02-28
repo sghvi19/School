@@ -19,7 +19,7 @@ public class main extends GraphicsProgram {
 			Color color=rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x=rgen.nextInt(0,getWidth()-40);
-				int y=rgen.nextInt(0,getHeight-40);
+				int y=rgen.nextInt(0,getHeight()-40);
 				oval=new GOval(x,y,40,40);
 				oval.setFilled(true);
 				oval.setColor(color);
