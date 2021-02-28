@@ -15,7 +15,7 @@ public class main extends GraphicsProgram {
 	
 	public void run() {
 		GOval oval;
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 2; i++) {
 			Color color=rgen.nextColor();
 			for (int j = 0; j < 2; j++) {
 				int x=rgen.nextInt(0,getWidth()-40);
