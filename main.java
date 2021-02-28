@@ -17,6 +17,9 @@ public class main extends GraphicsProgram {
 		while(true) {
 			oval.move(x, y);
 			pause(10);
+			if(oval.getX()+2*RADIUS>=getWidth()) {
+				x=-x;
+			}
 		}
 	}
 
