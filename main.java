@@ -14,19 +14,20 @@ public class main extends GraphicsProgram {
 
 	public void run() {
 		int y=3;
-			while(oval!=null) {
-				double startY= oval.getY();
-				oval.move(0, y);
-				pause(100);
-				if(oval.getY()+40>=getHeight()) {
-					y=-y;
-				}
-				if(oval.getY()<=startY*0.8) {
-					startY=startY*0.8;
-					y=-y;
-				}
-			}
+		
 		addMouseListeners();
+		while(oval!=null) {
+			double startY= oval.getY();
+			oval.move(0, y);
+			pause(100);
+			if(oval.getY()+40>=getHeight()) {
+				y=-y;
+			}
+			if(oval.getY()<=startY*0.8) {
+				startY=startY*0.8;
+				y=-y;
+			}
+		}
 	}
 
 	public void mouseClicked(MouseEvent e) {
