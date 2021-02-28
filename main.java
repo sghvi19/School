@@ -50,21 +50,24 @@ public class main extends GraphicsProgram {
 		if (t1) {
 			currentOval = (GOval) getElementAt(e.getX(), e.getY());
 			t1 = false;
-			if(previous!=null&& currentOval.getColor()==previous.getColor()) {
-				remove(currentOval);
-				remove(previous);
-				t1=true;
+			if (currentOval != null && previous != null && currentOval != previous) {
+				if (previous != null && currentOval.getColor() == previous.getColor()) {
+					remove(currentOval);
+					remove(previous);
+					t1 = true;
+				}
 			}
 		} else {
 			previous = currentOval;
 			currentOval = (GOval) getElementAt(e.getX(), e.getY());
-			if (previous.getColor() == currentOval.getColor()) {
-				remove(previous);
-				remove(currentOval);
-				t1 = true;
-				
-			}else {
-				previous=currentOval;
+			if (currentOval != null && previous != null && currentOval != previous) {
+				if (previous.getColor() == currentOval.getColor()) {
+					remove(previous);
+					remove(currentOval);
+					t1 = true;
+				}
+			} else {
+				previous = currentOval;
 			}
 
 		}
