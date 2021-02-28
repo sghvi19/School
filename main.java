@@ -12,23 +12,28 @@ public class main extends GraphicsProgram {
 	private int mouseX;
 	private int mouseY;
 	private GLine line;
-	private boolean t=true;
+	private boolean t = true;
+
 	public void run() {
 		addMouseListeners();
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if(t) {
-		mouseX = e.getX();
-		mouseY = e.getY();
-		line = new GLine(mouseX, mouseY, mouseX, mouseY);
-		add(line);
-		t=false;
-		}else {
-			line = new GLine(mouseX, mouseY, e.getX(),e.getY());
+		if (t) {
+			mouseX = e.getX();
+			mouseY = e.getY();
+			line = new GLine(mouseX, mouseY, mouseX, mouseY);
 			add(line);
-			t=true;
+			t = false;
+		} else {
+			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
+			add(line);
+
 		}
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		t=true;
 	}
 
 	public void mouseMoved(MouseEvent e) {
@@ -36,6 +41,7 @@ public class main extends GraphicsProgram {
 			remove(line);
 			line = new GLine(mouseX, mouseY, e.getX(), e.getY());
 			add(line);
+
 		}
 	}
 
