@@ -15,7 +15,7 @@ public class main extends GraphicsProgram {
 		double y=1;
 		while(true) {
 			oval.move(x, y);
-			pause(100);
+			pause(10);
 		}
 	}
 
