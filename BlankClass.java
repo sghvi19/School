@@ -500,103 +500,101 @@ import acm.program.ConsoleProgram;
 //		println("fibonacci");
 //	}
 //}
+
 // mesame varianti 2 amocana 5
-//	public class BlankClass extends GraphicsProgram{
-//	private RandomGenerator rgen = RandomGenerator.getInstance();
-//	private final static int CIRCLE_D = 40;
-//	private final static int CIRCLE_NUM = 25;
-//	private final static int DELAY = 2000;
-//	private GOval oval = null;
-//	private int result = 0;
-//	private GOval oval1 = null;
-//	private GOval oval2 = null;
-//
-//	public void run() {
-//		addMouseListeners();
-//		for (int i = 0; i < CIRCLE_NUM; i++) {
-//			Color color = rgen.nextColor();
-//			for (int j = 0; j < 2; j++) {
-//				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-//				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-//				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-//				oval.setFilled(true);
-//				oval.setFillColor(color);
-//				add(oval);
-//			}
-//		}
-//		
-//		while (true) {
-//			pause(DELAY);
-//			Color color = rgen.nextColor();
-//			for (int j = 0; j < 2; j++) {
-//				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-//				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-//				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-//				oval.setFilled(true);
-//				oval.setFillColor(color);
-//				add(oval);
-//			}
-//
-//		}
-//	}
-//
-//
-//	
-//	public void mouseClicked(MouseEvent e) {
-//
-//		if (result % 2 == 0) {
-//			oval1 = (GOval) getElementAt(e.getX(), e.getY());
-//			result++;
-//			if (oval1 != oval2 && oval1 != null && oval2 != null) {
-//				if (oval1.getFillColor() == oval2.getFillColor()) {
-//					remove(oval1);
-//					remove(oval2);
-//					oval1 = null;
-//					oval2 = null;
-//				}
-//			}
-//
-//		} else if (result % 2 != 0) {
-//			oval2 = (GOval) getElementAt(e.getX(), e.getY());
-//			result++;
-//			if (oval1 != oval2 && oval1 != null && oval2 != null) {
-//				if (oval1.getFillColor() == oval2.getFillColor()) {
-//					remove(oval1);
-//					remove(oval2);
-//					oval1 = null;
-//					oval2 = null;
-//				}
-//			}
-//		}
-//		
-//	}
-//}
-//	
-// mesame varianti2 amocana 4
+public class BlankClass extends GraphicsProgram {
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private final static int CIRCLE_D = 40;
+	private final static int CIRCLE_NUM = 25;
+	private final static int DELAY = 2000;
+	private GOval oval = null;
+	private int result = 0;
+	private GOval oval1 = null;
+	private GOval oval2 = null;
 
-public class BlankClass extends ConsoleProgram{
 	public void run() {
-	
-			String str = readLine("Enter: ");
-			while (doubledElements(str)) {
-				for (int i = 0; i < str.length() - 1; i++) {
-					if (str.charAt(i) == str.charAt(i + 1)) {
-						str = str.substring(0, i) + str.substring(i + 2);
-					}
-				}
-			}
-			println(str);
-	}
-
-	private boolean doubledElements(String str) {
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == str.charAt(i + 1)) {
-				return true;
+		addMouseListeners();
+		for (int i = 0; i < CIRCLE_NUM; i++) {
+			Color color = rgen.nextColor();
+			for (int j = 0; j < 2; j++) {
+				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				oval.setFilled(true);
+				oval.setFillColor(color);
+				add(oval);
 			}
 		}
-		return false;
+
+		while (true) {
+			pause(DELAY);
+			Color color = rgen.nextColor();
+			for (int j = 0; j < 2; j++) {
+				int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+				int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+				oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+				oval.setFilled(true);
+				oval.setFillColor(color);
+				add(oval);
+			}
+
+		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+
+		if (result % 2 == 0) {
+			oval1 = (GOval) getElementAt(e.getX(), e.getY());
+			result++;
+			if (oval1 != oval2 && oval1 != null && oval2 != null) {
+				if (oval1.getFillColor() == oval2.getFillColor()) {
+					remove(oval1);
+					remove(oval2);
+					oval1 = null;
+					oval2 = null;
+				}
+			}
+
+		} else if (result % 2 != 0) {
+			oval2 = (GOval) getElementAt(e.getX(), e.getY());
+			result++;
+			if (oval1 != oval2 && oval1 != null && oval2 != null) {
+				if (oval1.getFillColor() == oval2.getFillColor()) {
+					remove(oval1);
+					remove(oval2);
+					oval1 = null;
+					oval2 = null;
+				}
+			}
+		}
+
 	}
 }
+
+// mesame varianti2 amocana 4
+//public class BlankClass extends ConsoleProgram{
+//	public void run() {
+//	
+//			String str = readLine("Enter: ");
+//			while (doubledElements(str)) {
+//				for (int i = 0; i < str.length() - 1; i++) {
+//					if (str.charAt(i) == str.charAt(i + 1)) {
+//						str = str.substring(0, i) + str.substring(i + 2);
+//					}
+//				}
+//			}
+//			println(str);
+//	}
+//
+//	private boolean doubledElements(String str) {
+//		for (int i = 0; i < str.length() - 1; i++) {
+//			if (str.charAt(i) == str.charAt(i + 1)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//}
 
 // mesame varianti 2 amocana 3
 //public class BlankClass extends ConsoleProgram{
