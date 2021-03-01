@@ -12,7 +12,7 @@ import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
 	public void run() {
-		GRect rect= new GRect(getWidth()/2-30,getHeight()/2-30,60,60);
+		GRect rect= new GRect(getWidth()/2-100,getHeight()/2-100,200,200);
 		add(rect);
 		}
 
