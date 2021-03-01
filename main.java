@@ -48,7 +48,12 @@ public class main extends GraphicsProgram {
 	}
 
 	public void mouseClicked(MouseEvent e) {
+		
 		click++;
+		
+		if(getElementAt(e.getX(), e.getY()) == null) {
+			click=0;
+		}
 		if (click % 3 == 0 && getElementAt(e.getX(), e.getY()) != null) {
 			if (getElementAt(e.getX(), e.getY()) == ball2) {
 				remove(ball2);
