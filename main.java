@@ -14,31 +14,24 @@ import acm.util.RandomGenerator;
 
 public class main extends ConsoleProgram {
 
-	public void run() {
-		String str = readLine("Enter: ");
-		int result = 1;
-		String st = "";
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == str.charAt(i + 1)) {
-				result++;
-			}
-			if (str.charAt(i) != str.charAt(i + 1) || i == str.length() - 2) {
-				if (result != 1) {
-					st += result;
-					st += str.charAt(i);
-				} else {
-					st += str.charAt(i);
-				}
-				result = 1;
-			}
+		public void run(){
+			int x = 1;
+			int y = 2;
+			GObject o = new GRect(x,y);
+			String s = "shalaxo";
+			println(iseRa(x,y,o,s));
+			println(iseRa(x,y,o,s));
 		}
-		if (str.length() >= 2 && str.charAt(str.length() - 2) != str.charAt(str.length() - 1)) {
-			st += str.charAt(str.length() - 1);
+		
+		private int iseRa(int x, double y, GObject r, String s){
+			x++;
+			y += 1;
+			r.move(x,y);
+			s = s.substring(s.indexOf('a'));
+			return (int)(x + y + r.getX() + s.length());
 		}
-		println(st);
-
 	}
-}
+
 
 //public class main extends GraphicsProgram {
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
