@@ -11,70 +11,14 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
-	private final static int CIRCLE_D = 40;
-	private final static int CIRCLE_NUM = 50;
-	private final static int DELAY = 2000;
-	private GOval oval = null;
-	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private int click = 0;
-	private GObject obj;
-	private int counter;
-	private GOval ball1;
-	private GOval ball2;
-
 	public void run() {
-		addMouseListeners();
-		for (int i = 0; i < CIRCLE_NUM; i++) {
-			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
+		GRect rect= new GRect(getWidth()/2-30,getHeight()/2-30,60,60);
+		add(rect);
 		}
-		counter = CIRCLE_NUM;
-		while (true) {
-			if (counter == 0)
-				break;
-			pause(DELAY);
-			counter++;
-			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
-			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
-			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		}
-	}
 
 	public void mouseClicked(MouseEvent e) {
-		
-		click++;
-		
-		if(getElementAt(e.getX(), e.getY()) == null) {
-			click=0;
-		}
-		if (click % 3 == 0 && getElementAt(e.getX(), e.getY()) != null) {
-			if (getElementAt(e.getX(), e.getY()) == ball2) {
-				remove(ball2);
-			}else {
-			
-				click=1;
-			}
-		}
-	
-		if (click % 3 == 2 && getElementAt(e.getX(), e.getY()) != null) {
-			ball2 = (GOval) getElementAt(e.getX(), e.getY());
-			if(ball1!=ball2) {
-				click=1;
-			}
-		}
-		if (click % 3 == 1&& getElementAt(e.getX(), e.getY()) != null) {
-			ball1 = (GOval) getElementAt(e.getX(), e.getY());
-			
-		}
-	}
 
+	}
 }
 
 //public class main extends GraphicsProgram {
