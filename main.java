@@ -58,6 +58,7 @@ public class main extends GraphicsProgram {
 			if (getElementAt(e.getX(), e.getY()) == ball2) {
 				remove(ball2);
 			}else {
+			
 				click=1;
 			}
 		}
@@ -68,7 +69,7 @@ public class main extends GraphicsProgram {
 		if (click % 3 == 2 && getElementAt(e.getX(), e.getY()) != null) {
 			ball2 = (GOval) getElementAt(e.getX(), e.getY());
 			if(ball1!=ball2) {
-				click=0;
+				click=1;
 			}
 		}
 	}
