@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+
+import acm.graphics.GLabel;
 import acm.graphics.GLine;
 import acm.graphics.GObject;
 import acm.graphics.GOval;
@@ -11,12 +13,46 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
+	private GLabel label;
+	private GRect rect;
+	private int counter = 0;
+	private int number = 0;
+	private String num = "0";
+	private int mouseX;
 	public void run() {
-		GRect rect= new GRect(getWidth()/2-100,getHeight()/2-100,200,200);
+		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
 		add(rect);
-		}
+		label = new GLabel(num);
+		add(label, getWidth() / 2 - label.getWidth(), getHeight() / 2 - label.getHeight() / 2);
+	}
 
-	public void mouseClicked(MouseEvent e) {
+	public void mouseDragged(MouseEvent e) {
+		if (getElementAt(e.getX(), e.getY()) != null) {
+			counter++;
+			if(counter%2==0) {
+				mouseX=e.getX();
+			}
+			if (number != 0) {
+				if(mouseX>e.getX()) {
+					num="";
+					number--;
+					num+=number;
+					remove(label);
+					label=new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth(), getHeight() / 2 - label.getHeight() / 2);
+				}
+			}
+			if (number != 9) {
+				if(mouseX<e.getX()) {
+					num="";
+					number++;
+					num+=number;
+					remove(label);
+					label=new GLabel(num);
+					add(label, getWidth() / 2 - label.getWidth(), getHeight() / 2 - label.getHeight() / 2);
+				}
+			}
+		}
 
 	}
 }
