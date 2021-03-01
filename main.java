@@ -11,49 +11,60 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
+	private final static int CIRCLE_D = 40;
+	private final static int CIRCLE_NUM = 50;
+	private final static int DELAY = 2000;
+	private GOval oval = null;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private GOval oval;
-	private boolean t = false;
-	private GOval ovals;
+	private int click = 0;
+	private GObject obj;
+	private int counter;
+	private GOval ball1;
+	private GOval ball2;
+
 	public void run() {
 		addMouseListeners();
+		for (int i = 0; i < CIRCLE_NUM; i++) {
+			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+			oval.setFilled(true);
+			oval.setColor(rgen.nextColor());
+			add(oval);
+		}
+		counter = CIRCLE_NUM;
 		while (true) {
-			if (t && ovals.getColor() != Color.green) {
-				Color color=getRandomColor();
-				ovals.setColor(color);
-			}
-
+			if (counter == 0)
+				break;
+			pause(DELAY);
+			counter++;
+			int x = rgen.nextInt(0, getWidth() - CIRCLE_D);
+			int y = rgen.nextInt(0, getHeight() - CIRCLE_D);
+			oval = new GOval(x, y, CIRCLE_D, CIRCLE_D);
+			oval.setFilled(true);
+			oval.setColor(rgen.nextColor());
+			add(oval);
 		}
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (getElementAt(e.getX(), e.getY()) == null) {
-			oval = new GOval(e.getX() - 20, e.getY() - 20, 40, 40);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		} else {
-			 ovals = (GOval) getElementAt(e.getX(), e.getY());
-
+		click++;
+		if (click % 3 == 0 && getElementAt(e.getX(), e.getY()) != null) {
+			if (getElementAt(e.getX(), e.getY()) == ball2) {
+				remove(ball2);
+			}else {
+				click=0;
+			}
 		}
-
-	}
-
-	private Color getRandomColor() {
-		int x = rgen.nextInt(0, 4);
-		if (x == 0) {
-			return Color.BLUE;
+		if (click % 3 == 1&& getElementAt(e.getX(), e.getY()) != null) {
+			ball1 = (GOval) getElementAt(e.getX(), e.getY());
+			
 		}
-		if (x == 1) {
-			return Color.RED;
-		}
-		if (x == 2) {
-			return Color.CYAN;
-		}
-		if (x == 3) {
-			return Color.GRAY;
-		} else {
-			return Color.green;
+		if (click % 3 == 2 && getElementAt(e.getX(), e.getY()) != null) {
+			ball2 = (GOval) getElementAt(e.getX(), e.getY());
+			if(ball1!=ball2) {
+				click=0;
+			}
 		}
 	}
 
