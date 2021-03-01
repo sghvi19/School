@@ -18,7 +18,7 @@ public class main extends ConsoleProgram {
 		String str = readLine("Enter: ");
 		int result = 1;
 		String st="";
-		for (int i = 0; i < str.length() - 1; i++) {
+		for (int i = 0; i < str.length() ; i++) {
 			if (str.charAt(i) == str.charAt(i + 1)) {
 				result++;
 			}else {
