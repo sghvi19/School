@@ -17,18 +17,18 @@ public class main extends ConsoleProgram {
 	public void run() {
 		String str = readLine("Enter: ");
 		int result = 1;
-		String st="";
-		for (int i = 0; i < str.length() ; i++) {
+		String st = "";
+		for (int i = 0; i < str.length() - 1; i++) {
 			if (str.charAt(i) == str.charAt(i + 1)) {
 				result++;
-			}else {
-				if(result!=1) {
-					st+=result;
-					st+=str.charAt(i);
-				}else {
-					st+=str.charAt(i);
+			} else {
+				if (result != 1) {
+					st += result;
+					st += str.charAt(i);
+				} else {
+					st += str.charAt(i);
 				}
-				result=1;
+				result = 1;
 			}
 		}
 		println(st);
