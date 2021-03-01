@@ -12,10 +12,26 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends GraphicsProgram {
-	
+public class main extends ConsoleProgram {
+
 	public void run() {
-		
+		String str = readLine("Enter: ");
+		int result = 1;
+		String st="";
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == str.charAt(i + 1)) {
+				result++;
+			}else {
+				if(result!=1) {
+					st+=result;
+					st+=str.charAt(i);
+				}else {
+					st+=str.charAt(i);
+				}
+			}
+		}
+		println(st);
+
 	}
 }
 
