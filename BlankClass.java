@@ -341,8 +341,8 @@ public class BlankClass extends ConsoleProgram {
 			if (st.charAt(i) == st.charAt(i + 1)) {
 				result++;
 				index = i;
-				if (result == n)                                            sgtnnnnmd
-					break;                                               n=result=4   index=5
+				if (result == n)                                       
+					break;                                               
 			}
 		}
 		int result1 = 1;
