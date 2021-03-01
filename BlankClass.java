@@ -348,15 +348,6 @@ public class BlankClass extends ConsoleProgram {
 		int result1 = 1;
 		if (result == n) {
 			st = st.substring(index - n + 2, index + 2);
-			if (st.length() == n) {
-				for (int i = 0; i < st.length() - 1; i++) {
-					if (st.charAt(i) == st.charAt(i + 1)) {
-						result1++;
-					}
-				}
-			}
-		}
-		if (result1 == n) {
 			stri = st;
 			return true;
 		}
