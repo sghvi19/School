@@ -14,29 +14,29 @@ import acm.util.RandomGenerator;
 
 public class main extends ConsoleProgram {
 
-		public void run(){
-			int x = 1;
-			int y = 2;
-			GObject o = new GRect(x,y);
-			String s = "shalaxo";
-		
-			println(iseRa(x,y,o,s));
-			println(iseRa(x,y,o,s));
-		}
-		
-		private int iseRa(int x, double y, GObject r, String s){
-			println(r.getX());
-			x++;
-			y += 1;
-			r.move(x,y);
-			s = s.substring(s.indexOf('a'));
-			println(x);
-			println(y);
-			println(r.getX());
-			return (int)(x + y + r.getX() + s.length());
-		}
+	public void run() {
+		int x = 2;
+		int y = 3;
+		GOval o = new GOval(4, 3); // width, height
+		println(racxa(x, 2, o));
+		println(racxa(y, x / 2 + x, o));
 	}
 
+	public int racxa(int x, int y, GOval o) {
+		String s = "hello world";
+		x = varesiRacxa(x / y, x + (int) o.getHeight(), s);
+		o.scale(2);
+		y = varesiRacxa(x, y + (int) o.getHeight(), s);
+		return x + y;
+	}
+
+	public int varesiRacxa(double x, int y, String s) {
+		int z = (int) x + s.charAt(0) - s.charAt(1);
+		s = s.substring(1);
+		return z + y;
+	}
+
+}
 
 //public class main extends GraphicsProgram {
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
