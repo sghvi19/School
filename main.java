@@ -21,7 +21,8 @@ public class main extends ConsoleProgram {
 		for (int i = 0; i < str.length() - 1; i++) {
 			if (str.charAt(i) == str.charAt(i + 1)) {
 				result++;
-			} else {
+			} 
+			if(str.charAt(i) != str.charAt(i + 1)|| i==str.length()-2) {
 				if (result != 1) {
 					st += result;
 					st += str.charAt(i);
@@ -31,6 +32,9 @@ public class main extends ConsoleProgram {
 				result = 1;
 			}
 		}
+//		if (str.charAt(str.length() - 2) != str.charAt(st.length() - 1)) {
+//			st+=str.charAt(str.length()-1);
+//		}
 		println(st);
 
 	}
