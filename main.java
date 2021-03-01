@@ -32,9 +32,9 @@ public class main extends ConsoleProgram {
 				result = 1;
 			}
 		}
-//		if (str.charAt(str.length() - 2) != str.charAt(st.length() - 1)) {
-//			st+=str.charAt(str.length()-1);
-//		}
+		if (str.charAt(str.length() - 2) != str.charAt(st.length() - 1)) {
+			st+=str.charAt(str.length()-1);
+		}
 		println(st);
 
 	}
