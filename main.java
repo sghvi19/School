@@ -20,6 +20,7 @@ public class main extends GraphicsProgram {
 	private String num = "0";
 	private int mouseX;
 	public void run() {
+		addMouseListeners();
 		rect = new GRect(getWidth() / 2 - 100, getHeight() / 2 - 100, 200, 200);
 		add(rect);
 		label = new GLabel(num);
