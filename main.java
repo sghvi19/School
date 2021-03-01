@@ -28,6 +28,7 @@ public class main extends ConsoleProgram {
 				}else {
 					st+=str.charAt(i);
 				}
+				result=1;
 			}
 		}
 		println(st);
