@@ -678,7 +678,7 @@ public class BlankClass extends ConsoleProgram {
 			if (str2.indexOf(str1.charAt(i)) != -1 && str2.indexOf(str1.charAt(i)) != str2.length()) {
 				str2 = str2.substring(0, str2.indexOf(str1.charAt(i)))
 						+ str2.substring(str2.indexOf(str1.charAt(i)) + 1, str2.length());
-				println(str2);
+				
 			} else {
 				println(false);
 				break;
