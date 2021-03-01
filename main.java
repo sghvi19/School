@@ -19,12 +19,13 @@ public class main extends ConsoleProgram {
 			int y = 2;
 			GObject o = new GRect(x,y);
 			String s = "shalaxo";
-			println(o.getX());
+		
 			println(iseRa(x,y,o,s));
 			println(iseRa(x,y,o,s));
 		}
 		
 		private int iseRa(int x, double y, GObject r, String s){
+			println(r.getX());
 			x++;
 			y += 1;
 			r.move(x,y);
