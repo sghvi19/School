@@ -62,15 +62,16 @@ public class main extends GraphicsProgram {
 				click=1;
 			}
 		}
-		if (click % 3 == 1&& getElementAt(e.getX(), e.getY()) != null) {
-			ball1 = (GOval) getElementAt(e.getX(), e.getY());
-			
-		}
+	
 		if (click % 3 == 2 && getElementAt(e.getX(), e.getY()) != null) {
 			ball2 = (GOval) getElementAt(e.getX(), e.getY());
 			if(ball1!=ball2) {
 				click=1;
 			}
+		}
+		if (click % 3 == 1&& getElementAt(e.getX(), e.getY()) != null) {
+			ball1 = (GOval) getElementAt(e.getX(), e.getY());
+			
 		}
 	}
 
