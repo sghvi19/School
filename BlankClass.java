@@ -34,7 +34,6 @@ import acm.program.*;
 import acm.util.ErrorException;
 import acm.util.RandomGenerator;
 import acm.graphics.*;
-import acm.program.ConsoleProgram;
 
 //minMax maxMin
 //	private JButton left;
@@ -321,47 +320,49 @@ import acm.program.ConsoleProgram;
 
 //}
 //mexute varianti 4 amocana4 (almost done)
-//	private String stri = "";
-//
-//	public void run() {
-//		String str = readLine("Enter: ");
-//		int n = readInt("Enter number: ");
-//		while (nPlet(str, n)) {
-//			int ind = str.indexOf(stri);
-//			str = str.substring(0, ind) + str.substring(ind + n + 1);
-//		}
-//		println(str);
-//	}
-//
-//	private boolean nPlet(String st, int n) {
-//		int index = 0;
-//		int result = 1;
-//		for (int i = 0; i < st.length() - 1; i++) {
-//			if (st.charAt(i) == st.charAt(i + 1)) {
-//				result++;
-//				index = i;
-//				if(result==n)break;
-//			}
-//		}
-//		int result1 = 1;
-//		if (result == n) {
-//			st = st.substring(index - n + 2, index + 2);
-//			if (st.length() == n) {
-//				for (int i = 0; i < st.length() - 1; i++) {
-//					if (st.charAt(i) == st.charAt(i + 1)) {
-//						result1++;
-//					}
-//				}
-//			}
-//		}
-//
-//		if (result1 == n) {
-//			stri = st;
-//			return true;
-//		}
-//		return false;
-//	}
-//}
+
+public class BlankClass extends ConsoleProgram {
+	private String stri = "";
+
+	public void run() {
+		String str = readLine("Enter: ");
+		int n = readInt("Enter number: ");
+		while (nPlet(str, n)) {
+			int ind = str.indexOf(stri);
+			str = str.substring(0, ind) + str.substring(ind + n + 1);
+		}
+		println(str);
+	}
+
+	private boolean nPlet(String st, int n) {
+		int index = 0;
+		int result = 1;
+		for (int i = 0; i < st.length() - 1; i++) {
+			if (st.charAt(i) == st.charAt(i + 1)) {
+				result++;
+				index = i;
+				if (result == n)
+					break;
+			}
+		}
+		int result1 = 1;
+		if (result == n) {
+			st = st.substring(index - n + 2, index + 2);
+			if (st.length() == n) {
+				for (int i = 0; i < st.length() - 1; i++) {
+					if (st.charAt(i) == st.charAt(i + 1)) {
+						result1++;
+					}
+				}
+			}
+		}
+		if (result1 == n) {
+			stri = st;
+			return true;
+		}
+		return false;
+	}
+}
 //mexute varianti 4 amocana3
 //	public void run() {
 //		int n = readInt("Enter: ");
@@ -383,57 +384,54 @@ import acm.program.ConsoleProgram;
 //}
 //meotxe varianti 3 amocana5
 
-public class BlankClass extends GraphicsProgram {
-	private final static int CIRCLE_D = 40;
-	private final static int DELAY = 50;
-	private boolean t = false;
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	private GOval oval = null;
-
-	public void run() {
-		addMouseListeners();
-		while (true) {
-			if (oval != null && oval.getFillColor() != Color.green) {
-				oval.setColor(getRandomColor());
-				pause(DELAY);
-			}
-		}
-	}
-
-	public void mouseClicked(MouseEvent e) {
-		double x = e.getX();
-		double y = e.getY();
-		GObject obj = getElementAt(x, y);
-		if (obj == null) {
-			GOval oval = new GOval(x - CIRCLE_D / 2, y - CIRCLE_D / 2, CIRCLE_D, CIRCLE_D);
-			oval.setFilled(true);
-			oval.setColor(rgen.nextColor());
-			add(oval);
-		} else {
-			oval = (GOval) obj;
-		}
-
-	}
-
-	private Color getRandomColor() {
-		int x = rgen.nextInt(0, 4);
-		if (x == 0) {
-			return Color.BLUE;
-		}
-		if (x == 1) {
-			return Color.RED;
-		}
-		if (x == 2) {
-			return Color.CYAN;
-		}
-		if (x == 3) {
-			return Color.GRAY;
-		} else {
-			return Color.green;
-		}
-	}
-}
-
+//public class BlankClass extends GraphicsProgram {
+//	private RandomGenerator rgen = RandomGenerator.getInstance();
+//	private GOval oval;
+//	private boolean t = false;
+//	private GOval ovals;
+//	public void run() {
+//		addMouseListeners();
+//		while (true) {
+//			if (t && ovals.getColor() != Color.green) {
+//				Color color=getRandomColor();
+//				ovals.setColor(color);
+//			}
+//
+//		}
+//	}
+//
+//	public void mouseClicked(MouseEvent e) {
+//		if (getElementAt(e.getX(), e.getY()) == null) {
+//			oval = new GOval(e.getX() - 20, e.getY() - 20, 40, 40);
+//			oval.setFilled(true);
+//			oval.setColor(rgen.nextColor());
+//			add(oval);
+//		} else {
+//			 ovals = (GOval) getElementAt(e.getX(), e.getY());
+//
+//		}
+//
+//	}
+//
+//	private Color getRandomColor() {
+//		int x = rgen.nextInt(0, 4);
+//		if (x == 0) {
+//			return Color.BLUE;
+//		}
+//		if (x == 1) {
+//			return Color.RED;
+//		}
+//		if (x == 2) {
+//			return Color.CYAN;
+//		}
+//		if (x == 3) {
+//			return Color.GRAY;
+//		} else {
+//			return Color.green;
+//		}
+//	}
+//
+//}
 
 // meotxe varianti 3 amocana 4
 //public class BlankClass extends ConsoleProgram {
