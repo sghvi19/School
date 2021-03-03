@@ -15,14 +15,14 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run() {
-		double n = 2.25;
+		double n = 0.25;
 		double x1 = (n + 1) / 2;
 		while (x1 * x1 != n) {
 
 			if (x1 * x1 > n) {
-				x1=(x1+n)/2;
-			}else {
 				x1 = (x1 + 1) / 2;
+			}else {
+				x1=(x1+n)/2;
 			}
 		}
 		println(x1);
