@@ -21,13 +21,13 @@ public class main extends ConsoleProgram {
 		while (x1 * x1 != n) {
 		
 			if (x1 * x1 > n) {
-				temp=x1;
+				//temp=x1;
 				x1 = (x1 + n) / 2;
-				n=temp;
+				//n=temp;
 			} else {
-				temp=x1;
+				//temp=x1;
 				x1 = (x1 + 1) / 2;
-				n=temp;
+			//	n=temp;
 			}
 		}
 		println(x1);
