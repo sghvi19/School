@@ -23,10 +23,9 @@ public class main extends ConsoleProgram {
 				x1 = (x1 + 1) / 2;
 			}
 			if(x1*x1<n) {
-				x1= (x1+n)/2;
+				x1=(x1+n)/2;
 			}
 		}
-		println(x1);
 	}
 
 }
