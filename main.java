@@ -16,7 +16,7 @@ public class main extends ConsoleProgram {
 
 	public void run() {
 		double n = 100;
-		double x1 = (n + 1) / 2;
+		double x1 = 0;
 		while (x1 * x1 != n) {
 
 			if (x1 * x1 > n) {
