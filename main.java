@@ -17,14 +17,17 @@ public class main extends ConsoleProgram {
 	public void run() {
 		double n = 6.25;
 		double x1 = (n + 1) / 2;
+		double temp;
 		while (x1 * x1 != n) {
-
+		
 			if (x1 * x1 > n) {
-				n=x1;
-				x1=(x1+n)/2;
-			}else {
-				n=x1;
+				temp=x1;
+				x1 = (x1 + n) / 2;
+				n=temp;
+			} else {
+				temp=x1;
 				x1 = (x1 + 1) / 2;
+				n=temp;
 			}
 		}
 		println(x1);
