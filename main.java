@@ -21,10 +21,10 @@ public class main extends ConsoleProgram {
 
 			if (x1 * x1 > n) {
 				n=x1;
-				x1 = (x1 + 1) / 2;
+				x1=(x1+n)/2;
 			}else {
 				n=x1;
-				x1=(x1+n)/2;
+				x1 = (x1 + 1) / 2;
 			}
 		}
 		println(x1);
