@@ -26,6 +26,7 @@ public class main extends ConsoleProgram {
 				x1=(x1+n)/2;
 			}
 		}
+		println(x1);
 	}
 
 }
