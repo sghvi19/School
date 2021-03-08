@@ -14,24 +14,43 @@ import acm.util.RandomGenerator;
 
 public class main extends ConsoleProgram {
 
-	public void run(){
-		double x = sqrt(6.25);
-		println(x); // უნდა დაბეჭდოს 2.5
+	public void run() {
+		int n = reverse(7);
+		println(n); // უნდა დაბეჭდოს 4294967288
 	}
 
-	private double sqrt(double n){
-	double x1= (n+1)/2;
-		while(x1*x1!=n){
-			if(x1*x1>n){
-				x1=(x1+1)/2;
+	private int reverse(int n) {
+		int temp = n;
+		int counter = 0;
+		int result = 0;
+		int[] arr = new int[32];
+		while (temp != 0) {
+			while (n / 2 != 0) {
+				n /= 2;
+				counter++;
 			}
-			if(x1*x1<n){
-				x1=(x1+n)/2;
+			temp -= Math.pow(2, counter);
+			arr[counter]++;
+		}
+		for (int i = 0; i < arr.length; i++) {
+			println(arr[i]);
+		}
+		int[] arrNew = new int[32];
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) {
+				arrNew[i] = 1;
+			} else {
+				arrNew[i] = 1;
 			}
 		}
-		
-		return x1;
-		
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arrNew[i] == 1) {
+				result += Math.pow(2, i);
+			}
+		}
+
+		return result;
 	}
 
 }
