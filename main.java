@@ -15,29 +15,44 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run(){
-		double x = sqrt(6.25);
-		println(x); // უნდა დაბეჭდოს 2.5
+		int n = balance(“LLLRRR”);
+		println(n); // უნდა დაბეჭდოს 1
 	}
 
-	private double sqrt(double n){
-	double x1= (n+1)/2;
-		while(x1*x1!=n){
-			
-			if(x1*x1>n){
-				x1=(x1+1)/2;
+	private int balance(String text) {
+		int result = 0;
+		int counter1 = 1;
+		for (int i = 0; i < text.length() - 1; i++) {
+			while (text.charAt(i) == text.charAt(i + 1)) {
+				counter1++;
+				if (text.charAt(i) != text.charAt(i + 1)) {
+					break;
+				}
 			}
-			
-			if(x1*x1<n){
-				x1=(x1+n)/2;
+
+			int counter2 = 1;
+			while (text.charAt(i) == text.charAt(i + 1)) {
+				counter2++;
+				if (text.charAt(i) != text.charAt(i + 1)) {
+					break;
+				}
+			}
+			if (counter1 == counter2) {
+				result++;
+			}
+
+			if ((text.charAt(i) == 'L' && text.charAt(i + 1) == 'R')
+					|| (text.charAt(i) == 'R' && text.charAt(i + 1) == 'L')) {
+				result++;
+				i++;
 			}
 		}
+			if (result == 0) {
+				return 1;
+			}
 		
-		return x1;
-		
-	}	
-	
-	
-	
+		return result;
+	}
 
 }
 
