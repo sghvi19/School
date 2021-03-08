@@ -44,6 +44,7 @@ public class main extends ConsoleProgram {
 				arrNew[i] = 0;
 			}
 		}
+		//21474836
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arrNew[i] == 1) {
