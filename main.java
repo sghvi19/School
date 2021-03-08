@@ -25,10 +25,9 @@ public class main extends ConsoleProgram {
 		int result = 0;
 		int[] arr = new int[32];
 		while (temp != 0) {
-			temp=n;
 			counter=0;
-			while (temp / 2 != 0) {
-				temp /= 2;
+			while (n / 2 != 0) {
+				n /= 2;
 				counter++;
 			}
 			temp -= Math.pow(2, counter);
