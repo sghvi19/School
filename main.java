@@ -25,7 +25,7 @@ public class main extends ConsoleProgram {
 		int result=0;
 		int[] arr=new int[32];
 	while(temp!=0){
-		while(n/2!=0){
+		while(n%2!=0){
 			n/=2;
 			counter++;
 		}
