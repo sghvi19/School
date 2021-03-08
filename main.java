@@ -15,22 +15,39 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run() {
-		double n = 6.25;
-		double x1 = (n + 1) / 2;
-		double temp;
-		while (x1 * x1 != n) {
+		int n = reverse(7);
+		println(n); // უნდა დაბეჭდოს 4294967288
+	}
 
-			if (x1 * x1 > n) {
-				
-				x1 = (x1 + 1) / 2;
-				
-			} else {
-				temp = x1;
-				x1 = (x1 + n) / 2;
-				
+	private int reverse(int n){
+		int temp=n;
+		int counter=0;
+		int result=0;
+		int[] arr=new int[32];
+	while(temp!=0){
+		while(n/2!=0){
+			n/=2;
+			counter++;
+		}
+		temp-=Math.pow(2,counter);
+		arr[counter]++;
+	}
+		int[] arrNew= new int[32];
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]==0){
+				arrNew[i]=1;
+			}else{
+				arrNew[i]=1;
 			}
 		}
-		println(x1);
+		
+		for(int i=0; i<arr.length; i++){
+			if(arrNew[i]==1){
+				result+=Math.pow(2,i);
+			}
+		}
+		
+		return result;
 	}
 
 }
