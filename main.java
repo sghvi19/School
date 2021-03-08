@@ -35,15 +35,13 @@ public class main extends ConsoleProgram {
 			arr[counter]++;
 		}
 	
-		for (int i = 0; i < arr.length; i++) {
-			println(arr[i]);
-		}
+		
 		int[] arrNew = new int[32];
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == 0) {
 				arrNew[i] = 1;
 			} else {
-				arrNew[i] = 1;
+				arrNew[i] = 0;
 			}
 		}
 
