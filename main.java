@@ -51,7 +51,7 @@ public class main extends ConsoleProgram {
 			}
 			
 		}
-		//result+=Math.pow(2, 32);
+		result+=Math.pow(2, 32);
 
 		return result;
 	}
