@@ -44,7 +44,7 @@ public class main extends ConsoleProgram {
 				arrNew[i] = 0;
 			}
 		}
-		//21474836
+		//2147483647
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arrNew[i] == 1) {
@@ -52,7 +52,7 @@ public class main extends ConsoleProgram {
 			}
 			
 		}
-		result+=Math.pow(2, 32);
+		//result+=Math.pow(2, 32);
 
 		return result;
 	}
