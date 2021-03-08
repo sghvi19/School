@@ -35,6 +35,9 @@ public class main extends ConsoleProgram {
 			arr[counter]++;
 		}
 	
+		for(int i=0; i<arr.length; i++) {
+			print(arr[i]);
+		}
 		
 		int[] arrNew = new int[32];
 		for (int i = 0; i < arr.length; i++) {
