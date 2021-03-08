@@ -26,6 +26,7 @@ public class main extends ConsoleProgram {
 		int[] arr = new int[32];
 		while (temp != 0) {
 			counter=0;
+			n=temp;
 			while (n / 2 != 0) {
 				n /= 2;
 				counter++;
@@ -33,6 +34,7 @@ public class main extends ConsoleProgram {
 			temp -= Math.pow(2, counter);
 			arr[counter]++;
 		}
+	
 		for (int i = 0; i < arr.length; i++) {
 			println(arr[i]);
 		}
