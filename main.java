@@ -49,10 +49,15 @@ public class main extends ConsoleProgram {
 			if (arrNew[i] == 1) {
 				result += Math.pow(2, i);
 			}
+			result+=Math.pow(2, 32);
 		}
 
 		return result;
 	}
+	
+	
+	
+	
 
 }
 
