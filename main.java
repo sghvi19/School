@@ -22,16 +22,15 @@ public class main extends GraphicsProgram {
 		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
 		add(oval);
 		while (true) {
-			if(t) {
-			double R= Math.sqrt((Math.pow(getWidth()/2-x,2))-Math.pow((getHeight()/2-y),2));
+					double R= Math.sqrt((Math.pow(getWidth()/2-x,2))-Math.pow((getHeight()/2-y),2));
 			oval.setBounds(getWidth()/2-R,getHeight()/2-R,2*R,2*R);
-			}
+			
 		}
 	}
 	
 	
 	public void mouseDragged(MouseEvent e) {
-		t=true;
+		
 		x=e.getX();
 		y=e.getY();
 		
