@@ -14,8 +14,8 @@ import acm.util.RandomGenerator;
 
 public class main extends GraphicsProgram {
 	private GOval oval;
-	private double x;
-	private double y;
+	private double x=0;
+	private double y=0;
 	public void run() {
 		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
 		add(oval);
