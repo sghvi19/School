@@ -33,7 +33,7 @@ public class main extends GraphicsProgram {
 		t=true;
 		x=e.getX();
 		y=e.getY();
-		t=false;
+		
 	}
 
 }
