@@ -12,46 +12,23 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends ConsoleProgram {
-
-	public void run(){
-		int n = balance(“LLLRRR”);
-		println(n); // უნდა დაბეჭდოს 1
-	}
-
-	private int balance(String text) {
-		int result = 0;
-		int counter1 = 1;
-		for (int i = 0; i < text.length() - 1; i++) {
-			while (text.charAt(i) == text.charAt(i + 1)) {
-				counter1++;
-				if (text.charAt(i) != text.charAt(i + 1)) {
-					break;
-				}
-			}
-
-			int counter2 = 1;
-			while (text.charAt(i) == text.charAt(i + 1)) {
-				counter2++;
-				if (text.charAt(i) != text.charAt(i + 1)) {
-					break;
-				}
-			}
-			if (counter1 == counter2) {
-				result++;
-			}
-
-			if ((text.charAt(i) == 'L' && text.charAt(i + 1) == 'R')
-					|| (text.charAt(i) == 'R' && text.charAt(i + 1) == 'L')) {
-				result++;
-				i++;
-			}
+public class main extends GraphicsProgram {
+	private GOval oval;
+	private double x;
+	private double y;
+	public void run() {
+		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
+		add(oval);
+		while (true) {
+			double R= Math.sqrt((Math.pow(getWidth()/2-x,2))-Math.pow((getHeight()/2-y),2));
+			oval.setBounds(getWidth()-R,getHeight()-R,2*R,2*R);
 		}
-			if (result == 0) {
-				return 1;
-			}
-		
-		return result;
+	}
+	
+	
+	public void mouseDragged(MouseEvent e) {
+		x=e.getX();
+		y=e.getY();
 	}
 
 }
