@@ -18,6 +18,7 @@ public class main extends GraphicsProgram {
 	private double y=0;
 	private boolean t=false;
 	public void run() {
+		addMouseListeners();
 		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
 		add(oval);
 		while (true) {
