@@ -16,19 +16,24 @@ public class main extends GraphicsProgram {
 	private GOval oval;
 	private double x=0;
 	private double y=0;
+	private boolean t=false;
 	public void run() {
 		oval = new GOval(getWidth() / 2 - 20, getHeight() / 2 - 20, 40, 40);
 		add(oval);
 		while (true) {
+			if(t) {
 			double R= Math.sqrt((Math.pow(getWidth()/2-x,2))-Math.pow((getHeight()/2-y),2));
 			oval.setBounds(getWidth()-R,getHeight()-R,2*R,2*R);
+			}
 		}
 	}
 	
 	
 	public void mouseDragged(MouseEvent e) {
+		t=true;
 		x=e.getX();
 		y=e.getY();
+		t=false;
 	}
 
 }
