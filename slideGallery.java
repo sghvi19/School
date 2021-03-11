@@ -27,7 +27,7 @@ public class slideGallery extends GraphicsProgram {
 		for (int i = 1; i < list.size(); i++) {
 			if (i == 1) {
 				list.get(i).setSize(SIZE/3, SIZE/3);
-				add(list.get(i), getWidth() / 2 - list.get(i).getWidth() / 2,
+				add(list.get(i), getWidth() / 2 + SIZE/2+DISTANCE,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			} else {
 				list.get(i).setSize(SIZE / 3, SIZE / 3);
