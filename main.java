@@ -87,9 +87,12 @@ public class main extends ConsoleProgram {
 					}
 				}
 			}
+			area--;
+			return area;
+		}else {
+			return -1;
 		}
-		area--;
-		return area;
+		
 	}
 
 }
