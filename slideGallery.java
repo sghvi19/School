@@ -69,7 +69,7 @@ public class slideGallery extends GraphicsProgram {
 		}
 	}
 	
-	public void mouseClicked(MouseEvent e) {
+	public void mousePressed(MouseEvent e) {
 		x0=e.getX();
 	}
 	
