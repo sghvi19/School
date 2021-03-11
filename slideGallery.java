@@ -76,10 +76,11 @@ public class slideGallery extends GraphicsProgram {
 		} else {
 			for (int i = 0; i < list.size() ; i++) {
 				if (list.get(i) == getElementAt(getWidth() / 2, getHeight() / 2)) {
-					list.get(i).set(getWidth()/2+DISTANCE+SIZE/2+SIZE/3,getHeight()/2+SIZE/6,SIZE/3,SIZE/3);
-
-				}else if(list.get(i)==getElementAt(getWidth()/2-SIZE/2-DISTANCE-1,getHeight()/2)) {
-					list.get(i).setBounds(getWidth()/2+SIZE/6+SIZE/3,getHeight()/2+SIZE/6+SIZE/3,SIZE,SIZE);
+					list.get(i).setSize(SIZE/3,SIZE/3);
+					list.get(i).setLocation(getWidth()/2+DISTANCE+SIZE/2,getHeight()/2-SIZE/6);
+				}else if(list.get(i)==getElementAt(getWidth()/2-SIZE/2-DISTANCE
+						-1,getHeight()/2)) {
+					list.get(i).setBounds(getWidth()/2+SIZE/6+SIZE/3,getHeight()/2+SIZE/6,SIZE,SIZE);
 				}else {
 					list.get(i).move(DISTANCE + SIZE / 3, 0);	
 				}
