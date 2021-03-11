@@ -15,7 +15,8 @@ public class slideGallery extends GraphicsProgram {
 	private static final int DISTANCE = 30;
 	private JButton right;
 	private JButton left;
-
+	private GRect rect1;
+	private GRect rect2;
 	public void run() {
 		list = new ArrayList<GRect>();
 		fillList();
@@ -33,6 +34,11 @@ public class slideGallery extends GraphicsProgram {
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			}
 		}
+		
+		 rect1= (GRect) list.get(0);
+		 rect2= (GRect) list.get(1);
+		list.remove(0);
+		list.remove(1);
 
 		add(left, SOUTH);
 		add(right, SOUTH);
@@ -61,24 +67,19 @@ public class slideGallery extends GraphicsProgram {
 	private void reNew(int n) {
 		if (n == -1) {
 			for (int i = 0; i < list.size() - 1; i++) {
-				if (list.get(i).getWidth() == SIZE) {
-					list.get(i).setSize(SIZE / 3, SIZE / 3);
-					list.get(i + 1).setSize(SIZE, SIZE);
-					list.get(i).setLocation(getWidth() / 2 - list.get(i + 1).getWidth() / 2 - SIZE / 3 - DISTANCE,
-							getHeight() / 2 - list.get(i).getHeight() / 2);
-
-					list.get(i + 1).setLocation(getWidth() / 2 - list.get(i + 1).getWidth() / 2,
-							getHeight() / 2 - list.get(i + 1).getHeight() / 2);
-					list.remove(i + 1);
-					list.remove(i);
-					i--;
-				} else {
-					list.get(i).move(-DISTANCE - list.get(i).getWidth(), 0);
-				}
-
+					list.get(i).move(-DISTANCE-SIZE/3, 0);
+					
 			}
-			list.add((GRect) getElementAt(getWidth() / 2, getHeight() / 2));
-			list.add((GRect) getElementAt(getWidth() / 2 - DISTANCE - SIZE / 2 - 1, getHeight() / 2));
+			rect1.setSize(SIZE/3,SIZE/3);
+			rect1.move(-DISTANCE-2*SIZE/3, 0);
+			rect2.setBounds(getWidth()/2-SIZE/2,getHeight()/2-SIZE/2,SIZE,SIZE);
+			
+			rect2= (GRect) list.get(0);
+			list.remove(0);
+			list.add(rect1);
+			rect2=rect1;
+			
+			
 		} else {
 			for (int i = 0; i < list.size() - 1; i++) {
 

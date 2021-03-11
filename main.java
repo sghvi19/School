@@ -12,30 +12,8 @@ import acm.program.ConsoleProgram;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
-public class main extends ConsoleProgram {
-	public void run(){
-		double x = sqrt(6.25);
-		println(x); // უნდა დაბეჭდოს 2.5
-	}
-
-	private double sqrt(double n){
-	double lowest=1;
-	double highest=n;
-	double x1= (n+1)/2;
-		while(x1*x1!=n){
-			if(x1*x1>n){
-				x1=(x1+lowest)/2;
-				lowest=x1;
-			}else if(x1*x1<n){
-				x1=(x1+n)/2;
-				n=x1;
-			}
-		}
+public class main extends GraphicsProgram {
 		
-		return x1;
-		
-	}
-	
 }
 
 //public class main extends GraphicsProgram {
