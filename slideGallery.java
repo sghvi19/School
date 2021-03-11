@@ -75,7 +75,7 @@ public class slideGallery extends GraphicsProgram {
 	
 	public void mouseReleased(MouseEvent e) {
 		x1=e.getX();
-		if(x1-x0<=20) {
+		if(x0-x1>=20) {
 			reNew(-1);
 		}
 		//if(x1-x0)
