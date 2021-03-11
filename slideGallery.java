@@ -24,9 +24,9 @@ public class slideGallery extends GraphicsProgram {
 		left = new JButton("Left");
 		right = new JButton("Right");
 
-		for (int i = 0; i < list.size(); i++) {
-			if (i == 0) {
-				list.get(i).setSize(SIZE, SIZE);
+		for (int i = 1; i < list.size(); i++) {
+			if (i == 1) {
+				list.get(i).setSize(SIZE/3, SIZE/3);
 				add(list.get(i), getWidth() / 2 - list.get(i).getWidth() / 2,
 						getHeight() / 2 - list.get(i).getHeight() / 2);
 			} else {
