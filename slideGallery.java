@@ -1,4 +1,5 @@
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -17,6 +18,10 @@ public class slideGallery extends GraphicsProgram {
 	private JButton left;
 	private GRect rect1;
 	private GRect rect2;
+	private double x0;
+
+	private double x1;
+	
 
 	public void run() {
 		list = new ArrayList<GRect>();
@@ -42,6 +47,7 @@ public class slideGallery extends GraphicsProgram {
 		add(left, SOUTH);
 		add(right, SOUTH);
 		addActionListeners();
+		addMouseListeners();
 	}
 
 	private void fillList() {
@@ -61,6 +67,18 @@ public class slideGallery extends GraphicsProgram {
 			reNew(1);
 
 		}
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+		x0=e.getX();
+	}
+	
+	public void mouseReleased(MouseEvent e) {
+		x1=e.getX();
+		if(x1-x0<=20) {
+			reNew(-1);
+		}
+		
 	}
 
 	private void reNew(int n) {
