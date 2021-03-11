@@ -78,9 +78,9 @@ public class slideGallery extends GraphicsProgram {
 		if(x0-x1>=20) {
 			reNew(-1);
 		}
-//		if(x0-x1>=-20) {
-//			reNew(1);
-//		}
+		if(x1-x0>=20) {
+			reNew(1);
+		}
 		
 	}
 
