@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import acm.graphics.GLabel;
 import acm.graphics.GLine;
@@ -29,6 +30,61 @@ public class main extends ConsoleProgram {
 		println(maxRectangleArea(matrix));
 	}
 
+	
+	
+	private boolean[][] pictureUnion(boolean [][] p1, boolean [][] p2){
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		for(int i = 0; i < p1.length; i++) {
+			int count = 0;
+			for(int j = 0; j < p1[i].length; j++) {
+				if(p1[i][p1[0].length-1-j] == false) {
+					count++;
+				} else {
+					list.add(count);
+					break;
+				}
+			}
+		}
+		
+	}
+	
+	list1;
+	list2;
+	
+	for(int i = 0; i < list1.size(); i++) {
+		if(i == 0) {
+			int n1 = Math.abs(list1.get(i) - list2.get(i));
+			int n2 = Math.abs(list.get(i) - list2.get(i + 1));
+			list.add(n1);
+			list.add(n2);
+		}
+		
+		if(i == list1.size() - 1) {
+			int n1 = Math.abs(list1.get(i) - list2.get(i));
+			int n2 = Math.abs(list.get(i) - list2.get(i - 1));
+			list.add(n1);
+			list.add(n2);
+		}
+		
+		else {
+			int n1 = Math.abs(list1.get(i) - list2.get(i - 1));
+			int n2 = Math.abs(list.get(i) - list2.get(i + 1));
+			int n3 = Math.abs(list1.get(i) - list2.get(i));
+
+			list.add(n1);
+			list.add(n2);
+			list.add(n3);
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	// Problem: 59
 	private int maxRectangleArea(int[][] matrix) {
 		int maxArea = 0;
@@ -90,7 +146,7 @@ public class main extends ConsoleProgram {
 			area--;
 			return area;
 		}else {
-			return -1;
+			return -
 		}
 		
 	}
