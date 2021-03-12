@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import acm.graphics.GLabel;
 import acm.graphics.GLine;
@@ -15,144 +16,76 @@ import acm.util.RandomGenerator;
 
 public class main extends ConsoleProgram {
 	public void run() {
-		int[][] matrix = new int[4][8];
-
-		int[] arr = { 0, 1, 1, 0, 0, 1, 0, 0 };
-		int[] arr1 = { 0, 1, 1, 1, 1, 1, 0, 0 };
-		int[] arr2 = { 0, 0, 1, 1, 1, 1, 0, 0 };
-		int[] arr3 = { 0, 0, 1, 1, 1, 1, 0, 0 };
-
-		matrix[0] = arr;
-		matrix[1] = arr1;
-		matrix[2] = arr2;
-		matrix[3] = arr3;
-
-		println(maxRectangleArea(matrix));
+	String s=readLine("enter: ");
+	
+	println(rearrange(s));
+		
+		
+		
+	}
+	
+	
+	private String rearrange(String text) {
+		ArrayList<String> list=new ArrayList<String>();
+		StringTokenizer token=new StringTokenizer(text);
+		
+		while(token.hasMoreTokens()){
+			String s=token.nextToken();
+			addToList(s,list);
+			
+			
+		}
+		
+		String result="";
+		
+		for(int i=0; i<list.size(); i++){
+			result+=list.get(i);
+			result+=" ";
+			
+		}
+		
+		
+		return result;
 	}
 
-	
-	
-	private boolean[][] pictureUnion(boolean [][] p1, boolean [][] p2){
-		ArrayList<Integer> list = new ArrayList<>();
-		
-		for(int i = 0; i < p1.length; i++) {
-			int count = 0;
-			for(int j = 0; j < p1[i].length; j++) {
-				if(p1[i][p1[0].length-1-j] == false) {
-					count++;
-				} else {
-					list.add(count);
-					break;
-				}
+
+	private void addToList(String s, ArrayList<String> list){
+		for(int i=0; i<list.size();i++){
+			if(list.size()==0){
+				list.add(s);
+				break;
 			}
-		}
-		
-	}
-	
-	list1;
-	list2;
-	
-	for(int i = 0; i < list1.size(); i++) {
-		if(i == 0) {
-			int n1 = Math.abs(list1.get(i) - list2.get(i));
-			int n2 = Math.abs(list.get(i) - list2.get(i + 1));
-			list.add(n1);
-			list.add(n2);
-		}
-		
-		if(i == list1.size() - 1) {
-			int n1 = Math.abs(list1.get(i) - list2.get(i));
-			int n2 = Math.abs(list.get(i) - list2.get(i - 1));
-			list.add(n1);
-			list.add(n2);
-		}
-		
-		else {
-			int n1 = Math.abs(list1.get(i) - list2.get(i - 1));
-			int n2 = Math.abs(list.get(i) - list2.get(i + 1));
-			int n3 = Math.abs(list1.get(i) - list2.get(i));
-
-			list.add(n1);
-			list.add(n2);
-			list.add(n3);
-		}
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	// Problem: 59
-	private int maxRectangleArea(int[][] matrix) {
-		int maxArea = 0;
-
-		for (int i = 0; i < matrix.length; i++) {
-
-			for (int j = 0; j < matrix[i].length; j++) {
-
-				if (matrix[i][j] == 1) {
-					int area = maxSubRectangleArea(matrix, i, j);
-					if (area > maxArea) {
-						maxArea = area;
-					}
-				}
+			if(list.get(i).length()>s.length()){
+				list.add(i,s);
+				break;
 			}
-
-		}
-		return maxArea;
-	}
-
-	private int maxSubRectangleArea(int[][] matrix, int iStart, int jStart) {
-		int maxArea = 0;
-
-		for (int iEnd = iStart; iEnd < matrix.length; iEnd++) {
-
-			for (int jEnd = jStart; jEnd < matrix[0].length; jEnd++) {
-
-				int currentArea = rectangeArea(matrix, iStart, jStart, iEnd, jEnd);
-
-				if (currentArea != -1) {
-					if (maxArea < currentArea) {
-						maxArea = currentArea;
-					}
-				}
+			if(list.get(i).length()==s.length()){
+				list.add(i+1,s);
+				break;
 			}
-		}
-		return maxArea;
-	}
-
-	private int rectangeArea(int[][] matrix, int iStart, int jStart, int iEnd, int jEnd) {
-		int area = 0;
-
-		if (Math.abs(iStart - iEnd) == Math.abs(jStart - jEnd)) {
-			for (int i = iStart; i <= iEnd; i++) {
-				for (int j = jStart; j <= jEnd; j++) {
-
-					if(j-i==jStart-iStart && matrix[i][j]==1) {
-					area++;
-					}else {
-						return -1;
-					}
-					if(iEnd+jEnd==i+j){
-						area++;
-					}else {
-						return -1;
-					}
-				}
+			if(s.length()>list.get(i).length()){
+				list.add(i+1,s);
+				break;
 			}
-			area--;
-			return area;
-		}else {
-			return -
+			
+			
 		}
 		
+		
 	}
-
+	
 }
 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 //public class main extends GraphicsProgram {
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private boolean t1 = true;
