@@ -27,7 +27,7 @@ public class main extends ConsoleProgram {
 	
 	private String rearrange(String text) {
 		ArrayList<String> list=new ArrayList<String>();
-		StringTokenizer token=new StringTokenizer(text);
+		StringTokenizer token=new StringTokenizer(text, " ");
 		
 		while(token.hasMoreTokens()){
 			String s=token.nextToken();
