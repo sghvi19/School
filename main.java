@@ -66,17 +66,11 @@ public class main extends ConsoleProgram {
 			if(list.get(i).length()==s.length()&& i==list.size()-1) {
 				list.add(s);
 			}
-			if(s.length()>list.get(i).length()&& i!=list.size()-1){
-				list.add(i+1,s);
-				break;
-			}
-			if(s.length()>list.get(i).length()&& i==list.size()-1){
-				list.add(i,s);
-				break;
-			}
-			
-			
 		}
+		if(!list.contains(s)) {
+			list.add(s);
+		}
+
 		
 		
 	}
