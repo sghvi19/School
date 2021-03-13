@@ -17,7 +17,7 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run() {
-		int m=simulateStrategy(100);
+		println(simulateStrategy(100));
 	
 	}
 
