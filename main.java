@@ -15,78 +15,85 @@ import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 public class main extends ConsoleProgram {
+
 	public void run() {
-	String s=readLine("enter: ");
+		int m=simulateStrategy(100);
 	
-	println(rearrange(s));
-		
-		
-		
 	}
-	
-	
-	private String rearrange(String text) {
-		ArrayList<String> list=new ArrayList<String>();
-		StringTokenizer token=new StringTokenizer(text, " ");
-		
-		while(token.hasMoreTokens()){
-			String s=token.nextToken();
-			addToList(s,list);
+
+	private int simulateStrategy(int n) {
+		RandomGenerator rgen=RandomGenerator.getInstance();
+		ArrayList<Integer> list=new ArrayList<Integer>();
+		double lost=0;
+		int counter=0;
+		double result=0;
+		for(int i=0; i<1000; i++){
+			counter=0;
+		while(n!=0){
+			if(lost==0){
+				int number=readInt("Enter number: ");
+				if(n>=1){
+				
+				if(number==rgen.nextInt(0,36)){
+					n+=36;
+					lost-=36;
+					counter++;
+				}else{
+					n-=1;
+					lost+=1;
+					counter++;
+				}
+				}else{
+					if(number==rgen.nextInt(0,36)){
+						counter++;
+						n+=36*n;
+					}else{
+						n=0;
+						counter++;
+					}
+				}
+				
+			}else if(lost!=0){
+				int number=readInt("Enter number: ");
+				double fsoni= (lost+1)/36;
+				if(fsoni>=n){
+				if(number==rgen.nextInt(0,36)){
+					n+=36*fsoni;
+					lost-=36*fsoni;
+					counter++;
+				}else{
+					n-=fsoni;
+					lost+=fsoni;
+					counter++;
+				}
+				}else{
+					if(number==rgen.nextInt(0,36)){
+						n+=36*n;
+						lost-=36*n;
+						counter++;
+					}else{
+						n=0;
+						lost+=36*n;
+						counter++;
+					}
+				}
+				
+				
+			}
 			
 			
 		}
-		
-		String result="";
-		
-		for(int i=0; i<list.size(); i++){
-			result+=list.get(i);
-			result+=" ";
-			
-		}
-		
-		
-		return result;
+		list.add(counter);
+	}
+			for(Integer m: list){
+				result+=m;
+			}
+			result/=list.size();
+	return (int)result;
 	}
 
-
-	private void addToList(String s, ArrayList<String> list){
-		for(int i=0; i<list.size();i++){
-			if(list.size()==0){
-				list.add(s);
-				break;
-			}
-			if(list.get(i).length()>s.length()){
-				list.add(i,s);
-				break;
-			}
-			if(list.get(i).length()==s.length()&& i!=list.size()-1){
-				list.add(i+1,s);
-				break;
-			}
-			if(list.get(i).length()==s.length()&& i==list.size()-1) {
-				list.add(s);
-			}
-		}
-		if(!list.contains(s)) {
-			list.add(s);
-		}
-
-		
-		
-	}
-	
 }
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 //public class main extends GraphicsProgram {
 //	private RandomGenerator rgen = RandomGenerator.getInstance();
 //	private boolean t1 = true;
