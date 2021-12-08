@@ -17,10 +17,7 @@ import acm.util.RandomGenerator;
 public class main extends ConsoleProgram {
 
 	public void run() {
-		String a = "aab";
-		String b = "aab";
-		a+='a';
-		println(b);	
+		System.out.println("a");
 	}
 	
 }
