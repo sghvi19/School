@@ -101,7 +101,7 @@ public class Graphic extends GraphicsProgram{
 			Iterator<String> it = school.getTeachers(pupField.getText());
 			
 			if(it == null) return;
-			add(new GLabel("Results:", 10, 5));
+			add(new GLabel("Results:", 10, 10));
 			int size = 1;
 			while(it.hasNext()) {
 				println("a");
