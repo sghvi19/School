@@ -117,7 +117,15 @@ public class Graphic extends GraphicsProgram{
 		private void displayPupils() {
 			removeAll();
 			Iterator<String> it = school.getPupils(teaField.getText());
+			add(new GLabel("Results:", distance, 15));
+			int size = 2;
+			while(it.hasNext()) {
 			
+				String pupil = it.next();
+			
+				add(new GLabel("Result"+ size +": "+ pupil, distance , distance*size));
+				size++;
+			}
 			
 		}
 	
