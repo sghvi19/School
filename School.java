@@ -18,7 +18,7 @@ public class School {
 	}
 	
 	public void addSubject(String teacher, String subject) {
-		data.get(teacher).put(subject,new ArrayList<>());
+		data.get(teacher).put(subject,new ArrayList<String>());
 	}
 	
 	public void addPupil(String pupil, String subject) {
