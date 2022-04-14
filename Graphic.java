@@ -4,12 +4,13 @@ import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
+import acm.program.Program;
 
 import java.awt.event.ActionEvent;
 import java.util.Iterator;
 
 
-public class Graphic extends GraphicsProgram{
+public class Graphic extends Program{
 	private static final int distance = 5;
 	
 	
