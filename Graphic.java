@@ -99,8 +99,9 @@ public class Graphic extends GraphicsProgram{
 		private void displayTeachers() {
 			removeAll();
 			Iterator<String> it = school.getTeachers(pupField.getText());
-			println("yes");
+			
 			if(it == null) return;
+			println("yes");
 			int size = 1;
 			while(it.hasNext()) {
 				String teacher = it.next();
