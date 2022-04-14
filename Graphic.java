@@ -31,7 +31,7 @@ public class Graphic extends GraphicsProgram{
 		public  void init() {
             school  = new School();
             
-            this.setSize(1500, 900);
+            this.setSize(1500, 700);
 			
 			addT = new JButton("Add Teach");
 			addP = new JButton("Add Pupil");
