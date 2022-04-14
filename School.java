@@ -14,7 +14,7 @@ public class School {
 	
 	
 	public void addTeacher(String teacher) {
-		if(!data.containsKey(teacher)) data.put(teacher, new HashMap<>());
+		if(!data.containsKey(teacher)) data.put(teacher, new HashMap<String,ArrayList<String> >());
 	}
 	
 	public void addSubject(String teacher, String subject) {
@@ -30,7 +30,7 @@ public class School {
 		
 	}
 	
-	public Iterator getTeachers(String pupil) {
+	public Iterator<String> getTeachers(String pupil) {
 		List<String> teachers = new ArrayList<String>(); 
 		
 		for(String t: data.keySet()) {
@@ -45,7 +45,8 @@ public class School {
 		
 	}
 	
-	public Iterator getPupils(String teacher) {
+	
+	public Iterator<String> getPupils(String teacher) {
 		ArrayList<String> pups = new ArrayList<String>(); 
 		
 		for(String sub: data.get(teacher).keySet()) {
