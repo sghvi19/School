@@ -101,10 +101,11 @@ public class Graphic extends GraphicsProgram{
 			Iterator<String> it = school.getTeachers(pupField.getText());
 			
 			if(it == null) return;
-			println("no");
+			
 			int size = 1;
 			while(it.hasNext()) {
 				String teacher = it.next();
+				println(teacher);
 				add(new GLabel(teacher, distance , distance*size));
 				size++;
 			}
