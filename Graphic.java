@@ -2,12 +2,17 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
 import java.util.Iterator;
 import acmx.export.javax.swing.JFrame;
 import javafx.event.ActionEvent;
 
 public class Graphic extends GraphicsProgram{
+	private static final int distance = 5;
+	
+	
+	//let them be default :)
 	JTextField teaField;
 	JTextField subField;
 	JTextField pupField;
@@ -85,9 +90,16 @@ public class Graphic extends GraphicsProgram{
 		
 		private void displayTeachers() {
 			removeAll();
-			Iterator it = school.getTeachers(pupField.getText());
+			Iterator<String> it = school.getTeachers(pupField.getText());
 			
-			
+			if(it == null) return;
+			int size = 0;
+			while(it.hasNext()) {
+				String teacher = it.next();
+				add(new GLabel(teacher, distance , distance*size));
+				size++;
+			}
+		
 			
 		}
 
