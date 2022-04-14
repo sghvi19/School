@@ -13,7 +13,7 @@ public class Graphic extends GraphicsProgram{
 	private static final int distance = 5;
 	
 	
-	//let them be default :)
+	
 	private JTextField teaField;
 	private JTextField subField;
 	private JTextField pupField;
