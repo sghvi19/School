@@ -4,8 +4,10 @@ import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
+
+import java.awt.event.ActionEvent;
 import java.util.Iterator;
-import javafx.event.ActionEvent;
+
 
 public class Graphic extends GraphicsProgram{
 	private static final int distance = 5;
@@ -30,7 +32,7 @@ public class Graphic extends GraphicsProgram{
 		public  void init() {
             school  = new School();
             
-            this.setSize(1500, 700);
+            this.setSize(1500, 600);
 			
 			addT = new JButton("Add Teach");
 			addP = new JButton("Add Pupil");
