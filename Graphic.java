@@ -104,8 +104,9 @@ public class Graphic extends GraphicsProgram{
 			
 			int size = 1;
 			while(it.hasNext()) {
+				println("asd");
 				String teacher = it.next();
-				println(teacher);
+				
 				add(new GLabel(teacher, distance , distance*size));
 				size++;
 			}
