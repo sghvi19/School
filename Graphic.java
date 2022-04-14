@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 
 public class Graphic extends GraphicsProgram{
-	private static final int distance = 5;
+	private static final int distance = 10;
 	
 	
 	
@@ -106,8 +106,8 @@ public class Graphic extends GraphicsProgram{
 			while(it.hasNext()) {
 			
 				String teacher = it.next();
-				
-				add(new GLabel("Result" + size + teacher, distance , distance*size));
+				println(teacher);
+				add(new GLabel("Result: " + size + teacher, distance , distance*size));
 				size++;
 			}
 		
