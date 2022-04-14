@@ -9,7 +9,7 @@ public class School {
 	
 	
 	public School() {
-		 data = new  HashMap<String,ArrayList<String>>();
+		 data = new  HashMap<String, HashMap<String,ArrayList<String> > >();
 	}
 	
 	
