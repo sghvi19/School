@@ -54,10 +54,15 @@ public class Graphic extends GraphicsProgram{
 			add(pup,SOUTH);
 			add(pupField,SOUTH);
 			add(addT,SOUTH);
+			addT.addActionListener(this);
 			add(addS,SOUTH);
+			addS.addActionListener(this);
 			add(addP,SOUTH);
+			addP.addActionListener(this);
 			add(disP,SOUTH);
+			disP.addActionListener(this);
 			add(disT,SOUTH);
+			disT.addActionListener(this);
 			
 			addActionListeners();
 			
@@ -65,7 +70,7 @@ public class Graphic extends GraphicsProgram{
 			
 		}
 	
-		
+	
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == addT) {
 				addTeacher();
@@ -82,7 +87,6 @@ public class Graphic extends GraphicsProgram{
 			teaField.setText("");
 			subField.setText("");
 			pupField.setText("");
-			
 		}
 		
 		
