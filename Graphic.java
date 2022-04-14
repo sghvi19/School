@@ -4,10 +4,9 @@ import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
-import acmx.export.java.util.Iterator;
 
 import java.awt.event.ActionEvent;
-
+import java.util.Iterator;
 
 
 public class Graphic extends GraphicsProgram{
@@ -99,13 +98,13 @@ public class Graphic extends GraphicsProgram{
 		
 		private void displayTeachers() {
 			removeAll();
-			Iterator it = school.getTeachers(pupField.getText());
+			Iterator<String> it = school.getTeachers(pupField.getText());
 			
 			if(it == null) return;
 			
 			int size = 1;
 			while(it.hasNext()) {
-				String teacher = (String) it.next();
+				String teacher = it.next();
 				println(teacher);
 				add(new GLabel(teacher, distance , distance*size));
 				size++;
@@ -116,7 +115,7 @@ public class Graphic extends GraphicsProgram{
 
 		private void displayPupils() {
 			removeAll();
-			Iterator it = school.getPupils(teaField.getText());
+			Iterator<String> it = school.getPupils(teaField.getText());
 			
 			
 		}
