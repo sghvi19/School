@@ -5,7 +5,6 @@ import javax.swing.JTextField;
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
 import java.util.Iterator;
-import acmx.export.javax.swing.JFrame;
 import javafx.event.ActionEvent;
 
 public class Graphic extends GraphicsProgram{
@@ -102,7 +101,7 @@ public class Graphic extends GraphicsProgram{
 
 		private void displayPupils() {
 			removeAll();
-			Iterator it = school.getPupils(teaField.getText());
+			Iterator<String> it = school.getPupils(teaField.getText());
 			
 			
 		}
