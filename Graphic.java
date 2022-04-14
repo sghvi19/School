@@ -84,10 +84,10 @@ public class Graphic extends GraphicsProgram{
 				school.addSubject(teaField.getText(), subField.getText());
 			}
 			if(e.getSource() == disP) {
-				displayPupils();
+				display(teaField.getText());
 			}
 			if(e.getSource() == disT) {
-				displayTeachers();
+				display(pupField.getText());
 			}
 			
 			teaField.setText("");
@@ -96,27 +96,10 @@ public class Graphic extends GraphicsProgram{
 		}
 		
 		
-		private void displayTeachers() {
-			removeAll();
-			Iterator<String> it = school.getTeachers(pupField.getText());
-			
-			if(it == null) return;
-			add(new GLabel("Results:", distance, 15));
-			int size = 2;
-			while(it.hasNext()) {
-			
-				String teacher = it.next();
-			
-				add(new GLabel("Result"+ size +": "+ teacher, distance , distance*size));
-				size++;
-			}
-		
-			
-		}
 
-		private void displayPupils() {
+		private void display(String person) {
 			removeAll();
-			Iterator<String> it = school.getPupils(teaField.getText());
+			Iterator<String> it = school.getPupils(person);
 			add(new GLabel("Results:", distance, 15));
 			int size = 2;
 			while(it.hasNext()) {
@@ -127,8 +110,5 @@ public class Graphic extends GraphicsProgram{
 				size++;
 			}
 			
-		}
-	
-		
-		
+		}	
 }
