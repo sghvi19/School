@@ -30,7 +30,7 @@ public class School {
 		
 	}
 	
-	public Iterator<String> getTeachers(String pupil) {
+	public Iterator getTeachers(String pupil) {
 		List<String> teachers = new ArrayList<String>(); 
 		
 		for(String t: data.keySet()) {
@@ -45,7 +45,7 @@ public class School {
 		
 	}
 	
-	public Iterator<String> getPupils(String teacher) {
+	public Iterator getPupils(String teacher) {
 		ArrayList<String> pups = new ArrayList<String>(); 
 		
 		for(String sub: data.get(teacher).keySet()) {
