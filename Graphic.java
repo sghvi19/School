@@ -73,11 +73,13 @@ public class Graphic extends GraphicsProgram{
 	
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == addT) {
-				addTeacher();
+				
+				school.addTeacher(teaField.getText());
+				
 			}else if(e.getSource() == addP) {
-				addPupil();
+				school.addPupil(pupField.getText(), subField.getText());
 			}else if(e.getSource() == addS) {
-				addSubj();
+				school.addSubject(teaField.getText(), subField.getText());
 			}else if(e.getSource() == disP) {
 				displayPupils();
 			}else if(e.getSource() == disT) {
@@ -111,24 +113,6 @@ public class Graphic extends GraphicsProgram{
 			
 			
 		}
-
-		private void addTeacher() {
-			school.addTeacher(teaField.getText());
-		
-		}
-	
-
-		private void addSubj() {
-			school.addSubject(teaField.getText(), subField.getText());
-			
-		}
-
-		private void addPupil() {
-			school.addPupil(pupField.getText(), subField.getText());
-			
-		}
-		
-		
 	
 		
 		
