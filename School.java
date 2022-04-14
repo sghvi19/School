@@ -49,8 +49,10 @@ public class School {
 		ArrayList<String> pups = new ArrayList<String>(); 
 		
 		for(String sub: data.get(teacher).keySet()) {
+			for(String pup: data.get(teacher).get(sub)) {
 			
-				 pups.addAll(data.get(teacher).get(sub));
+				 pups.add(pup);
+			}
 		}
 		
 		return pups.iterator();
