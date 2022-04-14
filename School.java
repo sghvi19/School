@@ -14,8 +14,7 @@ public class School {
 	
 	
 	public void addTeacher(String teacher) {
-		Map<String,ArrayList<String>> m = new HashMap<>();
-		 data.put(teacher, new HashMap<>());
+		if(!data.containsKey(teacher)) data.put(teacher, new HashMap<>());
 	}
 	
 	public void addSubject(String teacher, String subject) {
