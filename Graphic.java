@@ -4,13 +4,12 @@ import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
-import acm.program.Program;
 
 import java.awt.event.ActionEvent;
 import java.util.Iterator;
 
 
-public class Graphic extends Program{
+public class Graphic extends GraphicsProgram{
 	private static final int distance = 5;
 	
 	
@@ -103,9 +102,9 @@ public class Graphic extends Program{
 			
 			if(it == null) return;
 			add(new GLabel("Results:", distance, 15));
-			int size = 1;
+			int size = 2;
 			while(it.hasNext()) {
-				println("a");
+			
 				String teacher = it.next();
 				
 				add(new GLabel("Result" + size + teacher, distance , distance*size));
