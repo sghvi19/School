@@ -3,7 +3,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import acm.program.GraphicsProgram;
+import java.util.Iterator;
 import acmx.export.javax.swing.JFrame;
+import javafx.event.ActionEvent;
 
 public class Graphic extends GraphicsProgram{
 	JTextField teaField;
@@ -20,8 +22,11 @@ public class Graphic extends GraphicsProgram{
 	JLabel subj;
 	JLabel pup;
 	
+	School school;
 		
 		public  void init() {
+            school  = new School();
+			
 			addT = new JButton("Add Teach");
 			addP = new JButton("Add Pupil");
 			addS = new JButton("Add Subj");
@@ -57,6 +62,60 @@ public class Graphic extends GraphicsProgram{
 		public void run() {
 			
 		}
+		
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource() == addT) {
+				addTeacher();
+			}else if(e.getSource() == addP) {
+				addPupil();
+			}else if(e.getSource() == addS) {
+				addSubj();
+			}else if(e.getSource() == disP) {
+				displayPupils();
+			}else if(e.getSource() == disT) {
+				displayTeachers();
+			}
+			
+			teaField.setText("");
+			subField.setText("");
+			pupField.setText("");
+			
+		}
+		
+		
+		private void displayTeachers() {
+			removeAll();
+			Iterator it = school.getTeachers(pupField.getText());
+			
+			
+			
+		}
+
+		private void displayPupils() {
+			removeAll();
+			Iterator it = school.getPupils(teaField.getText());
+			
+			
+		}
+
+		private void addTeacher() {
+			school.addTeacher(teaField.getText());
+			
+		}
+	
+
+		private void addSubj() {
+			school.addSubject(teaField.getText(), subField.getText());
+			
+		}
+
+		private void addPupil() {
+			school.addPupil(pupField.getText(), subField.getText());
+			
+		}
+		
+		
+	
 		
 		
 }
