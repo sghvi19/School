@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class School {
-	private Map<String, HashMap<String,ArrayList<String> > > data;
+	private Map<String, HashMap<String,ArrayList<String>>> data;
 	
 	
 	public School() {
