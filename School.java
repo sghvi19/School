@@ -36,7 +36,7 @@ public class School {
 		for(String t: data.keySet()) {
 			HashMap<String, ArrayList<String>> subPups = data.get(t); 
 			for(ArrayList<String> pups: subPups.values()) {
-				if(pups.contains(pupil)) teachers.add(t);
+				if(pups.contains(pupil) && !teachers.contains(t)) teachers.add(t);
 			}
 			
 		}
@@ -52,7 +52,7 @@ public class School {
 		for(String sub: data.get(teacher).keySet()) {
 			for(String pup: data.get(teacher).get(sub)) {
 			
-				 pups.add(pup);
+				if(!pups.contains(pup)) pups.add(pup);
 			}
 		}
 		
