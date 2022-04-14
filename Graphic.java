@@ -101,7 +101,7 @@ public class Graphic extends GraphicsProgram{
 			Iterator<String> it = school.getTeachers(pupField.getText());
 			
 			if(it == null) return;
-			int size = 0;
+			int size = 1;
 			while(it.hasNext()) {
 				String teacher = it.next();
 				add(new GLabel(teacher, distance , distance*size));
