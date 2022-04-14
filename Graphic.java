@@ -74,17 +74,21 @@ public class Graphic extends GraphicsProgram{
 				
 				school.addTeacher(teaField.getText());
 				
-				teaField.setText("");
-			}else if(e.getSource() == addP) {
+			}
+			if(e.getSource() == addP) {
 				school.addPupil(pupField.getText(), subField.getText());
-			}else if(e.getSource() == addS) {
+			}
+			if(e.getSource() == addS) {
 				school.addSubject(teaField.getText(), subField.getText());
-			}else if(e.getSource() == disP) {
+			}
+			if(e.getSource() == disP) {
 				displayPupils();
-			}else if(e.getSource() == disT) {
+			}
+			if(e.getSource() == disT) {
 				displayTeachers();
 			}
-		
+			
+			teaField.setText("");
 			subField.setText("");
 			pupField.setText("");
 		}
