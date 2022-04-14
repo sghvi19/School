@@ -63,10 +63,7 @@ public class Graphic extends GraphicsProgram{
 
 			
 		}
-		
-		public void run() {
-			
-		}
+	
 		
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == addT) {
