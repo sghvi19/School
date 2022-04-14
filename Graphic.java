@@ -1,9 +1,11 @@
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
+import acmx.export.javax.swing.JButton;
+import acmx.export.javax.swing.JLabel;
+import acmx.export.javax.swing.JTextField;
+
 import java.util.Iterator;
 import javafx.event.ActionEvent;
 
@@ -12,21 +14,20 @@ public class Graphic extends GraphicsProgram{
 	
 	
 	//let them be default :)
-	JTextField teaField;
-	JTextField subField;
-	JTextField pupField;
+	private JTextField teaField;
+	private JTextField subField;
+	private JTextField pupField;
 	
-	JButton addT;
-	JButton addP;
-	JButton addS;
-	JButton disP;
-	JButton disT;
+	private JButton addT;
+	private JButton addP;
+	private JButton addS;
+	private JButton disP;
+	private JButton disT;
 	
-	JLabel tea;
-	JLabel subj;
-	JLabel pup;
 	
-	School school;
+	
+	
+	private School school;
 		
 		public  void init() {
             school  = new School();
@@ -39,9 +40,9 @@ public class Graphic extends GraphicsProgram{
 			disP = new JButton("Display Pupils");
 			disT = new JButton("Display Teachers");
 			
-			tea = new JLabel("Teach");
-			subj = new JLabel("Subj");
-			pup = new JLabel("Pupil");
+			JLabel tea = new JLabel("Teach");
+			JLabel subj = new JLabel("Subj");
+			JLabel pup = new JLabel("Pupil");
 			
 			teaField = new JTextField(10);
 			subField = new JTextField(10);
@@ -69,7 +70,6 @@ public class Graphic extends GraphicsProgram{
 
 			
 		}
-	
 	
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == addT) {
