@@ -106,7 +106,7 @@ public class Graphic extends GraphicsProgram{
 			while(it.hasNext()) {
 			
 				String teacher = it.next();
-				println(teacher);
+			
 				add(new GLabel("Result: " + size + teacher, distance , distance*size));
 				size++;
 			}
