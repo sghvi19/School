@@ -66,7 +66,7 @@ public class Graphic extends GraphicsProgram{
 		
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == addT) {
-				addTeacher();
+				addTeacher1();
 			}else if(e.getSource() == addP) {
 				addPupil();
 			}else if(e.getSource() == addS) {
@@ -106,7 +106,7 @@ public class Graphic extends GraphicsProgram{
 			
 		}
 
-		private void addTeacher() {
+		private void addTeacher1() {
 			school.addTeacher(teaField.getText());
 			
 		}
