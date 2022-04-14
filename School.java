@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Map;
+
+import acmx.export.java.util.Iterator;
 
 public class School {
 	private Map<String, HashMap<String,ArrayList<String> > > data;
@@ -30,7 +32,7 @@ public class School {
 		
 	}
 	
-	public Iterator<String> getTeachers(String pupil) {
+	public Iterator  getTeachers(String pupil) {
 		List<String> teachers = new ArrayList<String>(); 
 		
 		for(String t: data.keySet()) {
@@ -41,11 +43,11 @@ public class School {
 			
 		}
 		
-		return teachers.iterator();
+		return (Iterator) teachers.iterator();
 		
 	}
 	
-	public Iterator<String> getPupils(String teacher) {
+	public Iterator getPupils(String teacher) {
 		ArrayList<String> pups = new ArrayList<String>(); 
 		
 		for(String sub: data.get(teacher).keySet()) {
@@ -53,7 +55,7 @@ public class School {
 				 pups.addAll(data.get(teacher).get(sub));
 		}
 		
-		return pups.iterator();
+		return (Iterator) pups.iterator();
 			
 	}
 	
