@@ -1,11 +1,9 @@
-
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
-import acmx.export.javax.swing.JButton;
-import acmx.export.javax.swing.JLabel;
-import acmx.export.javax.swing.JTextField;
-
 import java.util.Iterator;
 import javafx.event.ActionEvent;
 
@@ -76,6 +74,7 @@ public class Graphic extends GraphicsProgram{
 				
 				school.addTeacher(teaField.getText());
 				
+				teaField.setText("");
 			}else if(e.getSource() == addP) {
 				school.addPupil(pupField.getText(), subField.getText());
 			}else if(e.getSource() == addS) {
@@ -85,8 +84,7 @@ public class Graphic extends GraphicsProgram{
 			}else if(e.getSource() == disT) {
 				displayTeachers();
 			}
-			
-			teaField.setText("");
+		
 			subField.setText("");
 			pupField.setText("");
 		}
